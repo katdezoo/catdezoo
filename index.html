@@ -236,7 +236,7 @@
 <body>
 
   <div id="introPage" class="intro-page">
-    no epylepsy please and no headphones please
+    <span id="introText">no epilepsie please and no headphones please</span>
   </div>
 
   <div class="gif-bg"></div>
@@ -283,8 +283,12 @@
 
   <script>
     setTimeout(function() {
-      document.getElementById("introPage").style.display = "none";
+      document.getElementById("introText").textContent = "<3";
     }, 5000);
+
+    setTimeout(function() {
+      document.getElementById("introPage").style.display = "none";
+    }, 6000);
 
     function afficherSection(id) {
       const sections = document.querySelectorAll(".page-section");
