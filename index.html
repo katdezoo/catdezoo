@@ -518,6 +518,14 @@
         0 0 10px #ff0000;
     }
 
+    .volume-warning.fort {
+      font-size: 17px;
+      text-shadow:
+        0 0 6px #ff0000,
+        0 0 14px #ff0000,
+        0 0 24px #ff0000;
+    }
+
     .audio-footer {
       position: static;
       width: 100%;
@@ -696,6 +704,10 @@
         font-size: 12px;
       }
 
+      .volume-warning.fort {
+        font-size: 14px;
+      }
+
       .audio-footer {
         padding: 4px 0 0 0;
       }
@@ -791,6 +803,10 @@
       .volume-warning {
         margin-top: 3px;
         font-size: 10px;
+      }
+
+      .volume-warning.fort {
+        font-size: 12px;
       }
 
       .volume-slider-wrap,
@@ -986,9 +1002,16 @@
           gainNode.gain.value = valeur / 100;
         }
 
-        if (valeur > 100) {
+        if (valeur > 150) {
+          volumeWarning.textContent = "tiens bon au dessus de 150%";
+          volumeWarning.classList.add("fort");
+          volumeWarning.style.display = "block";
+        } else if (valeur > 100) {
+          volumeWarning.textContent = "⚠ au-dessus de 100%, le son peut être très fort.";
+          volumeWarning.classList.remove("fort");
           volumeWarning.style.display = "block";
         } else {
+          volumeWarning.classList.remove("fort");
           volumeWarning.style.display = "none";
         }
       }
