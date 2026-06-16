@@ -399,7 +399,7 @@
       pointer-events: none;
       user-select: none;
       -webkit-user-select: none;
-      z-index: 2;
+      z-index: 0;
       box-shadow:
         0 0 4px #ff0000,
         0 0 8px #ff0000;
@@ -407,10 +407,13 @@
 
     #volumeBoost {
       display: block;
+      position: relative;
+      z-index: 2;
       width: 100%;
       cursor: pointer;
       accent-color: #ff0000;
       touch-action: pan-x;
+      background: transparent;
     }
 
     .volume-warning {
