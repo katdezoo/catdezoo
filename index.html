@@ -257,6 +257,56 @@
     }
 
     @media screen and (min-width: 601px) {
+      nav {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 30px;
+        padding: 18px 12px 6px 12px;
+      }
+
+      nav button {
+        margin: 0;
+        transform: translateY(4px);
+        text-shadow:
+          -2px -2px 0 #000000,
+          0 -2px 0 #000000,
+          2px -2px 0 #000000,
+          -2px 0 0 #000000,
+          2px 0 0 #000000,
+          -2px 2px 0 #000000,
+          0 2px 0 #000000,
+          2px 2px 0 #000000,
+          0 0 4px #000000,
+          0 0 18px #ff0000,
+          0 0 45px #ff0000,
+          0 0 85px #ff0000,
+          0 0 130px #ff0000,
+          0 0 190px #ff0000,
+          0 0 260px #ff0000,
+          0 0 340px #ff0000;
+      }
+
+      nav button:hover {
+        text-shadow:
+          -2px -2px 0 #000000,
+          0 -2px 0 #000000,
+          2px -2px 0 #000000,
+          -2px 0 0 #000000,
+          2px 0 0 #000000,
+          -2px 2px 0 #000000,
+          0 2px 0 #000000,
+          2px 2px 0 #000000,
+          0 0 4px #000000,
+          0 0 18px #ff0000,
+          0 0 45px #ff0000,
+          0 0 85px #ff0000,
+          0 0 130px #ff0000,
+          0 0 190px #ff0000,
+          0 0 260px #ff0000,
+          0 0 340px #ff0000;
+      }
+
       #apropos {
         top: calc(54vh + 10px);
       }
@@ -264,6 +314,23 @@
       #apropos h1 {
         font-size: 24px;
         margin-bottom: 12px;
+        text-shadow:
+          -2px -2px 0 #000000,
+          0 -2px 0 #000000,
+          2px -2px 0 #000000,
+          -2px 0 0 #000000,
+          2px 0 0 #000000,
+          -2px 2px 0 #000000,
+          0 2px 0 #000000,
+          2px 2px 0 #000000,
+          0 0 4px #000000,
+          0 0 18px #ff0000,
+          0 0 45px #ff0000,
+          0 0 85px #ff0000,
+          0 0 130px #ff0000,
+          0 0 190px #ff0000,
+          0 0 260px #ff0000,
+          0 0 340px #ff0000;
       }
 
       #apropos .card {
@@ -604,6 +671,7 @@
       <source src="./musique432.mp3?v=50" type="audio/mpeg">
     </audio>
 
+```
 <div class="volume-boost-box">
   <label for="volumeBoost">volume <span id="volumeValue">100%</span></label>
   <input id="volumeBoost" type="range" min="0" max="200" value="100" step="1">
@@ -613,6 +681,7 @@
 <div class="audio-footer">
   <p>© 2026 catdezoo&lt;3. all rights reserved.</p>
 </div>
+```
 
   </div>
 
