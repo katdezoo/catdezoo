@@ -301,7 +301,7 @@
       display: none;
       position: fixed;
       left: 50%;
-      bottom: 10px;
+      bottom: 45px;
       transform: translateX(-50%);
       z-index: 10001;
       width: 220px;
@@ -343,7 +343,8 @@
     .volume-warning {
       display: none;
       margin-top: 1px;
-      font-size: 7px;
+      font-size: 11px;
+      font-weight: bold;
       color: black;
       text-shadow:
         0 0 5px #ff0000,
@@ -446,7 +447,7 @@
       }
 
       .audio-box {
-        bottom: 10px;
+        bottom: 55px;
         left: 50%;
         transform: translateX(-50%);
         width: 180px;
@@ -475,7 +476,7 @@
 
       .volume-warning {
         margin-top: 0;
-        font-size: 6px;
+        font-size: 9px;
       }
 
       footer {
@@ -546,7 +547,7 @@
         transform: none;
         width: 165px;
         max-width: 90vw;
-        margin: 4px auto 8px auto;
+        margin: 0 auto 14px auto;
       }
 
       audio {
@@ -619,12 +620,14 @@
       <source src="./musique432.wav?v=50" type="audio/wav">
       <source src="./musique432.mp3?v=50" type="audio/mpeg">
     </audio>
-    
+
+```
 <div class="volume-boost-box">
   <label for="volumeBoost">volume <span id="volumeValue">100%</span></label>
   <input id="volumeBoost" type="range" min="0" max="200" value="100" step="1">
   <div id="volumeWarning" class="volume-warning">⚠ au-dessus de 100%, le son peut être très fort.</div>
 </div>
+```
 
   </div>
 
