@@ -1,89 +1,1261 @@
-function initialiserMotsAudio() {
-const lecteur = document.getElementById("lecteurAudio");
-const audioWordDisplay = document.getElementById("audioWordDisplay");
+<!DOCTYPE html>
 
-const texte12 = "imabarbigxrlinabarbiwxrld";
-const texte15 = "lifeinplastixitsfantastix";
-const texte17 = "?";
-const texte21 = "??";
-const texte24 = "imabarbigxrlinabarbiwxrld";
-const texte27 = "lifeinplastixitsfantastix";
-const texte29 = "?";
-const texte31 = "?";
-const texte33 = "???";
-const texte36 = "imabarbigxrlinabarbiwxrld";
-const texte39 = "lifeinplastixitsfantastix";
-const texte46 = "?!?!?!?!?!?!?!?><";
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PRODUCERSWORLDCUP</title>
 
-const sousTitresAudio = [
-{ debut: 12, fin: 13, texte: texte12 },
-{ debut: 15, fin: 16, texte: texte15 },
-{ debut: 17, fin: 18, texte: texte17 },
-{ debut: 21, fin: 22, texte: texte21 },
-{ debut: 24, fin: 25, texte: texte24 },
-{ debut: 27, fin: 28, texte: texte27 },
-{ debut: 29, fin: 30, texte: texte29 },
-{ debut: 31, fin: 32, texte: texte31 },
-{ debut: 33, fin: 34, texte: texte33 },
-{ debut: 36, fin: 37, texte: texte36 },
-{ debut: 39, fin: 40, texte: texte39 },
-{ debut: 46, fin: 47, texte: texte46 }
-];
+  <style>
+    @font-face {
+      font-family: 'DSEG7 Classic';
+      font-style: normal;
+      font-display: swap;
+      font-weight: 400;
+      src: url(https://cdn.jsdelivr.net/fontsource/fonts/dseg7-classic@latest/latin-400-normal.woff2) format('woff2'), url(https://cdn.jsdelivr.net/fontsource/fonts/dseg7-classic@latest/latin-400-normal.woff) format('woff');
+    }
 
-let animationSousTitres = null;
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      color: red;
+      background: #ff00ff;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
 
-function mettreAJourSousTitreAudio() {
-let texteActuel = "";
+    .intro-page {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: black;
+      color: white;
+      z-index: 9999;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      font-size: 28px;
+      font-weight: bold;
+      padding: 20px;
+      box-sizing: border-box;
+      overflow: hidden;
+    }
 
-```
-if (!lecteur.paused && !lecteur.ended) {
-  const temps = lecteur.currentTime;
+    .intro-gif {
+      display: none;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background-image: url("./fond.gif");
+      background-position: center center;
+      background-size: contain;
+      background-repeat: no-repeat;
+      z-index: 1;
+    }
 
-  const sousTitreActuel = sousTitresAudio.find(function(sousTitre) {
-    return temps >= sousTitre.debut && temps < sousTitre.fin;
-  });
+    .gif-bg {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background-image: url("./fond.gif");
+      background-position: center center;
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-color: #ff00ff;
+      z-index: 0;
+    }
 
-  if (sousTitreActuel) {
-    texteActuel = sousTitreActuel.texte;
-  }
-}
+    .overlay {
+      position: relative;
+      z-index: 1;
+      min-height: 100vh;
+      background: transparent;
+      display: flex;
+      flex-direction: column;
+    }
 
-if (texteActuel) {
-  audioWordDisplay.textContent = texteActuel;
-  audioWordDisplay.classList.add("active");
-} else {
-  audioWordDisplay.textContent = "";
-  audioWordDisplay.classList.remove("active");
-}
-```
+    nav {
+      background: transparent;
+      padding: 12px;
+      text-align: center;
+      position: relative;
+      z-index: 20;
+    }
 
-}
+    nav button {
+      color: #ff4fd8;
+      background: transparent;
+      border: none;
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: bold;
+      cursor: pointer;
+      -webkit-text-stroke: 0.7px #00ff00;
+      paint-order: stroke fill;
+      text-shadow:
+        -2px -2px 0 #000000,
+        0 -2px 0 #000000,
+        2px -2px 0 #000000,
+        -2px 0 0 #000000,
+        2px 0 0 #000000,
+        -2px 2px 0 #000000,
+        0 2px 0 #000000,
+        2px 2px 0 #000000,
+        0 0 4px #000000,
+        0 0 12px #ff0000,
+        0 0 30px #ff0000,
+        0 0 60px #ff0000,
+        0 0 95px #ff0000,
+        0 0 135px #ff0000,
+        0 0 170px #ff0000;
+      font-size: 18px;
+      font-family: Arial, sans-serif;
+      position: relative;
+      z-index: 21;
+    }
 
-function boucleSousTitres() {
-mettreAJourSousTitreAudio();
+    nav button:hover {
+      color: #ff4fd8;
+      -webkit-text-stroke: 0.7px #00ff00;
+      paint-order: stroke fill;
+      text-shadow:
+        -2px -2px 0 #000000,
+        0 -2px 0 #000000,
+        2px -2px 0 #000000,
+        -2px 0 0 #000000,
+        2px 0 0 #000000,
+        -2px 2px 0 #000000,
+        0 2px 0 #000000,
+        2px 2px 0 #000000,
+        0 0 4px #000000,
+        0 0 12px #ff0000,
+        0 0 30px #ff0000,
+        0 0 60px #ff0000,
+        0 0 95px #ff0000,
+        0 0 135px #ff0000,
+        0 0 170px #ff0000;
+    }
 
-```
-if (!lecteur.paused && !lecteur.ended) {
-  animationSousTitres = requestAnimationFrame(boucleSousTitres);
-} else {
-  animationSousTitres = null;
-}
-```
+    .paris-timer {
+      color: black;
+      font-family: "DSEG7 Classic", "Courier New", monospace;
+      font-size: 80px;
+      font-weight: 400;
+      text-align: center;
+      letter-spacing: 2px;
+      font-variant-numeric: tabular-nums;
+      text-shadow: none;
+      position: fixed;
+      top: 18vh;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 25;
+      pointer-events: none;
+      white-space: nowrap;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.15em;
+      line-height: 1;
+      width: max-content;
+    }
 
-}
+    #timerTime {
+      display: inline-block;
+      width: 8ch;
+      font-family: "DSEG7 Classic", "Courier New", monospace;
+      font-size: 1em;
+      line-height: 1;
+      text-align: center;
+    }
 
-function demarrerBoucleSousTitres() {
-if (!animationSousTitres) {
-boucleSousTitres();
-}
-}
+    .timer-period {
+      display: inline-block;
+      width: 2.2em;
+      flex: 0 0 2.2em;
+      font-family: Arial, sans-serif;
+      font-size: 0.35em;
+      letter-spacing: 0;
+      line-height: 1;
+      vertical-align: middle;
+      text-align: left;
+    }
 
-lecteur.addEventListener("play", demarrerBoucleSousTitres);
-lecteur.addEventListener("pause", mettreAJourSousTitreAudio);
-lecteur.addEventListener("ended", mettreAJourSousTitreAudio);
-lecteur.addEventListener("seeked", mettreAJourSousTitreAudio);
-lecteur.addEventListener("seeking", mettreAJourSousTitreAudio);
-lecteur.addEventListener("timeupdate", mettreAJourSousTitreAudio);
+    .page-section {
+      display: none;
+      min-height: auto;
+      max-width: 900px;
+      width: 100%;
+      margin: 0 auto;
+      text-align: center;
+      padding: 20px;
+      pointer-events: none;
+      position: fixed;
+      top: 58vh;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 40;
+      box-sizing: border-box;
+    }
 
-mettreAJourSousTitreAudio();
-}
+    .active {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+    }
+
+    h1 {
+      font-size: 50px;
+      margin-bottom: 150px;
+      color: #ff4fd8;
+      -webkit-text-stroke: 0.7px #00ff00;
+      paint-order: stroke fill;
+      text-shadow:
+        -2px -2px 0 #000000,
+        0 -2px 0 #000000,
+        2px -2px 0 #000000,
+        -2px 0 0 #000000,
+        2px 0 0 #000000,
+        -2px 2px 0 #000000,
+        0 2px 0 #000000,
+        2px 2px 0 #000000,
+        0 0 4px #000000,
+        0 0 12px #ff0000,
+        0 0 30px #ff0000,
+        0 0 60px #ff0000,
+        0 0 95px #ff0000,
+        0 0 135px #ff0000,
+        0 0 170px #ff0000;
+      word-break: break-word;
+      overflow-wrap: anywhere;
+      line-height: 1.3;
+      position: relative;
+      z-index: 45;
+    }
+
+    p {
+      font-size: 10px;
+      color: black;
+      text-shadow: 1px 1px 3px black;
+    }
+
+    .card {
+      background: transparent;
+      padding: 25px;
+      border-radius: 12px;
+      margin-top: 0;
+      text-align: center;
+      position: relative;
+      z-index: 45;
+    }
+
+    @media screen and (min-width: 601px) {
+      nav {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 30px;
+        padding: 18px 12px 6px 12px;
+      }
+
+      nav button {
+        margin: 0;
+        transform: translateY(4px);
+        text-shadow:
+          -2px -2px 0 #000000,
+          0 -2px 0 #000000,
+          2px -2px 0 #000000,
+          -2px 0 0 #000000,
+          2px 0 0 #000000,
+          -2px 2px 0 #000000,
+          0 2px 0 #000000,
+          2px 2px 0 #000000,
+          0 0 4px #000000,
+          0 0 18px #ff0000,
+          0 0 45px #ff0000,
+          0 0 85px #ff0000,
+          0 0 130px #ff0000,
+          0 0 190px #ff0000,
+          0 0 260px #ff0000,
+          0 0 340px #ff0000;
+      }
+
+      nav button:hover {
+        text-shadow:
+          -2px -2px 0 #000000,
+          0 -2px 0 #000000,
+          2px -2px 0 #000000,
+          -2px 0 0 #000000,
+          2px 0 0 #000000,
+          -2px 2px 0 #000000,
+          0 2px 0 #000000,
+          2px 2px 0 #000000,
+          0 0 4px #000000,
+          0 0 18px #ff0000,
+          0 0 45px #ff0000,
+          0 0 85px #ff0000,
+          0 0 130px #ff0000,
+          0 0 190px #ff0000,
+          0 0 260px #ff0000,
+          0 0 340px #ff0000;
+      }
+
+      #apropos {
+        top: calc(54vh + 10px);
+      }
+
+      #apropos h1 {
+        font-size: 24px;
+        margin-bottom: 12px;
+        text-shadow:
+          -2px -2px 0 #000000,
+          0 -2px 0 #000000,
+          2px -2px 0 #000000,
+          -2px 0 0 #000000,
+          2px 0 0 #000000,
+          -2px 2px 0 #000000,
+          0 2px 0 #000000,
+          2px 2px 0 #000000,
+          0 0 4px #000000,
+          0 0 18px #ff0000,
+          0 0 45px #ff0000,
+          0 0 85px #ff0000,
+          0 0 130px #ff0000,
+          0 0 190px #ff0000,
+          0 0 260px #ff0000,
+          0 0 340px #ff0000;
+      }
+
+      #apropos .card {
+        margin-top: 0;
+      }
+
+      #contact .card {
+        margin-top: 0;
+      }
+    }
+
+    .audio-box {
+      display: none;
+      position: fixed;
+      left: 50%;
+      bottom: 45px;
+      transform: translateX(-50%);
+      z-index: 10001;
+      width: 220px;
+      max-width: 80vw;
+    }
+
+    .audio-word-display {
+      min-height: clamp(76px, 11vw, 118px);
+      max-width: min(92vw, 760px);
+      margin: 0 auto 8px auto;
+      overflow: hidden;
+      white-space: nowrap;
+      text-align: center;
+      font-family: "Comic Sans MS", "Comic Neue", "Arial Black", Arial, sans-serif;
+      font-size: clamp(64px, 9vw, 102px);
+      font-weight: 900;
+      line-height: 0.95;
+      color: #ff0000;
+      opacity: 0;
+      pointer-events: none;
+      user-select: none;
+      -webkit-user-select: none;
+    }
+
+    .audio-word-display.active {
+      opacity: 1;
+    }
+
+    audio {
+      display: block;
+      width: 100%;
+      max-width: 100%;
+      min-width: 100%;
+      height: 32px;
+      filter: drop-shadow(2px 2px 8px black);
+    }
+
+    .volume-boost-box {
+      margin-top: 6px;
+      font-family: Arial, sans-serif;
+      color: black;
+      text-align: center;
+      font-size: 13px;
+      font-weight: bold;
+      text-shadow:
+        0 0 5px #00ff00,
+        0 0 12px #00ff00;
+      user-select: none;
+      -webkit-user-select: none;
+    }
+
+    .volume-boost-box label {
+      display: block;
+      margin-bottom: 3px;
+      cursor: default;
+      user-select: none;
+      -webkit-user-select: none;
+    }
+
+    #volumeValue {
+      cursor: default;
+      user-select: none;
+      -webkit-user-select: none;
+    }
+
+    .volume-slider-wrap,
+    .audio-progress-wrap,
+    .audio-time-row {
+      position: relative;
+      width: clamp(260px, 38vw, 420px);
+      left: 50%;
+      transform: translateX(-50%);
+      cursor: default;
+    }
+
+    .volume-slider-wrap::after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      width: 2px;
+      height: 18px;
+      background: #ff0000;
+      transform: translate(-50%, -50%);
+      pointer-events: none;
+      user-select: none;
+      -webkit-user-select: none;
+      z-index: 0;
+      box-shadow:
+        0 0 4px #ff0000,
+        0 0 8px #ff0000;
+    }
+
+    #volumeBoost {
+      display: block;
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      cursor: pointer;
+      accent-color: #ff0000;
+      touch-action: pan-x;
+      background: transparent;
+      user-select: auto;
+      -webkit-user-select: auto;
+    }
+
+    .audio-progress-box {
+      margin-top: 5px;
+      font-family: Arial, sans-serif;
+      color: black;
+      text-align: center;
+      font-size: 10px;
+      font-weight: bold;
+      text-shadow:
+        0 0 5px #00ff00,
+        0 0 12px #00ff00;
+      user-select: none;
+      -webkit-user-select: none;
+    }
+
+    .audio-time-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 3px;
+      margin-bottom: 0;
+      font-size: 10px;
+      line-height: 1;
+      pointer-events: none;
+    }
+
+    #audioProgress {
+      display: block;
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      cursor: pointer;
+      accent-color: #ff0000;
+      touch-action: pan-x;
+      background: transparent;
+      user-select: auto;
+      -webkit-user-select: auto;
+    }
+
+    .volume-warning {
+      display: none;
+      margin-top: 5px;
+      font-size: 14px;
+      font-weight: bold;
+      color: black;
+      text-shadow:
+        0 0 5px #ff0000,
+        0 0 10px #ff0000;
+    }
+
+    .audio-footer {
+      position: static;
+      width: 100%;
+      padding: 6px 0 0 0;
+      margin: 0;
+      text-align: center;
+      background: transparent;
+      color: black;
+      text-shadow: 2px 2px 6px black;
+      box-sizing: border-box;
+      pointer-events: none;
+    }
+
+    .audio-footer p {
+      margin: 0;
+      font-size: 10px;
+      color: black;
+      text-shadow:
+        0 0 4px #00ff00,
+        1px 1px 3px black;
+    }
+
+    @media screen and (max-width: 600px) {
+      .intro-page {
+        font-size: 22px;
+      }
+
+      .intro-gif {
+        background-size: 100% 120%;
+        background-position: center center;
+        background-repeat: no-repeat;
+      }
+
+      .gif-bg {
+        background-size: 100% 120%;
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-color: #ff00ff;
+      }
+
+      .overlay {
+        z-index: auto;
+      }
+
+      nav {
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+        padding: 18px 10px;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        box-sizing: border-box;
+        z-index: 10002;
+      }
+
+      nav button {
+        margin: 0;
+        font-size: 20px;
+      }
+
+      .paris-timer {
+        top: 26vh;
+        font-size: 52px;
+        color: black;
+        letter-spacing: 1px;
+        text-shadow: none;
+      }
+
+      .page-section {
+        top: 67vh;
+        min-height: auto;
+        padding: 10px 12px 190px 12px;
+        margin: 0 auto;
+      }
+
+      #apropos {
+        top: 56vh;
+      }
+
+      .active {
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+      }
+
+      h1 {
+        font-size: 17px;
+        margin-top: 10px;
+        margin-bottom: 0;
+        line-height: 1.4;
+      }
+
+      #apropos h1 {
+        font-size: 20px;
+        margin-bottom: 12px;
+      }
+
+      .card {
+        margin-top: 0;
+        padding: 10px;
+      }
+
+      .audio-box {
+        bottom: 55px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 180px;
+        max-width: 70vw;
+      }
+
+      .audio-word-display {
+        min-height: clamp(52px, 16vw, 86px);
+        max-width: min(94vw, 360px);
+        margin-bottom: 5px;
+        font-size: clamp(42px, 13vw, 72px);
+      }
+
+      audio {
+        width: 100%;
+        max-width: 100%;
+        min-width: 100%;
+        height: 26px;
+      }
+
+      .volume-boost-box {
+        margin-top: 4px;
+        font-size: 10px;
+      }
+
+      .volume-boost-box label {
+        margin-bottom: 2px;
+      }
+
+      .volume-slider-wrap,
+      .audio-progress-wrap,
+      .audio-time-row {
+        width: min(84vw, 300px);
+      }
+
+      #volumeBoost,
+      #audioProgress {
+        height: 12px;
+      }
+
+      .volume-slider-wrap::after {
+        height: 14px;
+      }
+
+      .audio-progress-box {
+        margin-top: 4px;
+        font-size: 8px;
+      }
+
+      .audio-time-row {
+        font-size: 8px;
+      }
+
+      .volume-warning {
+        margin-top: 4px;
+        font-size: 12px;
+      }
+
+      .audio-footer {
+        padding: 4px 0 0 0;
+      }
+
+      .audio-footer p {
+        font-size: 6px;
+      }
+    }
+
+    @media screen and (max-width: 900px) and (orientation: landscape) {
+      body {
+        overflow-y: auto;
+      }
+
+      .overlay {
+        min-height: 100vh;
+        overflow-y: visible;
+        padding-bottom: 120px;
+      }
+
+      nav {
+        position: relative;
+        z-index: 10002;
+      }
+
+      .paris-timer {
+        position: relative;
+        top: auto;
+        left: auto;
+        transform: none;
+        font-size: 38px;
+        margin: 8px auto 0 auto;
+      }
+
+      .page-section {
+        position: relative;
+        top: auto;
+        left: auto;
+        transform: none;
+        padding: 10px 12px 120px 12px;
+        margin-top: 8px;
+      }
+
+      #apropos {
+        top: auto;
+      }
+
+      #apropos h1 {
+        font-size: 18px;
+        margin-bottom: 12px;
+      }
+
+      .audio-box {
+        position: relative;
+        left: auto;
+        bottom: auto;
+        transform: none;
+        width: 165px;
+        max-width: 90vw;
+        margin: 0 auto 18px auto;
+      }
+
+      .audio-word-display {
+        min-height: clamp(42px, 10vw, 70px);
+        max-width: min(90vw, 520px);
+        margin-bottom: 4px;
+        font-size: clamp(34px, 8vw, 60px);
+      }
+
+      audio {
+        height: 24px;
+      }
+
+      .volume-boost-box {
+        margin-top: 3px;
+        font-size: 9px;
+      }
+
+      .volume-warning {
+        margin-top: 3px;
+        font-size: 10px;
+      }
+
+      .volume-slider-wrap,
+      .audio-progress-wrap,
+      .audio-time-row {
+        width: min(72vw, 280px);
+      }
+
+      .volume-slider-wrap::after {
+        height: 12px;
+      }
+
+      .audio-progress-box {
+        margin-top: 3px;
+        font-size: 7px;
+      }
+
+      .audio-time-row {
+        font-size: 7px;
+      }
+
+      .audio-footer p {
+        font-size: 7px;
+      }
+
+      #volumeBoost,
+      #audioProgress {
+        height: 10px;
+      }
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <div id="introPage" class="intro-page">
+    <span id="introText">⚠. -no epilepsie please, <br>
+      and headphones please/</span>
+    <div id="introGif" class="intro-gif"></div>
+  </div>
+
+  <div class="gif-bg"></div>
+
+  <div class="overlay">
+
+<nav id="menuPrincipal" style="display: none;">
+  <button onclick="lancerMusique()">starthere</button>
+  <button onclick="afficherSection('apropos')">RULES</button>
+  <button onclick="afficherSection('contact')">SEND A WAV / MP3</button>
+</nav>
+
+<div id="parisTimer" class="paris-timer"><span id="timerTime">00:00:01</span> <span id="timerPeriod" class="timer-period">AM</span></div>
+
+<section id="accueil" class="page-section active">
+</section>
+
+<section id="apropos" class="page-section">
+  <div class="card">
+    <h1>
+      -RULES/<br>
+      N1-USE A 1992/2012 MUSIC/<br>
+      N2-DO A REMIX/<br>
+      N3-LESS THAN 1MIN30/&lt;3<br>
+      N4-NO ai AT ALL/<br>
+      N5-ELECTRONIC ART ONLY/
+    </h1>
+  </div>
+</section>
+
+<section id="contact" class="page-section">
+  <div class="card">
+    <h1>@gmail.com</h1>
+  </div>
+</section>
+
+  </div>
+
+  <div class="audio-box">
+    <div id="audioWordDisplay" class="audio-word-display"></div>
+
+<audio id="lecteurAudio" controls preload="metadata">
+  <source src="./musique432.wav?v=50" type="audio/wav">
+  <source src="./musique432.mp3?v=50" type="audio/mpeg">
+</audio>
+
+<div class="volume-boost-box">
+  <label for="volumeBoost">volume <span id="volumeValue">100%</span></label>
+  <div class="volume-slider-wrap">
+    <input id="volumeBoost" type="range" min="0" max="200" value="100" step="1">
+  </div>
+
+  <div class="audio-progress-box">
+    <div class="audio-time-row">
+      <span id="audioCurrentTime">0:00</span>
+      <span id="audioDuration">0:00</span>
+    </div>
+    <div class="audio-progress-wrap">
+      <input id="audioProgress" type="range" min="0" max="1000" value="0" step="1">
+    </div>
+  </div>
+
+  <div id="volumeWarning" class="volume-warning">⚠ au-dessus de 100%, le son peut être très fort.</div>
+</div>
+
+<div class="audio-footer">
+  <p>© 2026 catdezoo&lt;3. all rights reserved.</p>
+</div>
+
+  </div>
+
+  <script>
+    let audioContext = null;
+    let sourceNode = null;
+    let gainNode = null;
+
+    setTimeout(function() {
+      document.getElementById("introText").textContent = "<3";
+    }, 3500);
+
+    setTimeout(function() {
+      document.getElementById("introText").style.display = "none";
+      document.getElementById("introGif").style.display = "block";
+      document.querySelector(".audio-box").style.display = "block";
+
+      const lecteur = document.getElementById("lecteurAudio");
+      lecteur.load();
+    }, 5500);
+
+    setTimeout(function() {
+      document.getElementById("introPage").style.background = "purple";
+    }, 6500);
+
+    setTimeout(function() {
+      document.getElementById("introPage").style.background = "red";
+    }, 7500);
+
+    setTimeout(function() {
+      document.getElementById("introGif").style.display = "none";
+      document.getElementById("introPage").style.background = "black";
+    }, 8500);
+
+    setTimeout(function() {
+      document.getElementById("introPage").style.background = "white";
+    }, 9000);
+
+    setTimeout(function() {
+      document.getElementById("introPage").style.background = "#00ff00";
+    }, 9500);
+
+    setTimeout(function() {
+      document.getElementById("introPage").style.display = "none";
+      document.getElementById("menuPrincipal").style.display = "";
+    }, 9750);
+
+    function afficherSection(id) {
+      const sections = document.querySelectorAll(".page-section");
+
+      sections.forEach(section => {
+        section.classList.remove("active");
+      });
+
+      document.getElementById(id).classList.add("active");
+    }
+
+    function initialiserVolumeBoost() {
+      const volumeBoost = document.getElementById("volumeBoost");
+      const volumeValue = document.getElementById("volumeValue");
+      const volumeWarning = document.getElementById("volumeWarning");
+
+      let animationVolume = null;
+      let dernierRelachementVolume = 0;
+
+      function appliquerAimant(valeur) {
+        const centreAimant = 100;
+        const margeAimant = 53;
+
+        if (valeur >= centreAimant - margeAimant && valeur <= centreAimant + margeAimant) {
+          return 100;
+        }
+
+        return valeur;
+      }
+
+      function courbeDouce(progression) {
+        return 1 - Math.pow(1 - progression, 3);
+      }
+
+      function appliquerVolume(valeur) {
+        volumeValue.textContent = Math.round(valeur) + "%";
+
+        if (gainNode) {
+          gainNode.gain.value = valeur / 100;
+        }
+
+        if (valeur > 100) {
+          volumeWarning.style.display = "block";
+        } else {
+          volumeWarning.style.display = "none";
+        }
+      }
+
+      function animerVolumeVers100(valeurDepart) {
+        if (animationVolume) {
+          cancelAnimationFrame(animationVolume);
+          animationVolume = null;
+        }
+
+        const debut = performance.now();
+        const duree = 220;
+        const arrivee = 100;
+
+        function animation(temps) {
+          const progression = Math.min((temps - debut) / duree, 1);
+          const valeurAnimee = valeurDepart + (arrivee - valeurDepart) * courbeDouce(progression);
+          const valeurArrondie = Math.round(valeurAnimee);
+
+          volumeBoost.value = valeurArrondie;
+          appliquerVolume(valeurArrondie);
+
+          if (progression < 1) {
+            animationVolume = requestAnimationFrame(animation);
+          } else {
+            volumeBoost.value = 100;
+            appliquerVolume(100);
+            animationVolume = null;
+          }
+        }
+
+        animationVolume = requestAnimationFrame(animation);
+      }
+
+      function mettreAJourVolume(avecAimant, aimantFluide) {
+        let valeur = Number(volumeBoost.value);
+
+        if (avecAimant) {
+          const valeurAimantee = appliquerAimant(valeur);
+
+          if (aimantFluide && valeurAimantee === 100 && valeur !== 100) {
+            animerVolumeVers100(valeur);
+            return;
+          }
+
+          valeur = valeurAimantee;
+          volumeBoost.value = valeur;
+        }
+
+        appliquerVolume(valeur);
+      }
+
+      function relacherVolume() {
+        const maintenant = Date.now();
+
+        if (maintenant - dernierRelachementVolume < 120) {
+          return;
+        }
+
+        dernierRelachementVolume = maintenant;
+        mettreAJourVolume(true, true);
+      }
+
+      volumeBoost.addEventListener("input", function() {
+        activerAudioBoost();
+
+        if (animationVolume) {
+          cancelAnimationFrame(animationVolume);
+          animationVolume = null;
+        }
+
+        mettreAJourVolume(false, false);
+      });
+
+      volumeBoost.addEventListener("change", relacherVolume);
+      volumeBoost.addEventListener("touchend", relacherVolume);
+      volumeBoost.addEventListener("pointerup", relacherVolume);
+
+      mettreAJourVolume(true, false);
+    }
+
+    function initialiserAudioProgression() {
+      const lecteur = document.getElementById("lecteurAudio");
+      const audioProgress = document.getElementById("audioProgress");
+      const audioCurrentTime = document.getElementById("audioCurrentTime");
+      const audioDuration = document.getElementById("audioDuration");
+
+      let progressionEnDeplacement = false;
+
+      function formaterTemps(secondes) {
+        if (!Number.isFinite(secondes) || secondes < 0) {
+          return "0:00";
+        }
+
+        const minutes = Math.floor(secondes / 60);
+        const secondesRestantes = Math.floor(secondes % 60).toString().padStart(2, "0");
+
+        return minutes + ":" + secondesRestantes;
+      }
+
+      function mettreAJourTexteTemps() {
+        audioCurrentTime.textContent = formaterTemps(lecteur.currentTime);
+        audioDuration.textContent = formaterTemps(lecteur.duration);
+      }
+
+      function mettreAJourProgressionDepuisAudio() {
+        mettreAJourTexteTemps();
+
+        if (!progressionEnDeplacement && Number.isFinite(lecteur.duration) && lecteur.duration > 0) {
+          audioProgress.value = Math.round((lecteur.currentTime / lecteur.duration) * 1000);
+        }
+      }
+
+      function chercherDansAudio() {
+        if (!Number.isFinite(lecteur.duration) || lecteur.duration <= 0) {
+          audioProgress.value = 0;
+          return;
+        }
+
+        const nouvellePosition = (Number(audioProgress.value) / 1000) * lecteur.duration;
+        lecteur.currentTime = nouvellePosition;
+        mettreAJourTexteTemps();
+      }
+
+      lecteur.addEventListener("loadedmetadata", mettreAJourProgressionDepuisAudio);
+      lecteur.addEventListener("durationchange", mettreAJourProgressionDepuisAudio);
+      lecteur.addEventListener("timeupdate", mettreAJourProgressionDepuisAudio);
+      lecteur.addEventListener("ended", function() {
+        audioProgress.value = 0;
+        mettreAJourProgressionDepuisAudio();
+      });
+
+      audioProgress.addEventListener("input", function() {
+        progressionEnDeplacement = true;
+        chercherDansAudio();
+      });
+
+      audioProgress.addEventListener("change", function() {
+        chercherDansAudio();
+        progressionEnDeplacement = false;
+        mettreAJourProgressionDepuisAudio();
+      });
+
+      audioProgress.addEventListener("pointerup", function() {
+        progressionEnDeplacement = false;
+        mettreAJourProgressionDepuisAudio();
+      });
+
+      audioProgress.addEventListener("touchend", function() {
+        progressionEnDeplacement = false;
+        mettreAJourProgressionDepuisAudio();
+      });
+
+      mettreAJourProgressionDepuisAudio();
+    }
+
+    function initialiserMotsAudio() {
+      const lecteur = document.getElementById("lecteurAudio");
+      const audioWordDisplay = document.getElementById("audioWordDisplay");
+
+      const texte12 = "imabarbigxrlinabarbiwxrld";
+      const texte15 = "lifeinplastixitsfantastix";
+      const texte17 = "?";
+      const texte21 = "??";
+      const texte24 = "imabarbigxrlinabarbiwxrld";
+      const texte27 = "lifeinplastixitsfantastix";
+      const texte29 = "?";
+      const texte31 = "?";
+      const texte33 = "???";
+      const texte36 = "imabarbigxrlinabarbiwxrld";
+      const texte39 = "lifeinplastixitsfantastix";
+      const texte46 = "?!?!?!?!?!?!?!?><";
+
+      const sousTitresAudio = [
+        { debut: 12, fin: 13, texte: texte12 },
+        { debut: 15, fin: 16, texte: texte15 },
+        { debut: 17, fin: 18, texte: texte17 },
+        { debut: 21, fin: 22, texte: texte21 },
+        { debut: 24, fin: 25, texte: texte24 },
+        { debut: 27, fin: 28, texte: texte27 },
+        { debut: 29, fin: 30, texte: texte29 },
+        { debut: 31, fin: 32, texte: texte31 },
+        { debut: 33, fin: 34, texte: texte33 },
+        { debut: 36, fin: 37, texte: texte36 },
+        { debut: 39, fin: 40, texte: texte39 },
+        { debut: 46, fin: 47, texte: texte46 }
+      ];
+
+      let animationSousTitres = null;
+
+      function mettreAJourSousTitreAudio() {
+        let texteActuel = "";
+
+        if (!lecteur.paused && !lecteur.ended) {
+          const temps = lecteur.currentTime;
+
+          const sousTitreActuel = sousTitresAudio.find(function(sousTitre) {
+            return temps >= sousTitre.debut && temps < sousTitre.fin;
+          });
+
+          if (sousTitreActuel) {
+            texteActuel = sousTitreActuel.texte;
+          }
+        }
+
+        if (texteActuel) {
+          audioWordDisplay.textContent = texteActuel;
+          audioWordDisplay.classList.add("active");
+        } else {
+          audioWordDisplay.textContent = "";
+          audioWordDisplay.classList.remove("active");
+        }
+      }
+
+      function boucleSousTitres() {
+        mettreAJourSousTitreAudio();
+
+        if (!lecteur.paused && !lecteur.ended) {
+          animationSousTitres = requestAnimationFrame(boucleSousTitres);
+        } else {
+          animationSousTitres = null;
+        }
+      }
+
+      function demarrerBoucleSousTitres() {
+        if (!animationSousTitres) {
+          boucleSousTitres();
+        }
+      }
+
+      lecteur.addEventListener("play", demarrerBoucleSousTitres);
+      lecteur.addEventListener("pause", mettreAJourSousTitreAudio);
+      lecteur.addEventListener("ended", mettreAJourSousTitreAudio);
+      lecteur.addEventListener("seeked", mettreAJourSousTitreAudio);
+      lecteur.addEventListener("seeking", mettreAJourSousTitreAudio);
+      lecteur.addEventListener("timeupdate", mettreAJourSousTitreAudio);
+
+      mettreAJourSousTitreAudio();
+    }
+
+    function activerAudioBoost() {
+      const lecteur = document.getElementById("lecteurAudio");
+      const volumeBoost = document.getElementById("volumeBoost");
+
+      if (!audioContext) {
+        audioContext = new (window.AudioContext || window.webkitAudioContext)();
+      }
+
+      if (!sourceNode) {
+        sourceNode = audioContext.createMediaElementSource(lecteur);
+        gainNode = audioContext.createGain();
+        sourceNode.connect(gainNode);
+        gainNode.connect(audioContext.destination);
+      }
+
+      if (audioContext.state === "suspended") {
+        audioContext.resume();
+      }
+
+      if (gainNode) {
+        gainNode.gain.value = Number(volumeBoost.value) / 100;
+      }
+    }
+
+    function lancerMusique() {
+      afficherSection('accueil');
+
+      const lecteur = document.getElementById("lecteurAudio");
+
+      activerAudioBoost();
+
+      lecteur.play().catch(function() {
+        document.querySelector(".audio-box").style.display = "block";
+        console.log("Le lecteur est visible. Appuie directement sur play dans le lecteur.");
+      });
+    }
+
+    function afficherHeureParis() {
+      const maintenant = new Date();
+
+      const formatter = new Intl.DateTimeFormat("en-US", {
+        timeZone: "Europe/Paris",
+        hour: "2-digit",
+        minute: "2-digit",
+        second: "2-digit",
+        hour12: false
+      });
+
+      const parts = formatter.formatToParts(maintenant);
+
+      const heureParis24 = parseInt(parts.find(part => part.type === "hour").value, 10);
+      let heure = String(heureParis24 % 12).padStart(2, "0");
+      let minute = parts.find(part => part.type === "minute").value;
+      let seconde = parts.find(part => part.type === "second").value;
+      const periode = heureParis24 < 12 ? "AM" : "PM";
+
+      if (heure === "00" && minute === "00" && seconde === "00") {
+        seconde = "01";
+      }
+
+      document.getElementById("timerTime").textContent = heure + ":" + minute + ":" + seconde;
+      document.getElementById("timerPeriod").textContent = periode;
+    }
+
+    initialiserVolumeBoost();
+    initialiserAudioProgression();
+    initialiserMotsAudio();
+    afficherHeureParis();
+    setInterval(afficherHeureParis, 1000);
+  </script>
+
+</body>
+</html>
+
