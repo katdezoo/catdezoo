@@ -381,7 +381,9 @@
 
     .volume-slider-wrap {
       position: relative;
-      width: 100%;
+      width: clamp(260px, 38vw, 420px);
+      left: 50%;
+      transform: translateX(-50%);
     }
 
     .volume-slider-wrap::after {
@@ -547,6 +549,10 @@
         margin-bottom: 2px;
       }
 
+      .volume-slider-wrap {
+        width: min(84vw, 300px);
+      }
+
       #volumeBoost {
         height: 12px;
       }
@@ -634,6 +640,10 @@
       .volume-warning {
         margin-top: 3px;
         font-size: 10px;
+      }
+
+      .volume-slider-wrap {
+        width: min(72vw, 280px);
       }
 
       .volume-slider-wrap::after {
