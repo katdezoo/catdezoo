@@ -701,6 +701,7 @@
       <source src="./musique432.mp3?v=50" type="audio/mpeg">
     </audio>
 
+```
 <div class="volume-boost-box">
   <label for="volumeBoost">volume <span id="volumeValue">100%</span></label>
   <div class="volume-slider-wrap">
@@ -712,6 +713,7 @@
 <div class="audio-footer">
   <p>© 2026 catdezoo&lt;3. all rights reserved.</p>
 </div>
+```
 
   </div>
 
@@ -774,14 +776,19 @@
       const volumeValue = document.getElementById("volumeValue");
       const volumeWarning = document.getElementById("volumeWarning");
 
-      function mettreAJourVolume() {
-        let valeur = Number(volumeBoost.value);
+      function smartphoneOuTactile() {
+        return window.matchMedia("(max-width: 600px), (pointer: coarse)").matches;
+      }
 
+      function appliquerAimant(valeur) {
         if (valeur >= 90 && valeur <= 110) {
-          valeur = 100;
-          volumeBoost.value = 100;
+          return 100;
         }
 
+        return valeur;
+      }
+
+      function appliquerVolume(valeur) {
         volumeValue.textContent = valeur + "%";
 
         if (gainNode) {
@@ -795,12 +802,40 @@
         }
       }
 
+      function mettreAJourVolume(avecAimant) {
+        let valeur = Number(volumeBoost.value);
+
+        if (avecAimant) {
+          valeur = appliquerAimant(valeur);
+          volumeBoost.value = valeur;
+        }
+
+        appliquerVolume(valeur);
+      }
+
       volumeBoost.addEventListener("input", function() {
         activerAudioBoost();
-        mettreAJourVolume();
+
+        if (smartphoneOuTactile()) {
+          mettreAJourVolume(false);
+        } else {
+          mettreAJourVolume(true);
+        }
       });
 
-      mettreAJourVolume();
+      volumeBoost.addEventListener("change", function() {
+        mettreAJourVolume(true);
+      });
+
+      volumeBoost.addEventListener("touchend", function() {
+        mettreAJourVolume(true);
+      });
+
+      volumeBoost.addEventListener("pointerup", function() {
+        mettreAJourVolume(true);
+      });
+
+      mettreAJourVolume(true);
     }
 
     function activerAudioBoost() {
