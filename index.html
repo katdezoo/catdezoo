@@ -423,7 +423,7 @@
     }
 
     #volumeValue {
-      color: #000000;
+      color: #ff0000;
       cursor: default;
       user-select: none;
       -webkit-user-select: none;
@@ -438,8 +438,8 @@
         -1px 1px 0 #000000,
         0 1px 0 #000000,
         1px 1px 0 #000000,
-        0 0 5px #00ff00,
-        0 0 12px #00ff00;
+        0 0 5px #ff0000,
+        0 0 12px #ff0000;
     }
 
     .volume-slider-wrap,
@@ -590,6 +590,24 @@
     #volumeBoost::-moz-range-thumb {
       transform: scale(1.08);
       background: radial-gradient(circle, #00ff00 0%, #ff0000 62%, #000000 100%);
+    }
+
+    #audioProgress::-webkit-slider-thumb {
+      transform: scale(1.08);
+      background: radial-gradient(circle, #ff7aff 0%, #ff00ff 62%, #000000 100%);
+      box-shadow:
+        0 0 0 1px #000000,
+        0 0 7px #ff7aff,
+        0 0 14px #ff00ff;
+    }
+
+    #audioProgress::-moz-range-thumb {
+      transform: scale(1.08);
+      background: radial-gradient(circle, #ff7aff 0%, #ff00ff 62%, #000000 100%);
+      box-shadow:
+        0 0 0 1px #000000,
+        0 0 7px #ff7aff,
+        0 0 14px #ff00ff;
     }
 
     .volume-warning {
@@ -845,8 +863,8 @@
           -1px 1px 0 #000000,
           0 1px 0 #000000,
           1px 1px 0 #000000,
-          0 0 4px #00ff00,
-          0 0 10px #00ff00;
+          0 0 4px #ff0000,
+          0 0 10px #ff0000;
       }
 
       .volume-slider-wrap,
