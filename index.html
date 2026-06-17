@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <title>-websitetypeshit/</title>
+  <title>-websitesypeshit/</title>
 
   <style>
     @font-face {
@@ -3246,6 +3246,44 @@
 
       #apropos::after {
         bottom: calc(120px + env(safe-area-inset-bottom) + 6px) !important;
+      }
+    }
+
+  
+    /* Smartphone : flèche haute à droite, même style que celle du bas, orientée vers le bas */
+    @media screen and (max-width: 768px) {
+      #apropos::before {
+        left: auto !important;
+        right: calc(18px + env(safe-area-inset-right)) !important;
+        top: calc(60vh + 8px) !important;
+        transform: rotate(45deg) !important;
+      }
+
+      @supports (height: 100dvh) {
+        #apropos::before {
+          top: calc(60dvh + 8px) !important;
+        }
+      }
+    }
+
+    @media screen and (max-width: 430px) and (min-height: 760px) {
+      #apropos::before {
+        right: calc(16px + env(safe-area-inset-right)) !important;
+        top: calc(62vh + 8px) !important;
+      }
+
+      @supports (height: 100dvh) {
+        #apropos::before {
+          top: calc(62dvh + 8px) !important;
+        }
+      }
+    }
+
+    @media screen and (max-width: 900px) and (max-height: 500px) and (orientation: landscape) {
+      #apropos::before {
+        right: calc(16px + env(safe-area-inset-right)) !important;
+        top: calc(50vh + 7px) !important;
+        transform: rotate(45deg) !important;
       }
     }
 
