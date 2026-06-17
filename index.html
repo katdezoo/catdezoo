@@ -420,24 +420,6 @@
       cursor: default;
       user-select: none;
       -webkit-user-select: none;
-      font-size: clamp(14px, 1vw, 18px);
-    }
-
-    .volume-label-word {
-      color: #00ff00;
-      -webkit-text-stroke: 0.35px #000000;
-      paint-order: stroke fill;
-      text-shadow:
-        -1px -1px 0 #000000,
-        0 -1px 0 #000000,
-        1px -1px 0 #000000,
-        -1px 0 0 #000000,
-        1px 0 0 #000000,
-        -1px 1px 0 #000000,
-        0 1px 0 #000000,
-        1px 1px 0 #000000,
-        0 0 5px #00ff00,
-        0 0 12px #00ff00;
     }
 
     #volumeValue {
@@ -539,6 +521,77 @@
       -webkit-user-select: auto;
     }
 
+    #volumeBoost,
+    #audioProgress {
+      -webkit-appearance: none;
+      appearance: none;
+      height: 12px;
+      border-radius: 999px;
+      outline: none;
+      background: transparent;
+    }
+
+    #volumeBoost::-webkit-slider-runnable-track,
+    #audioProgress::-webkit-slider-runnable-track {
+      height: 6px;
+      border-radius: 999px;
+      background: rgba(0, 0, 0, 0.28);
+      border: 1px solid rgba(0, 0, 0, 0.65);
+      box-shadow:
+        0 0 4px #00ff00,
+        0 0 8px #ff0000;
+    }
+
+    #volumeBoost::-moz-range-track,
+    #audioProgress::-moz-range-track {
+      height: 6px;
+      border-radius: 999px;
+      background: rgba(0, 0, 0, 0.28);
+      border: 1px solid rgba(0, 0, 0, 0.65);
+      box-shadow:
+        0 0 4px #00ff00,
+        0 0 8px #ff0000;
+    }
+
+    #volumeBoost::-webkit-slider-thumb,
+    #audioProgress::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 18px;
+      height: 18px;
+      margin-top: -7px;
+      border-radius: 50%;
+      border: 2px solid #000000;
+      background: #ff0000;
+      box-shadow:
+        0 0 0 1px #000000,
+        0 0 7px #00ff00,
+        0 0 12px #ff0000;
+    }
+
+    #volumeBoost::-moz-range-thumb,
+    #audioProgress::-moz-range-thumb {
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      border: 2px solid #000000;
+      background: #ff0000;
+      box-shadow:
+        0 0 0 1px #000000,
+        0 0 7px #00ff00,
+        0 0 12px #ff0000;
+    }
+
+    #volumeBoost::-webkit-slider-thumb {
+      transform: scale(1.08);
+      background: radial-gradient(circle, #00ff00 0%, #ff0000 62%, #000000 100%);
+    }
+
+    #volumeBoost::-moz-range-thumb {
+      transform: scale(1.08);
+      background: radial-gradient(circle, #00ff00 0%, #ff0000 62%, #000000 100%);
+    }
+
     .volume-warning {
       display: none;
       margin-top: 5px;
@@ -626,6 +679,19 @@
 
       .volume-boost-box label {
         font-size: clamp(13px, 1.6vw, 17px);
+      }
+
+      #volumeBoost::-webkit-slider-thumb,
+      #audioProgress::-webkit-slider-thumb {
+        width: 17px;
+        height: 17px;
+        margin-top: -6.5px;
+      }
+
+      #volumeBoost::-moz-range-thumb,
+      #audioProgress::-moz-range-thumb {
+        width: 17px;
+        height: 17px;
       }
     }
 
@@ -765,7 +831,6 @@
         font-size: clamp(11px, 3.2vw, 14px);
       }
 
-      .volume-label-word,
       #volumeValue {
         -webkit-text-stroke: 0.25px #000000;
         text-shadow:
@@ -790,6 +855,31 @@
       #volumeBoost,
       #audioProgress {
         height: 12px;
+      }
+
+      #volumeBoost::-webkit-slider-runnable-track,
+      #audioProgress::-webkit-slider-runnable-track {
+        height: 5px;
+      }
+
+      #volumeBoost::-moz-range-track,
+      #audioProgress::-moz-range-track {
+        height: 5px;
+      }
+
+      #volumeBoost::-webkit-slider-thumb,
+      #audioProgress::-webkit-slider-thumb {
+        width: 15px;
+        height: 15px;
+        margin-top: -6px;
+        border-width: 1.5px;
+      }
+
+      #volumeBoost::-moz-range-thumb,
+      #audioProgress::-moz-range-thumb {
+        width: 15px;
+        height: 15px;
+        border-width: 1.5px;
       }
 
       .volume-slider-wrap::after {
@@ -946,6 +1036,31 @@
       #audioProgress {
         height: 10px;
       }
+
+      #volumeBoost::-webkit-slider-runnable-track,
+      #audioProgress::-webkit-slider-runnable-track {
+        height: 4px;
+      }
+
+      #volumeBoost::-moz-range-track,
+      #audioProgress::-moz-range-track {
+        height: 4px;
+      }
+
+      #volumeBoost::-webkit-slider-thumb,
+      #audioProgress::-webkit-slider-thumb {
+        width: 14px;
+        height: 14px;
+        margin-top: -6px;
+        border-width: 1.5px;
+      }
+
+      #volumeBoost::-moz-range-thumb,
+      #audioProgress::-moz-range-thumb {
+        width: 14px;
+        height: 14px;
+        border-width: 1.5px;
+      }
     }
   </style>
 
@@ -1004,7 +1119,7 @@
 </audio>
 
 <div class="volume-boost-box">
-  <label for="volumeBoost"><span class="volume-label-word">volume</span> <span id="volumeValue">100%</span></label>
+  <label for="volumeBoost">volume <span id="volumeValue">100%</span></label>
   <div class="volume-slider-wrap">
     <input id="volumeBoost" type="range" min="0" max="200" value="100" step="1">
   </div>
