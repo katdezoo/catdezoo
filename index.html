@@ -3177,6 +3177,78 @@
       }
     }
 
+  
+    /* Smartphone : flèches RULES fixes, indépendantes de la longueur du texte */
+    @media screen and (max-width: 768px) {
+      #apropos::before,
+      #apropos::after {
+        content: "";
+        position: fixed !important;
+        left: 50% !important;
+        display: block !important;
+        width: 10px !important;
+        height: 10px !important;
+        border-right: 2px solid #000000 !important;
+        border-bottom: 2px solid #000000 !important;
+        filter:
+          drop-shadow(0 0 3px rgba(255, 255, 255, 0.95))
+          drop-shadow(0 0 7px rgba(255, 255, 255, 0.72)) !important;
+        pointer-events: none !important;
+        z-index: 17000 !important;
+        margin: 0 !important;
+      }
+
+      #apropos::before {
+        top: calc(60vh + 6px) !important;
+        transform: translateX(-50%) rotate(-135deg) !important;
+      }
+
+      #apropos::after {
+        bottom: calc(205px + env(safe-area-inset-bottom) + 8px) !important;
+        transform: translateX(-50%) rotate(45deg) !important;
+      }
+
+      @supports (height: 100dvh) {
+        #apropos::before {
+          top: calc(60dvh + 6px) !important;
+        }
+      }
+    }
+
+    @media screen and (max-width: 430px) and (min-height: 760px) {
+      #apropos::before {
+        top: calc(62vh + 6px) !important;
+      }
+
+      #apropos::after {
+        bottom: calc(205px + env(safe-area-inset-bottom) + 8px) !important;
+      }
+
+      @supports (height: 100dvh) {
+        #apropos::before {
+          top: calc(62dvh + 6px) !important;
+        }
+      }
+    }
+
+    @media screen and (max-width: 900px) and (max-height: 500px) and (orientation: landscape) {
+      #apropos::before,
+      #apropos::after {
+        width: 8px !important;
+        height: 8px !important;
+        border-right-width: 1.5px !important;
+        border-bottom-width: 1.5px !important;
+      }
+
+      #apropos::before {
+        top: calc(50vh + 5px) !important;
+      }
+
+      #apropos::after {
+        bottom: calc(120px + env(safe-area-inset-bottom) + 6px) !important;
+      }
+    }
+
   </style>
 
 </head>
