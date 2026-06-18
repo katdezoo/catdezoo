@@ -5477,6 +5477,50 @@ body {
     }
   }
 </style>
+<style id="gmail-current-position-ultra-smooth-final">
+  /* @gmail smartphone : position actuelle gardée, mouvement final ultra fluide */
+  @media screen and (max-width: 768px) {
+    #contact {
+      transform: translate3d(
+        -50%,
+        calc(
+          var(--gmail-origin-y, 72vh)
+          - 50%
+          + var(--gmail-scroll-glide, 0px)
+          + var(--gmail-ultra-smooth-float, 0px)
+        ),
+        0
+      ) !important;
+      will-change: transform !important;
+      backface-visibility: hidden !important;
+      -webkit-backface-visibility: hidden !important;
+      transform-style: preserve-3d !important;
+    }
+
+    #contact .card,
+    #contact h1 {
+      transform: translateZ(0) !important;
+      will-change: transform !important;
+      backface-visibility: hidden !important;
+      -webkit-backface-visibility: hidden !important;
+    }
+  }
+
+  @media screen and (max-width: 900px) and (max-height: 500px) and (orientation: landscape) {
+    #contact {
+      transform: translate3d(
+        -50%,
+        calc(
+          var(--gmail-origin-y, 66vh)
+          - 50%
+          + var(--gmail-scroll-glide, 0px)
+          + var(--gmail-ultra-smooth-float, 0px)
+        ),
+        0
+      ) !important;
+    }
+  }
+</style>
 </head>
 
 <body>
@@ -8190,6 +8234,142 @@ body {
 
     brancherVideo();
     demarrerUltra();
+  })();
+</script>
+<script id="gmail-current-position-ultra-smooth-final">
+  (function() {
+    const racine = document.documentElement;
+
+    let floatActuel = 0;
+    let floatCible = 0;
+    let raf = null;
+    let dernierScrollY = window.scrollY || 0;
+    let contactEtaitActif = false;
+    let retourTimer = null;
+
+    function mobile() {
+      return window.innerWidth <= 768;
+    }
+
+    function contactActif() {
+      const contact = document.getElementById("contact");
+      return !!(contact && contact.classList.contains("active"));
+    }
+
+    function hauteur() {
+      return window.innerHeight || document.documentElement.clientHeight || 760;
+    }
+
+    function amplitudeOuverture() {
+      return Math.max(18, Math.min(Math.round(hauteur() * 0.044), 34));
+    }
+
+    function retourDoux() {
+      clearTimeout(retourTimer);
+      retourTimer = setTimeout(function() {
+        floatCible = 0;
+        lancer();
+      }, 140);
+    }
+
+    function lancer() {
+      if (!raf) {
+        raf = requestAnimationFrame(animer);
+      }
+    }
+
+    function animer() {
+      if (!mobile()) {
+        floatActuel = 0;
+        floatCible = 0;
+        racine.style.removeProperty("--gmail-ultra-smooth-float");
+        raf = null;
+        return;
+      }
+
+      /* Plus bas = plus soyeux. Ça garde la position finale, ça arrondit juste le chemin. */
+      const douceur = 0.026;
+      const stop = 0.035;
+      const delta = floatCible - floatActuel;
+
+      if (Math.abs(delta) < stop) {
+        floatActuel = floatCible;
+      } else {
+        floatActuel += delta * douceur;
+      }
+
+      racine.style.setProperty("--gmail-ultra-smooth-float", floatActuel.toFixed(2) + "px");
+
+      if (floatActuel !== floatCible) {
+        raf = requestAnimationFrame(animer);
+      } else {
+        raf = null;
+      }
+    }
+
+    function majDepuisEtat(avecImpulsionScroll) {
+      if (!mobile()) {
+        lancer();
+        return;
+      }
+
+      const actif = contactActif();
+
+      if (actif && !contactEtaitActif) {
+        /* À l'ouverture : léger départ plus bas, retour très fluide à la position actuelle. */
+        floatActuel = amplitudeOuverture();
+        floatCible = 0;
+        racine.style.setProperty("--gmail-ultra-smooth-float", floatActuel.toFixed(2) + "px");
+        lancer();
+      }
+
+      contactEtaitActif = actif;
+
+      if (actif && avecImpulsionScroll) {
+        const y = window.scrollY || 0;
+        const vitesse = y - dernierScrollY;
+        dernierScrollY = y;
+
+        const impulsion = Math.max(-13, Math.min(13, vitesse * 0.16));
+        if (Math.abs(impulsion) > 0.35) {
+          floatCible = impulsion;
+          lancer();
+          retourDoux();
+        }
+      } else {
+        dernierScrollY = window.scrollY || 0;
+      }
+    }
+
+    function demander(avecImpulsionScroll) {
+      requestAnimationFrame(function() {
+        majDepuisEtat(!!avecImpulsionScroll);
+      });
+    }
+
+    window.addEventListener("DOMContentLoaded", function() { demander(false); }, { passive: true });
+    window.addEventListener("load", function() { demander(false); }, { passive: true });
+    window.addEventListener("pageshow", function() { demander(false); }, { passive: true });
+    window.addEventListener("resize", function() { demander(false); }, { passive: true });
+    window.addEventListener("orientationchange", function() {
+      setTimeout(function() { demander(false); }, 120);
+      setTimeout(function() { demander(false); }, 420);
+    }, { passive: true });
+
+    window.addEventListener("scroll", function() {
+      demander(true);
+    }, { passive: true });
+
+    document.addEventListener("click", function(event) {
+      const texte = event.target && event.target.textContent ? event.target.textContent.trim() : "";
+      if (texte === "SEND A WAV / MP3") {
+        contactEtaitActif = false;
+        setTimeout(function() { demander(false); }, 35);
+        setTimeout(function() { demander(false); }, 180);
+      }
+    }, { passive: true });
+
+    demander(false);
   })();
 </script>
 </body>
