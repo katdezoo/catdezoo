@@ -6506,8 +6506,8 @@ body {
       const margeBas = paysage ? 120 : 205;
       const hauteurMin = paysage ? 78 : grandSmartphone ? 100 : 96;
 
-      /* Point d'ancrage beaucoup plus bas, proche de la position de fin au scroll, sans changer la taille de la box. */
-      const descente = paysage ? 34 : Math.max(86, Math.min(Math.round(hauteur * 0.145), 132));
+      /* Point d'ancrage corrigé : juste sous le bandeau vidéo, presque entièrement visible, sans changer la taille de la box. */
+      const descente = paysage ? 18 : Math.max(38, Math.min(Math.round(hauteur * 0.065), 62));
 
       const topBase = Math.round(hauteur * ratioTop);
       topCible = topBase + descente;
