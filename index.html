@@ -6789,6 +6789,316 @@ body {
     }
   }
 </style>
+<style id="rules-scroll-text-adaptive-final">
+  /*
+    RULES TEXT ADAPTIVE FINAL
+    Objectif :
+    - le texte peut devenir très long sans casser la box
+    - on peut scroller jusqu'à la toute fin du texte
+    - les flèches restent indépendantes du texte
+    - tous les éléments gardent une adaptation propre quand la fenêtre se réduit
+  */
+
+  #apropos {
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+    -webkit-overflow-scrolling: touch !important;
+    overscroll-behavior: contain !important;
+    touch-action: pan-y pinch-zoom !important;
+    scroll-behavior: smooth !important;
+    scrollbar-width: thin !important;
+    box-sizing: border-box !important;
+  }
+
+  #apropos .card {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-height: auto !important;
+    height: auto !important;
+    margin: 0 auto !important;
+    box-sizing: border-box !important;
+    display: block !important;
+    overflow: visible !important;
+    background: transparent !important;
+    border: 0 !important;
+    box-shadow: none !important;
+  }
+
+  #apropos h1 {
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    min-height: 0 !important;
+    margin: 0 !important;
+    box-sizing: border-box !important;
+    white-space: normal !important;
+    word-break: normal !important;
+    overflow-wrap: anywhere !important;
+    overflow: visible !important;
+  }
+
+  /*
+    Flèches indépendantes : directes dans la box, pas dans le texte.
+    Même si tu modifies seulement le H1, elles ne bougent pas.
+  */
+  #apropos > .magicbox-arrow {
+    position: absolute !important;
+    display: block !important;
+    pointer-events: none !important;
+    z-index: 90 !important;
+    opacity: 1 !important;
+    width: clamp(8px, 0.78vw, 13px) !important;
+    height: clamp(8px, 0.78vw, 13px) !important;
+    border-right: clamp(1.5px, 0.15vw, 2.2px) solid #000000 !important;
+    border-bottom: clamp(1.5px, 0.15vw, 2.2px) solid #000000 !important;
+    filter:
+      drop-shadow(0 0 3px rgba(255, 255, 255, 1))
+      drop-shadow(0 0 7px rgba(255, 255, 255, 0.78))
+      drop-shadow(0 0 12px rgba(255, 255, 255, 0.46)) !important;
+    backface-visibility: hidden !important;
+    -webkit-backface-visibility: hidden !important;
+  }
+
+  #apropos > .magicbox-arrow-down {
+    top: clamp(10px, 1.1vw, 16px) !important;
+    right: clamp(16px, 2.1vw, 28px) !important;
+    left: auto !important;
+    margin: 0 !important;
+    transform: rotate(45deg) translate3d(0, 0, 0) !important;
+  }
+
+  #apropos > .magicbox-arrow-up {
+    bottom: clamp(10px, 1.1vw, 16px) !important;
+    left: 50% !important;
+    right: auto !important;
+    margin: 0 !important;
+    transform: translateX(-50%) rotate(-135deg) translate3d(0, 0, 0) !important;
+  }
+
+  /* Les flèches anciennes dans .card sont neutralisées si une vieille copie en garde */
+  #apropos .card > .magicbox-arrow,
+  #apropos::before,
+  #apropos::after,
+  #apropos .card::before,
+  #apropos .card::after {
+    content: none !important;
+    display: none !important;
+  }
+
+  @media screen and (min-width: 769px) {
+    #apropos {
+      scroll-padding-top: clamp(30px, 3vw, 44px) !important;
+      scroll-padding-bottom: clamp(34px, 3.4vw, 52px) !important;
+    }
+
+    #apropos .card {
+      padding: clamp(24px, 2.2vw, 34px) 0 clamp(34px, 3.1vw, 48px) 0 !important;
+    }
+
+    #apropos h1 {
+      padding: 0 clamp(5px, 0.7vw, 10px) 0 clamp(5px, 0.7vw, 10px) !important;
+    }
+
+    /*
+      Fenêtre normale : la box reste fixe/statique.
+      Le texte long ne change pas la box, il crée du scroll interne.
+    */
+    #apropos {
+      height: var(--ordi-rules-fixed-height, 132px) !important;
+      min-height: var(--ordi-rules-fixed-height, 132px) !important;
+      max-height: var(--ordi-rules-fixed-height, 132px) !important;
+    }
+
+    /* Tous les éléments restent flexibles quand une fenêtre ordi est réduite */
+    nav {
+      max-width: 100vw !important;
+      overflow: visible !important;
+    }
+
+    .paris-timer,
+    #contact,
+    .audio-box {
+      max-width: 100vw !important;
+      box-sizing: border-box !important;
+    }
+
+    #contact h1 {
+      max-width: 96vw !important;
+      overflow-wrap: anywhere !important;
+    }
+
+    .audio-box {
+      width: min(82vw, 340px) !important;
+    }
+
+    .volume-slider-wrap,
+    .audio-progress-wrap,
+    .audio-time-row {
+      width: min(88vw, 430px) !important;
+    }
+  }
+
+  @media screen and (min-width: 769px) and (max-width: 1050px),
+         screen and (min-width: 769px) and (max-height: 760px) {
+    #apropos {
+      height: var(--ordi-rules-fixed-height, clamp(78px, 13dvh, 150px)) !important;
+      min-height: var(--ordi-rules-fixed-height, clamp(78px, 13dvh, 150px)) !important;
+      max-height: var(--ordi-rules-fixed-height, clamp(78px, 13dvh, 150px)) !important;
+    }
+
+    #apropos .card {
+      padding-top: clamp(20px, 2.2vh, 28px) !important;
+      padding-bottom: clamp(28px, 3.2vh, 40px) !important;
+    }
+
+    #apropos > .magicbox-arrow-down {
+      top: clamp(7px, 1.1vh, 12px) !important;
+      right: clamp(12px, 1.8vw, 22px) !important;
+    }
+
+    #apropos > .magicbox-arrow-up {
+      bottom: clamp(7px, 1.1vh, 12px) !important;
+    }
+
+    .audio-box {
+      width: min(84vw, 310px) !important;
+    }
+
+    .volume-slider-wrap,
+    .audio-progress-wrap,
+    .audio-time-row {
+      width: min(88vw, 360px) !important;
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    #apropos {
+      scroll-padding-top: clamp(28px, 8vw, 42px) !important;
+      scroll-padding-bottom: clamp(38px, 11vw, 62px) !important;
+    }
+
+    #apropos .card {
+      padding: clamp(26px, 7vw, 38px) 0 clamp(44px, 12vw, 70px) 0 !important;
+    }
+
+    #apropos h1 {
+      padding: 0 2px 0 2px !important;
+      max-width: 100% !important;
+    }
+
+    #apropos > .magicbox-arrow {
+      width: clamp(8px, 2.6vw, 11px) !important;
+      height: clamp(8px, 2.6vw, 11px) !important;
+      border-right-width: clamp(1.5px, 0.55vw, 2px) !important;
+      border-bottom-width: clamp(1.5px, 0.55vw, 2px) !important;
+    }
+
+    #apropos > .magicbox-arrow-down {
+      top: clamp(9px, 3vw, 14px) !important;
+      right: clamp(13px, 5vw, 22px) !important;
+    }
+
+    #apropos > .magicbox-arrow-up {
+      bottom: clamp(9px, 3vw, 15px) !important;
+    }
+
+    nav,
+    .paris-timer,
+    #contact,
+    .audio-box {
+      max-width: 100vw !important;
+      box-sizing: border-box !important;
+    }
+
+    #contact h1 {
+      max-width: 96vw !important;
+      overflow-wrap: anywhere !important;
+    }
+  }
+
+  @media screen and (max-width: 900px) and (max-height: 500px) and (orientation: landscape) {
+    #apropos .card {
+      padding-top: clamp(20px, 6vh, 28px) !important;
+      padding-bottom: clamp(32px, 8vh, 44px) !important;
+    }
+
+    #apropos > .magicbox-arrow {
+      width: 8px !important;
+      height: 8px !important;
+      border-right-width: 1.5px !important;
+      border-bottom-width: 1.5px !important;
+    }
+
+    #apropos > .magicbox-arrow-down {
+      top: 8px !important;
+      right: 14px !important;
+    }
+
+    #apropos > .magicbox-arrow-up {
+      bottom: 8px !important;
+    }
+  }
+</style>
+<style id="gpc-intro-no-video-final">
+  /*
+    INTRO SANS VIDÉO
+    Copyright noir -> warning noir -> <3 noir -> site.
+    La vidéo de fond reste pour le site, mais jamais dans l'intro.
+  */
+
+  #copyrightIntroPage,
+  .copyright-intro-page {
+    background: #000000 !important;
+    color: #ffffff !important;
+  }
+
+  #copyrightIntroPage p,
+  .copyright-intro-page p {
+    color: #ffffff !important;
+    text-shadow:
+      0 0 4px #ffffff,
+      0 0 10px rgba(255, 255, 255, 0.72),
+      0 0 18px rgba(255, 255, 255, 0.38) !important;
+  }
+
+  #introPage,
+  #introPage.intro-page,
+  html.gpc-intro-hold #introPage,
+  html.gpc-intro-stage-text #introPage {
+    background: #000000 !important;
+  }
+
+  #introText {
+    color: #ffffff !important;
+    text-shadow:
+      0 0 4px #ffffff,
+      0 0 10px rgba(255, 255, 255, 0.72),
+      0 0 18px rgba(255, 255, 255, 0.38) !important;
+  }
+
+  /* La vidéo et l'ancien GIF/pink intro sont supprimés visuellement dans l'intro, toujours. */
+  #introPage #introVideo,
+  #introVideo.intro-video,
+  #introPage #introGif,
+  .intro-page .intro-gif {
+    display: none !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+  }
+
+  html.gpc-intro-stage-video #introPage {
+    background: #000000 !important;
+  }
+
+  html.gpc-intro-stage-video #introVideo,
+  html.gpc-intro-stage-video #introGif {
+    display: none !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+  }
+</style>
 </head>
 
 <body>
@@ -8818,114 +9128,6 @@ body {
     assurerFlechesMagicbox();
   })();
 </script>
-<script id="gpc-intro-three-screens-restore-final">
-  (function() {
-    const racine = document.documentElement;
-
-    function el(id) {
-      return document.getElementById(id);
-    }
-
-    function menu(show) {
-      const nav = el("menuPrincipal");
-      const audioBox = document.querySelector(".audio-box");
-
-      if (nav) nav.style.display = show ? "" : "none";
-      if (audioBox) audioBox.style.display = show ? "block" : "none";
-    }
-
-    function playIntroVideo() {
-      const v = el("introVideo");
-      if (!v) return;
-
-      try {
-        v.muted = true;
-        v.defaultMuted = true;
-        v.loop = true;
-        v.playsInline = true;
-        v.setAttribute("muted", "");
-        v.setAttribute("loop", "");
-        v.setAttribute("playsinline", "");
-        v.setAttribute("webkit-playsinline", "");
-        v.currentTime = 0;
-        const p = v.play();
-        if (p && typeof p.catch === "function") p.catch(function() {});
-      } catch (e) {}
-    }
-
-    function stageText(txt) {
-      const page = el("introPage");
-      const text = el("introText");
-      const gif = el("introGif");
-      const video = el("introVideo");
-
-      racine.classList.add("gpc-intro-hold", "gpc-intro-stage-text");
-      racine.classList.remove("gpc-intro-stage-video");
-
-      if (page) page.style.display = "flex";
-      if (text) {
-        text.style.display = "inline";
-        text.textContent = txt;
-      }
-      if (gif) gif.style.display = "none";
-      if (video) video.style.display = "none";
-      menu(false);
-    }
-
-    function stageVideo() {
-      const page = el("introPage");
-      const text = el("introText");
-      const gif = el("introGif");
-      const video = el("introVideo");
-
-      racine.classList.add("gpc-intro-hold", "gpc-intro-stage-video");
-      racine.classList.remove("gpc-intro-stage-text");
-
-      if (page) page.style.display = "flex";
-      if (text) text.style.display = "none";
-      if (gif) gif.style.display = "block";
-      if (video) video.style.display = "block";
-      playIntroVideo();
-      menu(false);
-    }
-
-    function entrerSite() {
-      const page = el("introPage");
-      const text = el("introText");
-      const video = el("introVideo");
-
-      racine.classList.remove("gpc-intro-hold", "gpc-intro-stage-video", "gpc-intro-stage-text");
-
-      if (text) text.style.display = "none";
-      if (video) {
-        try { video.pause(); } catch (e) {}
-        video.style.display = "none";
-      }
-      if (page) page.style.display = "none";
-
-      menu(true);
-
-      const lecteur = el("lecteurAudio");
-      if (lecteur) {
-        try { lecteur.load(); } catch (e) {}
-      }
-    }
-
-    /* Les anciens timeouts sont encore présents : cette couche reprend la main proprement. */
-    window.addEventListener("DOMContentLoaded", function() {
-      stageText("⚠. -no epilepsy please, \nand headphones please/");
-      setTimeout(function() { stageText("<3"); }, 5200);
-      setTimeout(stageVideo, 7000);
-      setTimeout(entrerSite, 9900);
-    }, { passive: true });
-
-    window.addEventListener("pageshow", function(event) {
-      if (event && event.persisted) {
-        entrerSite();
-      }
-    }, { passive: true });
-  })();
-</script>
 <script id="video-mobile-stable-antifreeze-final">
   (function() {
     const SRC = "./téma.mp4";
@@ -9210,6 +9412,204 @@ body {
     }, { passive: true });
 
     appliquer();
+  })();
+</script>
+<script id="rules-arrows-independent-final">
+  (function() {
+    function normaliserFleches() {
+      const box = document.getElementById("apropos");
+      if (!box) return;
+
+      const card = box.querySelector(".card");
+
+      function prendreOuCreer(classe) {
+        const existantes = Array.from(box.querySelectorAll("." + classe));
+        const premiere = existantes[0] || document.createElement("span");
+
+        premiere.className = "magicbox-arrow " + classe;
+        premiere.setAttribute("aria-hidden", "true");
+
+        existantes.slice(1).forEach(function(el) {
+          if (el && el.parentNode) el.parentNode.removeChild(el);
+        });
+
+        return premiere;
+      }
+
+      const flecheBas = prendreOuCreer("magicbox-arrow-down");
+      const flecheHaut = prendreOuCreer("magicbox-arrow-up");
+
+      if (flecheBas.parentNode !== box) {
+        box.insertBefore(flecheBas, box.firstChild);
+      } else if (box.firstChild !== flecheBas) {
+        box.insertBefore(flecheBas, box.firstChild);
+      }
+
+      if (flecheHaut.parentNode !== box) {
+        box.appendChild(flecheHaut);
+      } else if (box.lastChild !== flecheHaut) {
+        box.appendChild(flecheHaut);
+      }
+
+      if (card) {
+        card.style.minHeight = "auto";
+        card.style.height = "auto";
+        card.style.overflow = "visible";
+      }
+    }
+
+    function verifierScrollFin() {
+      const box = document.getElementById("apropos");
+      if (!box) return;
+
+      /* Forcer le navigateur à recalculer le scrollHeight après modification future du texte */
+      box.style.setProperty("--rules-scroll-height-check", String(box.scrollHeight || 0));
+    }
+
+    window.addEventListener("DOMContentLoaded", function() {
+      normaliserFleches();
+      verifierScrollFin();
+    }, { passive: true });
+
+    window.addEventListener("load", function() {
+      normaliserFleches();
+      verifierScrollFin();
+    }, { passive: true });
+
+    window.addEventListener("pageshow", function() {
+      normaliserFleches();
+      verifierScrollFin();
+    }, { passive: true });
+
+    window.addEventListener("resize", function() {
+      normaliserFleches();
+      verifierScrollFin();
+    }, { passive: true });
+
+    document.addEventListener("click", function(event) {
+      const texte = event.target && event.target.textContent ? event.target.textContent.trim() : "";
+      if (texte === "RULES") {
+        setTimeout(function() {
+          normaliserFleches();
+          verifierScrollFin();
+        }, 40);
+        setTimeout(verifierScrollFin, 240);
+      }
+    }, { passive: true });
+
+    if ("MutationObserver" in window) {
+      const observer = new MutationObserver(function() {
+        normaliserFleches();
+        verifierScrollFin();
+      });
+
+      window.addEventListener("DOMContentLoaded", function() {
+        const box = document.getElementById("apropos");
+        if (box) {
+          observer.observe(box, {
+            childList: true,
+            subtree: true,
+            characterData: true
+          });
+        }
+      }, { passive: true });
+    }
+
+    normaliserFleches();
+    verifierScrollFin();
+  })();
+</script>
+<script id="gpc-intro-no-video-script-final">
+  (function() {
+    const racine = document.documentElement;
+
+    function el(id) {
+      return document.getElementById(id);
+    }
+
+    function menu(show) {
+      const nav = el("menuPrincipal");
+      const audioBox = document.querySelector(".audio-box");
+
+      if (nav) nav.style.display = show ? "" : "none";
+      if (audioBox) audioBox.style.display = show ? "block" : "none";
+    }
+
+    function couperIntroVideo() {
+      const video = el("introVideo");
+      const gif = el("introGif");
+
+      if (video) {
+        try { video.pause(); } catch (e) {}
+        try { video.removeAttribute("autoplay"); } catch (e) {}
+        video.style.display = "none";
+        video.style.opacity = "0";
+        video.style.visibility = "hidden";
+      }
+
+      if (gif) {
+        gif.style.display = "none";
+        gif.style.opacity = "0";
+        gif.style.visibility = "hidden";
+      }
+    }
+
+    function stageText(txt) {
+      const page = el("introPage");
+      const text = el("introText");
+
+      racine.classList.add("gpc-intro-hold", "gpc-intro-stage-text");
+      racine.classList.remove("gpc-intro-stage-video");
+
+      if (page) {
+        page.style.display = "flex";
+        page.style.background = "#000000";
+      }
+
+      if (text) {
+        text.style.display = "inline";
+        text.textContent = txt;
+      }
+
+      couperIntroVideo();
+      menu(false);
+    }
+
+    function entrerSite() {
+      const page = el("introPage");
+      const text = el("introText");
+
+      racine.classList.remove("gpc-intro-hold", "gpc-intro-stage-text", "gpc-intro-stage-video");
+
+      couperIntroVideo();
+
+      if (text) text.style.display = "none";
+      if (page) page.style.display = "none";
+
+      menu(true);
+
+      const lecteur = el("lecteurAudio");
+      if (lecteur) {
+        try { lecteur.load(); } catch (e) {}
+      }
+    }
+
+    window.addEventListener("DOMContentLoaded", function() {
+      couperIntroVideo();
+      stageText("⚠. -no epilepsy please, \nand headphones please/");
+      setTimeout(function() { stageText("<3"); }, 5200);
+      setTimeout(entrerSite, 7200);
+    }, { passive: true });
+
+    window.addEventListener("load", couperIntroVideo, { passive: true });
+    window.addEventListener("pageshow", function(event) {
+      couperIntroVideo();
+      if (event && event.persisted) {
+        entrerSite();
+      }
+    }, { passive: true });
+
+    setInterval(couperIntroVideo, 800);
   })();
 </script>
 </body>
