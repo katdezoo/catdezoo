@@ -6809,16 +6809,19 @@ body {
   })();
 </script>
 
+
 <style id="timer-rules-effect-final">
-  /* TIMER : police originale, couleur/contour RULES, glow seulement rouge et plus élargi */
+  /* TIMER : police originale, couleur/contour RULES, glow rouge plus flashy et beaucoup plus large */
   :root {
     --timer-rules-fill: #ff4fd8;
     --timer-rules-stroke: #00ff00;
     --timer-rules-black: #000000;
-    --timer-rules-red-strong: rgba(255, 0, 0, 0.86);
-    --timer-rules-red-mid: rgba(255, 0, 0, 0.56);
-    --timer-rules-red-soft: rgba(255, 0, 0, 0.34);
-    --timer-rules-red-far: rgba(255, 0, 0, 0.20);
+    --timer-rules-red-core: rgba(255, 0, 0, 1);
+    --timer-rules-red-strong: rgba(255, 0, 0, 0.96);
+    --timer-rules-red-mid: rgba(255, 0, 0, 0.72);
+    --timer-rules-red-soft: rgba(255, 0, 0, 0.48);
+    --timer-rules-red-far: rgba(255, 0, 0, 0.30);
+    --timer-rules-red-ultra: rgba(255, 0, 0, 0.18);
   }
 
   .paris-timer,
@@ -6838,10 +6841,12 @@ body {
       0 2px 0 var(--timer-rules-black),
       2px 2px 0 var(--timer-rules-black),
       0 0 4px var(--timer-rules-black),
-      0 0 clamp(24px, 2.6vw, 48px) var(--timer-rules-red-strong),
-      0 0 clamp(52px, 5.4vw, 105px) var(--timer-rules-red-mid),
-      0 0 clamp(96px, 9vw, 180px) var(--timer-rules-red-soft),
-      0 0 clamp(150px, 14vw, 280px) var(--timer-rules-red-far) !important;
+      0 0 clamp(18px, 2vw, 38px) var(--timer-rules-red-core),
+      0 0 clamp(42px, 4.2vw, 82px) var(--timer-rules-red-strong),
+      0 0 clamp(88px, 8.4vw, 170px) var(--timer-rules-red-mid),
+      0 0 clamp(160px, 14vw, 300px) var(--timer-rules-red-soft),
+      0 0 clamp(260px, 22vw, 460px) var(--timer-rules-red-far),
+      0 0 clamp(380px, 32vw, 680px) var(--timer-rules-red-ultra) !important;
   }
 
   .paris-timer {
@@ -6884,10 +6889,12 @@ body {
       0 2px 0 var(--timer-rules-black),
       2px 2px 0 var(--timer-rules-black),
       0 0 4px var(--timer-rules-black),
-      0 0 clamp(24px, 2.6vw, 48px) var(--timer-rules-red-strong),
-      0 0 clamp(52px, 5.4vw, 105px) var(--timer-rules-red-mid),
-      0 0 clamp(96px, 9vw, 180px) var(--timer-rules-red-soft),
-      0 0 clamp(150px, 14vw, 280px) var(--timer-rules-red-far) !important;
+      0 0 clamp(18px, 2vw, 38px) var(--timer-rules-red-core),
+      0 0 clamp(42px, 4.2vw, 82px) var(--timer-rules-red-strong),
+      0 0 clamp(88px, 8.4vw, 170px) var(--timer-rules-red-mid),
+      0 0 clamp(160px, 14vw, 300px) var(--timer-rules-red-soft),
+      0 0 clamp(260px, 22vw, 460px) var(--timer-rules-red-far),
+      0 0 clamp(380px, 32vw, 680px) var(--timer-rules-red-ultra) !important;
   }
 
   @media screen and (max-width: 768px) {
@@ -6911,10 +6918,11 @@ body {
         0 1.5px 0 var(--timer-rules-black),
         1.5px 1.5px 0 var(--timer-rules-black),
         0 0 4px var(--timer-rules-black),
-        0 0 30px rgba(255, 0, 0, 0.82),
-        0 0 62px rgba(255, 0, 0, 0.56),
-        0 0 118px rgba(255, 0, 0, 0.34),
-        0 0 176px rgba(255, 0, 0, 0.20) !important;
+        0 0 44px rgba(255, 0, 0, 1),
+        0 0 92px rgba(255, 0, 0, 0.78),
+        0 0 170px rgba(255, 0, 0, 0.50),
+        0 0 260px rgba(255, 0, 0, 0.30),
+        0 0 380px rgba(255, 0, 0, 0.18) !important;
     }
 
     .paris-timer,
@@ -6949,6 +6957,26 @@ body {
       font-size: clamp(30px, 7vh, 45px) !important;
       letter-spacing: 0 !important;
       gap: 0.09em !important;
+    }
+
+    .paris-timer,
+    #timerTime,
+    #timerPeriod,
+    .timer-period {
+      text-shadow:
+        -1.5px -1.5px 0 var(--timer-rules-black),
+        0 -1.5px 0 var(--timer-rules-black),
+        1.5px -1.5px 0 var(--timer-rules-black),
+        -1.5px 0 0 var(--timer-rules-black),
+        1.5px 0 0 var(--timer-rules-black),
+        -1.5px 1.5px 0 var(--timer-rules-black),
+        0 1.5px 0 var(--timer-rules-black),
+        1.5px 1.5px 0 var(--timer-rules-black),
+        0 0 4px var(--timer-rules-black),
+        0 0 36px rgba(255, 0, 0, 1),
+        0 0 78px rgba(255, 0, 0, 0.78),
+        0 0 145px rgba(255, 0, 0, 0.48),
+        0 0 220px rgba(255, 0, 0, 0.26) !important;
     }
 
     #timerPeriod,
