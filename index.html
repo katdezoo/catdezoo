@@ -5198,6 +5198,331 @@ body {
     line-height: 1.1 !important;
   }
 }
+  
+/* GLOBAL PRODUCERS CUP : vidéo stable et fluide au scroll, tous écrans */
+:root {
+  --fond-video-bg: #ff00ff;
+  --site-fixed-vh: 100vh;
+  --site-fixed-vw: 100vw;
+  --rules-desktop-font: clamp(16px, 1.42vw, 21px);
+  --rules-desktop-line: 1.20;
+  --rules-desktop-bottom-anchor: clamp(128px, 20vh, 230px);
+  --rules-desktop-anchor-height: clamp(150px, 20vh, 218px);
+  --rules-mobile-top: 62vh;
+  --rules-mobile-height: 24vh;
+  --rules-mobile-bottom: 12vh;
+}
+
+html {
+  background: var(--fond-video-bg) !important;
+  overflow-x: hidden !important;
+  overscroll-behavior-x: none !important;
+}
+
+body {
+  background: transparent !important;
+  overflow-x: hidden !important;
+  overscroll-behavior-x: none !important;
+  -webkit-font-smoothing: antialiased !important;
+  text-rendering: geometricPrecision !important;
+}
+
+.gif-bg,
+.intro-gif {
+  background-image: none !important;
+  background-color: var(--fond-video-bg) !important;
+  z-index: 0 !important;
+}
+
+#fondVideo.video-bg,
+#introVideo.intro-video {
+  position: fixed !important;
+  left: 0 !important;
+  top: 0 !important;
+  right: auto !important;
+  bottom: auto !important;
+  width: var(--site-fixed-vw) !important;
+  height: var(--site-fixed-vh) !important;
+  min-width: var(--site-fixed-vw) !important;
+  min-height: var(--site-fixed-vh) !important;
+  max-width: none !important;
+  max-height: none !important;
+  object-fit: fill !important;
+  object-position: center center !important;
+  background: var(--fond-video-bg) !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  display: block !important;
+  pointer-events: none !important;
+  z-index: 1 !important;
+  transform: translateZ(0) !important;
+  -webkit-transform: translateZ(0) !important;
+  transform-origin: 50% 50% !important;
+  backface-visibility: hidden !important;
+  -webkit-backface-visibility: hidden !important;
+  will-change: auto !important;
+  contain: strict !important;
+  isolation: isolate !important;
+}
+
+#introVideo.intro-video {
+  display: none !important;
+  z-index: 1 !important;
+}
+
+.overlay {
+  position: relative !important;
+  z-index: 2 !important;
+  background: transparent !important;
+  min-height: var(--site-fixed-vh) !important;
+  transform: translateZ(0) !important;
+  -webkit-transform: translateZ(0) !important;
+}
+
+/* Ordinateur : RULES plus petit, bas du texte ancré */
+@media screen and (min-width: 769px) {
+  #apropos {
+    position: fixed !important;
+    left: 50% !important;
+    top: auto !important;
+    bottom: var(--rules-desktop-bottom-anchor) !important;
+    transform: translate3d(-50%, 0, 0) !important;
+    width: min(900px, calc(100vw - 48px)) !important;
+    max-width: min(900px, calc(100vw - 48px)) !important;
+    padding: 0 20px !important;
+    box-sizing: border-box !important;
+  }
+
+  #apropos.active {
+    display: flex !important;
+    align-items: flex-end !important;
+    justify-content: center !important;
+  }
+
+  #apropos .card {
+    height: var(--rules-desktop-anchor-height) !important;
+    min-height: var(--rules-desktop-anchor-height) !important;
+    padding: 0 25px !important;
+    margin: 0 auto !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: flex-end !important;
+    box-sizing: border-box !important;
+  }
+
+  #apropos h1 {
+    font-size: var(--rules-desktop-font) !important;
+    line-height: var(--rules-desktop-line) !important;
+    margin: 0 !important;
+    max-width: min(820px, calc(100vw - 96px)) !important;
+    text-align: center !important;
+  }
+}
+
+@media screen and (min-width: 769px) and (max-height: 760px) {
+  :root {
+    --rules-desktop-font: clamp(14px, 1.45vw, 18px);
+    --rules-desktop-bottom-anchor: clamp(92px, 16vh, 150px);
+    --rules-desktop-anchor-height: clamp(126px, 18vh, 170px);
+  }
+
+  #apropos h1 {
+    line-height: 1.15 !important;
+  }
+}
+
+@media screen and (min-width: 1600px) {
+  :root {
+    --rules-desktop-font: clamp(18px, 1.18vw, 23px);
+    --rules-desktop-bottom-anchor: clamp(150px, 19vh, 260px);
+  }
+}
+
+/* Smartphone : vidéo déformée plein écran mais hauteur stabilisée, donc elle ne tremble plus au scroll */
+@media screen and (max-width: 768px) {
+  html,
+  body {
+    overscroll-behavior-y: none !important;
+  }
+
+  #fondVideo.video-bg,
+  #introVideo.intro-video {
+    width: var(--site-fixed-vw) !important;
+    height: var(--site-fixed-vh) !important;
+    min-height: var(--site-fixed-vh) !important;
+    object-fit: fill !important;
+    object-position: center center !important;
+    transform: translateZ(0) !important;
+    -webkit-transform: translateZ(0) !important;
+  }
+
+  .overlay {
+    min-height: var(--site-fixed-vh) !important;
+    padding-bottom: env(safe-area-inset-bottom) !important;
+  }
+
+  #apropos {
+    position: fixed !important;
+    left: 50% !important;
+    top: var(--rules-mobile-top) !important;
+    bottom: auto !important;
+    height: var(--rules-mobile-height) !important;
+    min-height: 108px !important;
+    max-height: calc(var(--site-fixed-vh) - var(--rules-mobile-bottom) - 128px) !important;
+    width: min(calc(100vw - 24px), 520px) !important;
+    max-width: min(calc(100vw - 24px), 520px) !important;
+    padding: clamp(12px, 2.8vw, 20px) 12px !important;
+    margin: 0 !important;
+    transform: translate3d(-50%, 0, 0) !important;
+    box-sizing: border-box !important;
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+    -webkit-overflow-scrolling: touch !important;
+    overscroll-behavior: contain !important;
+    z-index: 16000 !important;
+    scrollbar-width: none !important;
+  }
+
+  #apropos::-webkit-scrollbar {
+    display: none !important;
+  }
+
+  #apropos.active {
+    display: block !important;
+    pointer-events: auto !important;
+  }
+
+  #apropos .card {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 auto !important;
+    padding: 0 !important;
+    box-sizing: border-box !important;
+  }
+
+  #apropos h1 {
+    font-size: clamp(12px, 3.05vw, 17px) !important;
+    line-height: 1.16 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    text-align: center !important;
+  }
+}
+
+@media screen and (max-width: 390px) and (orientation: portrait) {
+  #apropos h1 {
+    font-size: clamp(11px, 3.15vw, 14px) !important;
+    line-height: 1.14 !important;
+  }
+}
+
+@media screen and (max-width: 900px) and (max-height: 500px) and (orientation: landscape) {
+  #apropos {
+    top: var(--rules-mobile-top) !important;
+    height: var(--rules-mobile-height) !important;
+    min-height: 72px !important;
+    padding: 8px 12px !important;
+  }
+
+  #apropos h1 {
+    font-size: clamp(10px, 2.2vw, 14px) !important;
+    line-height: 1.1 !important;
+  }
+}
+  
+/* MAGICBOX : taille originale conservée, juste un peu plus basse sur smartphone */
+@media screen and (max-width: 768px) {
+  :root {
+    --magicbox-mobile-down: clamp(12px, 2.4vh, 22px);
+  }
+
+  #apropos {
+    position: fixed !important;
+    left: 50% !important;
+    top: var(--magicbox-top, 60dvh) !important;
+    bottom: auto !important;
+    height: var(--magicbox-height, calc(100dvh - 60dvh - 205px - env(safe-area-inset-bottom))) !important;
+    min-height: 96px !important;
+    max-height: none !important;
+    width: calc(100vw - 24px) !important;
+    max-width: calc(100vw - 24px) !important;
+    padding: 30px 12px 30px 12px !important;
+    margin: 0 !important;
+    transform: translate3d(-50%, var(--magicbox-mobile-down), 0) !important;
+    box-sizing: border-box !important;
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+    -webkit-overflow-scrolling: touch !important;
+    overscroll-behavior: contain !important;
+    contain: layout paint style !important;
+    backface-visibility: hidden !important;
+    will-change: transform !important;
+    z-index: 16000 !important;
+    scrollbar-width: none !important;
+  }
+
+  #apropos::-webkit-scrollbar {
+    display: none !important;
+  }
+
+  #apropos.active {
+    display: block !important;
+    pointer-events: auto !important;
+  }
+
+  #apropos .card {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 auto !important;
+    padding: 0 !important;
+    box-sizing: border-box !important;
+    contain: paint !important;
+    transform: translateZ(0) !important;
+  }
+
+  #apropos h1 {
+    font-size: clamp(15px, 4.6vw, 21px) !important;
+    line-height: 1.22 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    text-align: center !important;
+  }
+}
+
+@supports (height: 100dvh) {
+  @media screen and (max-width: 768px) {
+    #apropos {
+      height: var(--magicbox-height, calc(100dvh - 60dvh - 205px - env(safe-area-inset-bottom))) !important;
+    }
+  }
+}
+
+@media screen and (max-width: 430px) and (min-height: 760px) {
+  #apropos {
+    transform: translate3d(-50%, clamp(10px, 2vh, 18px), 0) !important;
+  }
+
+  #apropos h1 {
+    font-size: clamp(15px, 4.6vw, 21px) !important;
+    line-height: 1.22 !important;
+  }
+}
+
+@media screen and (max-width: 900px) and (max-height: 500px) and (orientation: landscape) {
+  #apropos {
+    top: var(--magicbox-top, 50dvh) !important;
+    height: var(--magicbox-height, calc(100dvh - 50dvh - 120px - env(safe-area-inset-bottom))) !important;
+    min-height: 78px !important;
+    padding: 30px 12px 30px 12px !important;
+    transform: translate3d(-50%, 8px, 0) !important;
+  }
+
+  #apropos h1 {
+    font-size: clamp(13px, 3.2vw, 18px) !important;
+    line-height: 1.16 !important;
+  }
+}
   </style>
 
 </head>
@@ -6056,146 +6381,186 @@ body {
   })();
 </script>
 
-
 <script>
-  function lancerBlobalMp4EnBoucle() {
-    const video = document.getElementById("fondVideo");
-    if (!video) return;
+  (function() {
+    let dernierLargeur = 0;
+    let dernierOrientation = "";
 
-    video.muted = true;
-    video.defaultMuted = true;
-    video.loop = true;
-    video.autoplay = true;
-    video.playsInline = true;
-    video.preload = "auto";
-
-    video.setAttribute("muted", "");
-    video.setAttribute("loop", "");
-    video.setAttribute("autoplay", "");
-    video.setAttribute("playsinline", "");
-    video.setAttribute("webkit-playsinline", "");
-    video.setAttribute("preload", "auto");
-
-    video.style.opacity = "1";
-    video.style.visibility = "visible";
-    video.style.display = "block";
-
-    const lecture = video.play();
-    if (lecture && typeof lecture.catch === "function") {
-      lecture.catch(function() {});
-    }
-  }
-
-  function reglerMagicboxTousEcrans() {
-    const racine = document.documentElement;
-    const largeur = window.visualViewport && window.visualViewport.width ? window.visualViewport.width : window.innerWidth;
-    const hauteur = window.visualViewport && window.visualViewport.height ? window.visualViewport.height : window.innerHeight;
-    const paysage = largeur > hauteur;
-    const mobile = largeur <= 768;
-
-    if (!mobile) {
-      racine.style.removeProperty("--rules-mobile-top");
-      racine.style.removeProperty("--rules-mobile-height");
-      racine.style.removeProperty("--rules-mobile-bottom");
-      return;
+    function estMobileLargeur() {
+      return window.innerWidth <= 768;
     }
 
-    const clamp = function(min, val, max) {
-      return Math.max(min, Math.min(val, max));
-    };
+    function dimensionsStables(force) {
+      const racine = document.documentElement;
+      const largeur = Math.max(1, Math.round(window.innerWidth || document.documentElement.clientWidth || 1));
+      const hauteur = Math.max(1, Math.round(window.innerHeight || document.documentElement.clientHeight || 1));
+      const orientation = largeur > hauteur ? "landscape" : "portrait";
 
-    let bottom;
-    let hauteurBox;
+      /* Sur smartphone, la hauteur change souvent pendant le scroll à cause de la barre du navigateur.
+         On ignore ces micro-changements pour que la vidéo reste collée comme une plaque de verre. */
+      if (!force && estMobileLargeur()) {
+        const largeurChange = Math.abs(largeur - dernierLargeur) > 24;
+        const orientationChange = orientation !== dernierOrientation;
 
-    if (paysage || hauteur <= 520) {
-      bottom = clamp(28, hauteur * 0.08, 62);
-      hauteurBox = clamp(74, hauteur * 0.30, 142);
-    } else if (hauteur <= 700) {
-      bottom = clamp(62, hauteur * 0.115, 92);
-      hauteurBox = clamp(118, hauteur * 0.245, 172);
-    } else if (hauteur <= 860) {
-      bottom = clamp(82, hauteur * 0.125, 122);
-      hauteurBox = clamp(142, hauteur * 0.255, 218);
-    } else {
-      bottom = clamp(106, hauteur * 0.135, 158);
-      hauteurBox = clamp(172, hauteur * 0.265, 260);
+        if (dernierLargeur && !largeurChange && !orientationChange) {
+          return;
+        }
+      }
+
+      dernierLargeur = largeur;
+      dernierOrientation = orientation;
+
+      racine.style.setProperty("--site-fixed-vw", largeur + "px");
+      racine.style.setProperty("--site-fixed-vh", hauteur + "px");
     }
 
-    const top = Math.max(104, hauteur - bottom - hauteurBox);
+    function lancerBlobalMp4EnBoucle() {
+      const video = document.getElementById("fondVideo");
+      if (!video) return;
 
-    racine.style.setProperty("--rules-mobile-bottom", Math.round(bottom) + "px");
-    racine.style.setProperty("--rules-mobile-height", Math.round(hauteurBox) + "px");
-    racine.style.setProperty("--rules-mobile-top", Math.round(top) + "px");
-  }
+      video.muted = true;
+      video.defaultMuted = true;
+      video.loop = true;
+      video.autoplay = true;
+      video.playsInline = true;
+      video.preload = "auto";
 
-  function installerBlobalLoopInfini() {
-    const video = document.getElementById("fondVideo");
-    if (!video) return;
+      video.setAttribute("muted", "");
+      video.setAttribute("loop", "");
+      video.setAttribute("autoplay", "");
+      video.setAttribute("playsinline", "");
+      video.setAttribute("webkit-playsinline", "");
+      video.setAttribute("preload", "auto");
 
-    lancerBlobalMp4EnBoucle();
+      video.style.opacity = "1";
+      video.style.visibility = "visible";
+      video.style.display = "block";
 
-    if (!video.dataset.blobalLoopInstalle) {
-      video.dataset.blobalLoopInstalle = "1";
+      const lecture = video.play();
+      if (lecture && typeof lecture.catch === "function") {
+        lecture.catch(function() {});
+      }
+    }
 
-      video.addEventListener("timeupdate", function() {
-        if (video.duration && video.currentTime > video.duration - 0.06) {
+    function reglerMagicboxSansTremblement(force) {
+      const racine = document.documentElement;
+      const largeur = Math.max(1, Math.round(window.innerWidth || 1));
+      const hauteur = Math.max(1, Math.round(parseFloat(getComputedStyle(racine).getPropertyValue("--site-fixed-vh")) || window.innerHeight || 1));
+      const paysage = largeur > hauteur;
+      const mobile = largeur <= 768;
+
+      if (!mobile) {
+        racine.style.removeProperty("--rules-mobile-top");
+        racine.style.removeProperty("--rules-mobile-height");
+        racine.style.removeProperty("--rules-mobile-bottom");
+        return;
+      }
+
+      const clamp = function(min, val, max) {
+        return Math.max(min, Math.min(val, max));
+      };
+
+      let bottom;
+      let hauteurBox;
+
+      if (paysage || hauteur <= 520) {
+        bottom = clamp(28, hauteur * 0.08, 62);
+        hauteurBox = clamp(74, hauteur * 0.30, 142);
+      } else if (hauteur <= 700) {
+        bottom = clamp(62, hauteur * 0.115, 92);
+        hauteurBox = clamp(118, hauteur * 0.245, 172);
+      } else if (hauteur <= 860) {
+        bottom = clamp(82, hauteur * 0.125, 122);
+        hauteurBox = clamp(142, hauteur * 0.255, 218);
+      } else {
+        bottom = clamp(106, hauteur * 0.135, 158);
+        hauteurBox = clamp(172, hauteur * 0.265, 260);
+      }
+
+      const top = Math.max(104, hauteur - bottom - hauteurBox);
+
+      racine.style.setProperty("--rules-mobile-bottom", Math.round(bottom) + "px");
+      racine.style.setProperty("--rules-mobile-height", Math.round(hauteurBox) + "px");
+      racine.style.setProperty("--rules-mobile-top", Math.round(top) + "px");
+    }
+
+    function installerBlobalLoopInfini() {
+      const video = document.getElementById("fondVideo");
+      if (!video) return;
+
+      lancerBlobalMp4EnBoucle();
+
+      if (!video.dataset.blobalLoopInstalle) {
+        video.dataset.blobalLoopInstalle = "1";
+
+        video.addEventListener("timeupdate", function() {
+          if (video.duration && video.currentTime > video.duration - 0.06) {
+            try {
+              video.currentTime = 0;
+              video.play();
+            } catch (e) {}
+          }
+        });
+
+        video.addEventListener("ended", function() {
           try {
             video.currentTime = 0;
             video.play();
           } catch (e) {}
-        }
-      });
+        });
 
-      video.addEventListener("ended", function() {
-        try {
-          video.currentTime = 0;
-          video.play();
-        } catch (e) {}
-      });
+        video.addEventListener("pause", function() {
+          if (!document.hidden) {
+            lancerBlobalMp4EnBoucle();
+          }
+        });
 
-      video.addEventListener("pause", function() {
-        if (!document.hidden) {
-          lancerBlobalMp4EnBoucle();
-        }
-      });
-
-      setInterval(function() {
-        if (!document.hidden && (video.paused || video.ended || video.readyState < 2)) {
-          lancerBlobalMp4EnBoucle();
-        }
-      }, 700);
+        setInterval(function() {
+          if (!document.hidden && (video.paused || video.ended || video.readyState < 2)) {
+            lancerBlobalMp4EnBoucle();
+          }
+        }, 700);
+      }
     }
-  }
 
-  window.addEventListener("DOMContentLoaded", function() {
-    reglerMagicboxTousEcrans();
-    installerBlobalLoopInfini();
-  });
-  window.addEventListener("load", function() {
-    reglerMagicboxTousEcrans();
-    installerBlobalLoopInfini();
-  });
-  window.addEventListener("resize", reglerMagicboxTousEcrans, { passive: true });
-  window.addEventListener("orientationchange", function() {
-    setTimeout(reglerMagicboxTousEcrans, 250);
-  }, { passive: true });
-  window.addEventListener("pageshow", function() {
-    reglerMagicboxTousEcrans();
-    lancerBlobalMp4EnBoucle();
-  });
-
-  if (window.visualViewport) {
-    window.visualViewport.addEventListener("resize", reglerMagicboxTousEcrans, { passive: true });
-  }
-
-  document.addEventListener("visibilitychange", function() {
-    if (!document.hidden) {
-      reglerMagicboxTousEcrans();
-      lancerBlobalMp4EnBoucle();
+    function demarrerTout(force) {
+      dimensionsStables(force);
+      reglerMagicboxSansTremblement(force);
+      installerBlobalLoopInfini();
     }
-  });
-  document.addEventListener("click", lancerBlobalMp4EnBoucle, { once: true });
-  document.addEventListener("touchstart", lancerBlobalMp4EnBoucle, { once: true });
+
+    window.addEventListener("DOMContentLoaded", function() {
+      demarrerTout(true);
+    });
+
+    window.addEventListener("load", function() {
+      demarrerTout(true);
+    });
+
+    window.addEventListener("resize", function() {
+      dimensionsStables(false);
+      reglerMagicboxSansTremblement(false);
+    }, { passive: true });
+
+    window.addEventListener("orientationchange", function() {
+      setTimeout(function() {
+        demarrerTout(true);
+      }, 260);
+    }, { passive: true });
+
+    window.addEventListener("pageshow", function() {
+      demarrerTout(false);
+    });
+
+    document.addEventListener("visibilitychange", function() {
+      if (!document.hidden) {
+        demarrerTout(false);
+      }
+    });
+
+    document.addEventListener("click", lancerBlobalMp4EnBoucle, { once: true });
+    document.addEventListener("touchstart", lancerBlobalMp4EnBoucle, { once: true });
+  })();
 </script>
 </body>
 </html>
