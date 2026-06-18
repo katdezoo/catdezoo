@@ -4422,6 +4422,84 @@
       }
     }
 
+  
+    /* MAGICBOX : remplace les flèches texte par deux pointes noires avec glow blanc */
+    @media screen and (max-width: 768px) {
+      #apropos .magicbox-arrow {
+        display: block !important;
+        position: relative !important;
+        width: 0 !important;
+        height: 0 !important;
+        font-size: 0 !important;
+        line-height: 0 !important;
+        color: transparent !important;
+        -webkit-text-fill-color: transparent !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+        pointer-events: none !important;
+        z-index: 99999 !important;
+        background: transparent !important;
+        filter:
+          drop-shadow(0 0 2px rgba(255, 255, 255, 1))
+          drop-shadow(0 0 6px rgba(255, 255, 255, 0.95))
+          drop-shadow(0 0 12px rgba(255, 255, 255, 0.72)) !important;
+        text-shadow: none !important;
+        transform: translate3d(0, 0, 0) !important;
+      }
+
+      /* Pointe du haut : à droite, vers le bas */
+      #apropos .magicbox-arrow-down {
+        margin: 0 12px 12px auto !important;
+        border-left: 7px solid transparent !important;
+        border-right: 7px solid transparent !important;
+        border-top: 11px solid #000000 !important;
+        border-bottom: 0 !important;
+      }
+
+      /* Pointe du bas : centrée, vers le haut */
+      #apropos .magicbox-arrow-up {
+        margin: 12px auto 0 auto !important;
+        border-left: 7px solid transparent !important;
+        border-right: 7px solid transparent !important;
+        border-bottom: 11px solid #000000 !important;
+        border-top: 0 !important;
+      }
+    }
+
+    @media screen and (max-width: 430px) and (min-height: 760px) {
+      #apropos .magicbox-arrow-down {
+        margin-right: 10px !important;
+        margin-bottom: 11px !important;
+        border-left-width: 6px !important;
+        border-right-width: 6px !important;
+        border-top-width: 10px !important;
+      }
+
+      #apropos .magicbox-arrow-up {
+        margin-top: 11px !important;
+        border-left-width: 6px !important;
+        border-right-width: 6px !important;
+        border-bottom-width: 10px !important;
+      }
+    }
+
+    @media screen and (max-width: 900px) and (max-height: 500px) and (orientation: landscape) {
+      #apropos .magicbox-arrow-down {
+        margin-right: 8px !important;
+        margin-bottom: 8px !important;
+        border-left-width: 5px !important;
+        border-right-width: 5px !important;
+        border-top-width: 8px !important;
+      }
+
+      #apropos .magicbox-arrow-up {
+        margin-top: 8px !important;
+        border-left-width: 5px !important;
+        border-right-width: 5px !important;
+        border-bottom-width: 8px !important;
+      }
+    }
+
   </style>
 
 </head>
@@ -4456,7 +4534,7 @@
 <section id="apropos" class="page-section">
   <div class="card">
         
-        <span class="magicbox-arrow magicbox-arrow-down" aria-hidden="true">▼</span>
+        <span class="magicbox-arrow magicbox-arrow-down" aria-hidden="true"></span>
         <h1>
       -RULES/<br>
       N1-USE A 1992/2012 MUSIC/<br>
@@ -4465,7 +4543,7 @@
       N4-NO ai AT ALL/<br>
       N5-ELECTRONIC ART ONLY/
     </h1>
-        <span class="magicbox-arrow magicbox-arrow-up" aria-hidden="true">▲</span>
+        <span class="magicbox-arrow magicbox-arrow-up" aria-hidden="true"></span>
   </div>
 </section>
 
