@@ -4667,7 +4667,7 @@
     }
 
   
-    /* GLOBAL PRODUCERS CUP : ././latbien.mp4 ajusté comme l'ancien GIF */
+    /* GLOBAL PRODUCERS CUP : ./latbien.mp4 ajusté comme l'ancien GIF */
     :root {
       --fond-video-bg: #ff00ff;
       --fond-video-position: center center;
@@ -4750,7 +4750,7 @@
     }
 
   
-    /* GLOBAL PRODUCERS CUP FINAL : ././latbien.mp4 rose/vert visible + loop, comme le GIF */
+    /* GLOBAL PRODUCERS CUP FINAL : ./latbien.mp4 rose/vert visible + loop, comme le GIF */
     :root {
       --fond-video-bg: #ff00ff;
     }
@@ -4861,7 +4861,7 @@
     }
 
   
-    /* GLOBAL PRODUCERS CUP : ././latbien.mp4 plein écran 100%, sans crop, loop partout */
+    /* GLOBAL PRODUCERS CUP : ./latbien.mp4 plein écran 100%, sans crop, loop partout */
     :root {
       --fond-video-bg: #ff00ff;
     }
@@ -4958,7 +4958,7 @@
     }
 
   
-/* GLOBAL PRODUCERS CUP : audit responsive final RULES + ././latbien.mp4 */
+/* GLOBAL PRODUCERS CUP : audit responsive final RULES + ./latbien.mp4 */
 :root {
   --fond-video-bg: #ff00ff;
   --rules-desktop-font: clamp(16px, 1.42vw, 21px);
@@ -5199,267 +5199,84 @@ body {
   }
 }
   
-/* GLOBAL PRODUCERS CUP : vidéo stable et fluide au scroll, tous écrans */
+/* FIX FINAL : RULES scrollable, taille d'origine, seulement un peu plus bas */
 :root {
   --fond-video-bg: #ff00ff;
-  --site-fixed-vh: 100vh;
-  --site-fixed-vw: 100vw;
-  --rules-desktop-font: clamp(16px, 1.42vw, 21px);
-  --rules-desktop-line: 1.20;
-  --rules-desktop-bottom-anchor: clamp(128px, 20vh, 230px);
-  --rules-desktop-anchor-height: clamp(150px, 20vh, 218px);
-  --rules-mobile-top: 62vh;
-  --rules-mobile-height: 24vh;
-  --rules-mobile-bottom: 12vh;
+  --magicbox-down-small: clamp(8px, 1.8vh, 18px);
 }
 
-html {
+html,
+body {
   background: var(--fond-video-bg) !important;
   overflow-x: hidden !important;
-  overscroll-behavior-x: none !important;
-}
-
-body {
-  background: transparent !important;
-  overflow-x: hidden !important;
-  overscroll-behavior-x: none !important;
-  -webkit-font-smoothing: antialiased !important;
-  text-rendering: geometricPrecision !important;
 }
 
 .gif-bg,
 .intro-gif {
   background-image: none !important;
   background-color: var(--fond-video-bg) !important;
-  z-index: 0 !important;
 }
 
 #fondVideo.video-bg,
 #introVideo.intro-video {
   position: fixed !important;
-  left: 0 !important;
-  top: 0 !important;
-  right: auto !important;
-  bottom: auto !important;
-  width: var(--site-fixed-vw) !important;
-  height: var(--site-fixed-vh) !important;
-  min-width: var(--site-fixed-vw) !important;
-  min-height: var(--site-fixed-vh) !important;
-  max-width: none !important;
-  max-height: none !important;
+  inset: 0 !important;
+  width: 100vw !important;
+  height: 100vh !important;
+  min-width: 100vw !important;
+  min-height: 100vh !important;
   object-fit: fill !important;
   object-position: center center !important;
-  background: var(--fond-video-bg) !important;
   opacity: 1 !important;
   visibility: visible !important;
   display: block !important;
   pointer-events: none !important;
   z-index: 1 !important;
-  transform: translateZ(0) !important;
-  -webkit-transform: translateZ(0) !important;
-  transform-origin: 50% 50% !important;
+  transform: translate3d(0, 0, 0) !important;
   backface-visibility: hidden !important;
   -webkit-backface-visibility: hidden !important;
-  will-change: auto !important;
-  contain: strict !important;
-  isolation: isolate !important;
 }
 
 #introVideo.intro-video {
   display: none !important;
-  z-index: 1 !important;
 }
 
 .overlay {
   position: relative !important;
   z-index: 2 !important;
   background: transparent !important;
-  min-height: var(--site-fixed-vh) !important;
-  transform: translateZ(0) !important;
-  -webkit-transform: translateZ(0) !important;
 }
 
-/* Ordinateur : RULES plus petit, bas du texte ancré */
-@media screen and (min-width: 769px) {
-  #apropos {
-    position: fixed !important;
-    left: 50% !important;
-    top: auto !important;
-    bottom: var(--rules-desktop-bottom-anchor) !important;
-    transform: translate3d(-50%, 0, 0) !important;
-    width: min(900px, calc(100vw - 48px)) !important;
-    max-width: min(900px, calc(100vw - 48px)) !important;
-    padding: 0 20px !important;
-    box-sizing: border-box !important;
-  }
-
-  #apropos.active {
-    display: flex !important;
-    align-items: flex-end !important;
-    justify-content: center !important;
-  }
-
-  #apropos .card {
-    height: var(--rules-desktop-anchor-height) !important;
-    min-height: var(--rules-desktop-anchor-height) !important;
-    padding: 0 25px !important;
-    margin: 0 auto !important;
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: center !important;
-    justify-content: flex-end !important;
-    box-sizing: border-box !important;
-  }
-
-  #apropos h1 {
-    font-size: var(--rules-desktop-font) !important;
-    line-height: var(--rules-desktop-line) !important;
-    margin: 0 !important;
-    max-width: min(820px, calc(100vw - 96px)) !important;
-    text-align: center !important;
-  }
-}
-
-@media screen and (min-width: 769px) and (max-height: 760px) {
-  :root {
-    --rules-desktop-font: clamp(14px, 1.45vw, 18px);
-    --rules-desktop-bottom-anchor: clamp(92px, 16vh, 150px);
-    --rules-desktop-anchor-height: clamp(126px, 18vh, 170px);
-  }
-
-  #apropos h1 {
-    line-height: 1.15 !important;
-  }
-}
-
-@media screen and (min-width: 1600px) {
-  :root {
-    --rules-desktop-font: clamp(18px, 1.18vw, 23px);
-    --rules-desktop-bottom-anchor: clamp(150px, 19vh, 260px);
-  }
-}
-
-/* Smartphone : vidéo déformée plein écran mais hauteur stabilisée, donc elle ne tremble plus au scroll */
 @media screen and (max-width: 768px) {
-  html,
-  body {
-    overscroll-behavior-y: none !important;
-  }
-
-  #fondVideo.video-bg,
-  #introVideo.intro-video {
-    width: var(--site-fixed-vw) !important;
-    height: var(--site-fixed-vh) !important;
-    min-height: var(--site-fixed-vh) !important;
-    object-fit: fill !important;
-    object-position: center center !important;
-    transform: translateZ(0) !important;
-    -webkit-transform: translateZ(0) !important;
-  }
-
-  .overlay {
-    min-height: var(--site-fixed-vh) !important;
-    padding-bottom: env(safe-area-inset-bottom) !important;
-  }
-
-  #apropos {
-    position: fixed !important;
-    left: 50% !important;
-    top: var(--rules-mobile-top) !important;
-    bottom: auto !important;
-    height: var(--rules-mobile-height) !important;
-    min-height: 108px !important;
-    max-height: calc(var(--site-fixed-vh) - var(--rules-mobile-bottom) - 128px) !important;
-    width: min(calc(100vw - 24px), 520px) !important;
-    max-width: min(calc(100vw - 24px), 520px) !important;
-    padding: clamp(12px, 2.8vw, 20px) 12px !important;
-    margin: 0 !important;
-    transform: translate3d(-50%, 0, 0) !important;
-    box-sizing: border-box !important;
-    overflow-y: auto !important;
-    overflow-x: hidden !important;
-    -webkit-overflow-scrolling: touch !important;
-    overscroll-behavior: contain !important;
-    z-index: 16000 !important;
-    scrollbar-width: none !important;
-  }
-
-  #apropos::-webkit-scrollbar {
-    display: none !important;
-  }
-
-  #apropos.active {
-    display: block !important;
-    pointer-events: auto !important;
-  }
-
-  #apropos .card {
-    width: 100% !important;
-    max-width: 100% !important;
-    margin: 0 auto !important;
-    padding: 0 !important;
-    box-sizing: border-box !important;
-  }
-
-  #apropos h1 {
-    font-size: clamp(12px, 3.05vw, 17px) !important;
-    line-height: 1.16 !important;
-    margin: 0 !important;
-    padding: 0 !important;
-    text-align: center !important;
-  }
-}
-
-@media screen and (max-width: 390px) and (orientation: portrait) {
-  #apropos h1 {
-    font-size: clamp(11px, 3.15vw, 14px) !important;
-    line-height: 1.14 !important;
-  }
-}
-
-@media screen and (max-width: 900px) and (max-height: 500px) and (orientation: landscape) {
-  #apropos {
-    top: var(--rules-mobile-top) !important;
-    height: var(--rules-mobile-height) !important;
-    min-height: 72px !important;
-    padding: 8px 12px !important;
-  }
-
-  #apropos h1 {
-    font-size: clamp(10px, 2.2vw, 14px) !important;
-    line-height: 1.1 !important;
-  }
-}
-  
-/* MAGICBOX : taille originale conservée, juste un peu plus basse sur smartphone */
-@media screen and (max-width: 768px) {
-  :root {
-    --magicbox-mobile-down: clamp(12px, 2.4vh, 22px);
-  }
-
   #apropos {
     position: fixed !important;
     left: 50% !important;
     top: var(--magicbox-top, 60dvh) !important;
     bottom: auto !important;
+
+    /* Taille ancienne de la magicbox : on ne l'agrandit plus */
     height: var(--magicbox-height, calc(100dvh - 60dvh - 205px - env(safe-area-inset-bottom))) !important;
     min-height: 96px !important;
     max-height: none !important;
+
     width: calc(100vw - 24px) !important;
     max-width: calc(100vw - 24px) !important;
     padding: 30px 12px 30px 12px !important;
     margin: 0 !important;
-    transform: translate3d(-50%, var(--magicbox-mobile-down), 0) !important;
+
+    /* On descend un peu sans changer la taille */
+    transform: translate3d(-50%, var(--magicbox-down-small), 0) !important;
+
     box-sizing: border-box !important;
     overflow-y: auto !important;
     overflow-x: hidden !important;
     -webkit-overflow-scrolling: touch !important;
     overscroll-behavior: contain !important;
-    contain: layout paint style !important;
-    backface-visibility: hidden !important;
-    will-change: transform !important;
+    touch-action: pan-y !important;
+    pointer-events: auto !important;
     z-index: 16000 !important;
     scrollbar-width: none !important;
+    contain: layout paint style !important;
   }
 
   #apropos::-webkit-scrollbar {
@@ -5477,7 +5294,6 @@ body {
     margin: 0 auto !important;
     padding: 0 !important;
     box-sizing: border-box !important;
-    contain: paint !important;
     transform: translateZ(0) !important;
   }
 
@@ -5487,6 +5303,14 @@ body {
     margin: 0 !important;
     padding: 0 !important;
     text-align: center !important;
+    pointer-events: auto !important;
+  }
+
+  #fondVideo.video-bg,
+  #introVideo.intro-video {
+    height: 100vh !important;
+    min-height: 100vh !important;
+    object-fit: fill !important;
   }
 }
 
@@ -5495,17 +5319,12 @@ body {
     #apropos {
       height: var(--magicbox-height, calc(100dvh - 60dvh - 205px - env(safe-area-inset-bottom))) !important;
     }
-  }
-}
 
-@media screen and (max-width: 430px) and (min-height: 760px) {
-  #apropos {
-    transform: translate3d(-50%, clamp(10px, 2vh, 18px), 0) !important;
-  }
-
-  #apropos h1 {
-    font-size: clamp(15px, 4.6vw, 21px) !important;
-    line-height: 1.22 !important;
+    #fondVideo.video-bg,
+    #introVideo.intro-video {
+      height: 100dvh !important;
+      min-height: 100dvh !important;
+    }
   }
 }
 
@@ -5514,7 +5333,7 @@ body {
     top: var(--magicbox-top, 50dvh) !important;
     height: var(--magicbox-height, calc(100dvh - 50dvh - 120px - env(safe-area-inset-bottom))) !important;
     min-height: 78px !important;
-    padding: 30px 12px 30px 12px !important;
+    padding: 24px 10px 24px 10px !important;
     transform: translate3d(-50%, 8px, 0) !important;
   }
 
@@ -5534,13 +5353,13 @@ body {
       and headphones please/</span>
     <div id="introGif" class="intro-gif"></div>
 <video id="introVideo" class="intro-video" autoplay muted loop playsinline webkit-playsinline preload="auto">
-  <source src="././latbien.mp4" type="video/mp4">
+  <source src="./latbien.mp4" type="video/mp4">
 </video>
 </div>
 
   <div class="gif-bg"></div>
 <video id="fondVideo" class="video-bg" autoplay muted loop playsinline webkit-playsinline preload="auto">
-  <source src="././latbien.mp4" type="video/mp4">
+  <source src="./latbien.mp4" type="video/mp4">
 </video>
 
   <div id="volumeTextWhiteGlow" class="volume-white-glow-layer"></div>
@@ -6560,6 +6379,33 @@ body {
 
     document.addEventListener("click", lancerBlobalMp4EnBoucle, { once: true });
     document.addEventListener("touchstart", lancerBlobalMp4EnBoucle, { once: true });
+  })();
+</script>
+
+<script>
+  (function() {
+    function debloquerScrollRules() {
+      const box = document.getElementById("apropos");
+      if (!box || box.dataset.scrollRulesOk) return;
+
+      box.dataset.scrollRulesOk = "1";
+      box.style.overflowY = "auto";
+      box.style.webkitOverflowScrolling = "touch";
+      box.style.touchAction = "pan-y";
+      box.style.pointerEvents = "auto";
+
+      box.addEventListener("touchmove", function(event) {
+        event.stopPropagation();
+      }, { passive: true });
+
+      box.addEventListener("wheel", function(event) {
+        event.stopPropagation();
+      }, { passive: true });
+    }
+
+    window.addEventListener("DOMContentLoaded", debloquerScrollRules);
+    window.addEventListener("load", debloquerScrollRules);
+    window.addEventListener("pageshow", debloquerScrollRules);
   })();
 </script>
 </body>
