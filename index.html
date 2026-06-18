@@ -7315,11 +7315,9 @@ body {
         basFinal - topAncre
       );
 
-      const hauteurPetite = Math.round(clamp(
-        hauteurGrande * 0.50,
-        paysage ? 42 : 56,
-        paysage ? 76 : 82
-      ));
+      /* Hauteur de départ = exactement la moitié de la hauteur finale.
+         Le haut reste fixe, donc la box s'agrandit uniquement vers le bas. */
+      const hauteurPetite = Math.round(hauteurGrande * 0.50);
 
       hauteurCible = Math.round(hauteurPetite + (hauteurGrande - hauteurPetite) * p);
 
