@@ -8362,6 +8362,168 @@ body {
     }
   }
 </style>
+<style id="gpc-intro-black-sequence-restored-final">
+  /*
+    INTRO BLACK SEQUENCE RESTORED
+    Overlay final indépendant : copyright -> disclaimer -> <3 -> site.
+    Il protège la séquence contre les anciens scripts qui cachent #introPage trop tôt.
+  */
+
+  #gpcIntroSequenceFinal {
+    position: fixed !important;
+    inset: 0 !important;
+    width: 100vw !important;
+    height: 100dvh !important;
+    min-height: 100dvh !important;
+    background: #000000 !important;
+    color: #ffffff !important;
+    z-index: 2147483647 !important;
+    display: none;
+    justify-content: center !important;
+    align-items: center !important;
+    text-align: center !important;
+    padding: 22px !important;
+    box-sizing: border-box !important;
+    overflow: hidden !important;
+    pointer-events: auto !important;
+  }
+
+  #gpcIntroSequenceFinal.gpc-intro-visible {
+    display: flex !important;
+  }
+
+  #gpcIntroSequenceFinal.gpc-intro-hidden {
+    display: none !important;
+    pointer-events: none !important;
+  }
+
+  #gpcIntroSequenceFinalText {
+    display: block !important;
+    max-width: min(92vw, 920px) !important;
+    color: #ffffff !important;
+    font-family: Arial, Helvetica, sans-serif !important;
+    font-size: clamp(20px, 4.3vw, 34px) !important;
+    font-weight: 800 !important;
+    line-height: 1.22 !important;
+    white-space: pre-line !important;
+    text-align: center !important;
+    letter-spacing: 0.01em !important;
+    text-shadow:
+      0 0 4px #ffffff,
+      0 0 10px rgba(255,255,255,.72),
+      0 0 18px rgba(255,255,255,.38) !important;
+    opacity: 1 !important;
+    transform: translate3d(0, 0, 0) !important;
+  }
+
+  @media screen and (max-width: 768px) {
+    #gpcIntroSequenceFinal {
+      height: var(--gpc-ih, 100dvh) !important;
+      min-height: var(--gpc-ih, 100dvh) !important;
+      padding: calc(22px + env(safe-area-inset-top)) 20px calc(22px + env(safe-area-inset-bottom)) 20px !important;
+    }
+
+    #gpcIntroSequenceFinalText {
+      font-size: clamp(20px, 6.2vw, 30px) !important;
+      max-width: 94vw !important;
+    }
+  }
+
+  @supports (-webkit-touch-callout: none) {
+    @media screen and (max-width: 768px) {
+      #gpcIntroSequenceFinal {
+        height: var(--gpc-ih, 100svh) !important;
+        min-height: var(--gpc-ih, 100svh) !important;
+      }
+    }
+  }
+</style>
+<style id="gpc-rules-hier-size-position-final">
+  /*
+    BOX RULES POSITION/TAILLE HIER SOIR
+    Remet la box mobile sur l'ancrage et la hauteur de l'effet parfait :
+    top ≈ 54.5% + légère descente, bas collé au-dessus du lecteur audio.
+  */
+  @media screen and (max-width: 768px) {
+    html.gpc-rules-hier-active,
+    html.gpc-rules-hier-active body {
+      min-height: calc(var(--gpc-ih, 100dvh) + var(--rules-page-scroll-extra, 520px)) !important;
+      overflow-y: auto !important;
+      -webkit-overflow-scrolling: touch !important;
+    }
+
+    html.gpc-rules-hier-active #apropos.active {
+      position: fixed !important;
+      left: 50% !important;
+      top: var(--rules-hier-top, 56vh) !important;
+      bottom: auto !important;
+      width: calc(100vw - 24px) !important;
+      max-width: calc(100vw - 24px) !important;
+      height: var(--rules-hier-height, calc(100dvh - 56vh - 190px)) !important;
+      min-height: 112px !important;
+      max-height: none !important;
+      margin: 0 !important;
+      padding: 22px 13px !important;
+      box-sizing: border-box !important;
+      overflow-y: auto !important;
+      overflow-x: hidden !important;
+      -webkit-overflow-scrolling: touch !important;
+      overscroll-behavior: contain !important;
+      touch-action: pan-y pinch-zoom !important;
+      pointer-events: auto !important;
+      scrollbar-width: thin !important;
+      z-index: 16000 !important;
+      transform: translate3d(-50%, var(--rules-hier-float, 0px), 0) !important;
+      will-change: transform, top, height !important;
+      contain: layout paint style !important;
+      backface-visibility: hidden !important;
+      -webkit-backface-visibility: hidden !important;
+      transform-style: preserve-3d !important;
+    }
+
+    html.gpc-rules-hier-active #apropos.active .card {
+      width: 100% !important;
+      max-width: 100% !important;
+      margin: 0 auto !important;
+      padding: 0 !important;
+      box-sizing: border-box !important;
+      transform: translateZ(0) !important;
+      pointer-events: auto !important;
+    }
+
+    html.gpc-rules-hier-active #apropos.active h1 {
+      max-width: 100% !important;
+      font-size: clamp(15px, 4.6vw, 21px) !important;
+      line-height: 1.22 !important;
+      margin: 0 !important;
+      padding: 0 !important;
+      text-align: center !important;
+      pointer-events: auto !important;
+    }
+  }
+
+  @media screen and (max-width: 430px) {
+    html.gpc-rules-hier-active #apropos.active {
+      width: calc(100vw - 22px) !important;
+      max-width: calc(100vw - 22px) !important;
+      padding: 21px 12px !important;
+    }
+  }
+
+  @media screen and (max-width: 900px) and (max-height: 500px) and (orientation: landscape) {
+    html.gpc-rules-hier-active #apropos.active {
+      width: min(92vw, 680px) !important;
+      max-width: min(92vw, 680px) !important;
+      min-height: 82px !important;
+      padding: 18px 10px !important;
+    }
+
+    html.gpc-rules-hier-active #apropos.active h1 {
+      font-size: clamp(10px, 3.35vw, 13px) !important;
+      line-height: 1.12 !important;
+    }
+  }
+</style>
 </head>
 
 <body>
@@ -10209,6 +10371,418 @@ body {
     calcGmailAnchor();
     bindRulesScroll();
     setTimeout(function() { calcRules(true); calcGmailAnchor(); }, 650);
+  })();
+</script>
+<script id="gpc-intro-black-sequence-restored-script-final">
+  (function() {
+    "use strict";
+
+    let started = false;
+    const timers = [];
+
+    function $(id) {
+      return document.getElementById(id);
+    }
+
+    function setLater(fn, ms) {
+      const t = setTimeout(fn, ms);
+      timers.push(t);
+      return t;
+    }
+
+    function viewport() {
+      const h = Math.max(320, Math.round(window.innerHeight || document.documentElement.clientHeight || screen.height || 720));
+      const w = Math.max(240, Math.round(window.innerWidth || document.documentElement.clientWidth || screen.width || 390));
+      document.documentElement.style.setProperty("--gpc-ih", h + "px");
+      document.documentElement.style.setProperty("--gpc-iw", w + "px");
+    }
+
+    function hideOldIntroLayers() {
+      ["copyrightIntroPage", "introPage", "introGif", "introVideo"].forEach(function(id) {
+        const node = $(id);
+        if (!node) return;
+        if (id === "introVideo") {
+          try { node.pause(); } catch (e) {}
+        }
+        node.style.display = "none";
+        node.style.opacity = "0";
+        node.style.visibility = "hidden";
+        node.style.pointerEvents = "none";
+      });
+    }
+
+    function menu(show) {
+      const nav = $("menuPrincipal");
+      const audioBox = document.querySelector(".audio-box");
+      if (nav) nav.style.display = show ? "" : "none";
+      if (audioBox) audioBox.style.display = show ? "block" : "none";
+    }
+
+    function ensureOverlay() {
+      let overlay = $("gpcIntroSequenceFinal");
+      if (!overlay) {
+        overlay = document.createElement("div");
+        overlay.id = "gpcIntroSequenceFinal";
+        overlay.setAttribute("aria-hidden", "true");
+
+        const text = document.createElement("div");
+        text.id = "gpcIntroSequenceFinalText";
+        overlay.appendChild(text);
+
+        document.body.appendChild(overlay);
+      }
+      return overlay;
+    }
+
+    function textNode() {
+      const overlay = ensureOverlay();
+      let text = $("gpcIntroSequenceFinalText");
+      if (!text) {
+        text = document.createElement("div");
+        text.id = "gpcIntroSequenceFinalText";
+        overlay.appendChild(text);
+      }
+      return text;
+    }
+
+    function showText(txt) {
+      viewport();
+      hideOldIntroLayers();
+      menu(false);
+
+      const overlay = ensureOverlay();
+      const text = textNode();
+
+      overlay.classList.remove("gpc-intro-hidden");
+      overlay.classList.add("gpc-intro-visible");
+      text.textContent = txt;
+    }
+
+    function enterSite() {
+      const overlay = ensureOverlay();
+      overlay.classList.remove("gpc-intro-visible");
+      overlay.classList.add("gpc-intro-hidden");
+
+      hideOldIntroLayers();
+      document.documentElement.classList.add("gpc-site-ready");
+      document.documentElement.classList.remove("gpc-intro-stage-text", "gpc-intro-stage-video");
+      menu(true);
+
+      const video = $("fondVideo");
+      if (video) {
+        video.muted = true;
+        video.loop = true;
+        video.playsInline = true;
+        video.setAttribute("playsinline", "");
+        video.setAttribute("webkit-playsinline", "");
+        video.setAttribute("muted", "");
+        video.setAttribute("preload", "metadata");
+        const playPromise = video.play();
+        if (playPromise && playPromise.catch) playPromise.catch(function() {});
+      }
+    }
+
+    function startIntro() {
+      if (started) return;
+      started = true;
+
+      timers.forEach(clearTimeout);
+      timers.length = 0;
+
+      document.documentElement.classList.remove("gpc-site-ready");
+      viewport();
+      showText("© 2026 catdezoo<3. all rights reserved.");
+
+      setLater(function() {
+        showText("⚠. -no epilepsy please,\nand headphones please/");
+      }, 2600);
+
+      setLater(function() {
+        showText("<3");
+      }, 5200);
+
+      setLater(enterSite, 7200);
+    }
+
+    window.addEventListener("resize", viewport, { passive: true });
+    window.addEventListener("orientationchange", function() {
+      setLater(viewport, 80);
+      setLater(viewport, 360);
+    }, { passive: true });
+
+    window.addEventListener("pageshow", function(event) {
+      viewport();
+      if (event && event.persisted) {
+        enterSite();
+      }
+    }, { passive: true });
+
+    if (document.readyState === "loading") {
+      document.addEventListener("DOMContentLoaded", startIntro, { once: true, passive: true });
+    } else {
+      startIntro();
+    }
+  })();
+</script>
+<script id="gpc-rules-hier-size-position-script-final">
+  (function() {
+    "use strict";
+
+    const root = document.documentElement;
+    const oldAfficherSection = window.afficherSection;
+
+    let largeurStable = 0;
+    let hauteurStable = 0;
+    let orientationStable = "";
+
+    let topActuel = null;
+    let topCible = null;
+    let hauteurActuelle = null;
+    let hauteurCible = null;
+
+    let floatActuel = 0;
+    let floatCible = 0;
+    let dernierScrollY = window.scrollY || 0;
+    let dernierBoxScroll = 0;
+    let raf = null;
+    let retourTimer = null;
+
+    function el(id) {
+      return document.getElementById(id);
+    }
+
+    function box() {
+      return el("apropos");
+    }
+
+    function mobile() {
+      return (window.innerWidth || document.documentElement.clientWidth || 390) <= 768;
+    }
+
+    function active() {
+      const b = box();
+      return !!(b && b.classList.contains("active"));
+    }
+
+    function clamp(v, min, max) {
+      return Math.max(min, Math.min(max, v));
+    }
+
+    function dimensions(force) {
+      const w = Math.round(window.innerWidth || document.documentElement.clientWidth || 390);
+      const h = Math.round(window.innerHeight || document.documentElement.clientHeight || screen.height || 760);
+      const orientation = w > h ? "landscape" : "portrait";
+      const largeurChange = Math.abs(w - largeurStable) > 24;
+      const orientationChange = orientation !== orientationStable;
+
+      if (force || !largeurStable || largeurChange || orientationChange) {
+        largeurStable = w;
+        hauteurStable = h;
+        orientationStable = orientation;
+      }
+
+      const ws = largeurStable || w;
+      const hs = hauteurStable || h;
+
+      return {
+        w: ws,
+        h: hs,
+        paysage: ws <= 900 && hs <= 500 && window.matchMedia("(orientation: landscape)").matches
+      };
+    }
+
+    function topLecteurMedia() {
+      const d = dimensions(false);
+      const lecteur = document.querySelector(".audio-box");
+
+      if (lecteur) {
+        const rect = lecteur.getBoundingClientRect();
+        if (rect && rect.top > 0 && rect.top < d.h) {
+          return rect.top;
+        }
+      }
+
+      return d.h - 170;
+    }
+
+    function appliquer() {
+      const b = box();
+      if (!b) return;
+      b.style.setProperty("--rules-hier-top", topActuel.toFixed(2) + "px");
+      b.style.setProperty("--rules-hier-height", hauteurActuelle.toFixed(2) + "px");
+      b.style.setProperty("--rules-hier-float", floatActuel.toFixed(2) + "px");
+    }
+
+    function calculer(force) {
+      const b = box();
+
+      if (!mobile() || !b || !active()) {
+        root.classList.remove("gpc-rules-hier-active");
+        root.classList.remove("rules-page-scroll-mode");
+        root.style.removeProperty("--rules-page-scroll-extra");
+        if (b) {
+          b.style.removeProperty("--rules-hier-top");
+          b.style.removeProperty("--rules-hier-height");
+          b.style.removeProperty("--rules-hier-float");
+        }
+        topActuel = null;
+        topCible = null;
+        hauteurActuelle = null;
+        hauteurCible = null;
+        floatActuel = 0;
+        floatCible = 0;
+        raf = null;
+        return;
+      }
+
+      const d = dimensions(!!force);
+      const extra = d.paysage ? 320 : 520;
+      root.style.setProperty("--rules-page-scroll-extra", extra + "px");
+      root.classList.add("gpc-rules-hier-active");
+      root.classList.add("rules-page-scroll-mode");
+
+      const descenteLegere = d.paysage ? 8 : clamp(Math.round(d.h * 0.018), 10, 18);
+      const topAncre = Math.round(d.h * (d.paysage ? 0.42 : 0.545) + descenteLegere);
+      const margeLecteur = d.paysage ? 5 : 6;
+      const basFinal = Math.round(topLecteurMedia() - margeLecteur);
+      const hauteurGrande = Math.max(d.paysage ? 82 : 112, basFinal - topAncre);
+
+      topCible = topAncre;
+      hauteurCible = hauteurGrande;
+
+      if (topActuel === null || force) {
+        topActuel = topCible;
+        hauteurActuelle = hauteurCible;
+      }
+
+      appliquer();
+      lancer();
+    }
+
+    function retourSouple() {
+      clearTimeout(retourTimer);
+      retourTimer = setTimeout(function() {
+        floatCible = 0;
+        lancer();
+      }, 140);
+    }
+
+    function impulsionPage() {
+      if (!mobile() || !active()) return;
+      const y = window.scrollY || document.documentElement.scrollTop || 0;
+      const dy = y - dernierScrollY;
+      dernierScrollY = y;
+
+      if (Math.abs(dy) > 0.2) {
+        floatCible = clamp(floatCible + dy * 0.065, -18, 18);
+        retourSouple();
+        lancer();
+      }
+    }
+
+    function impulsionBox() {
+      const b = box();
+      if (!b || !mobile() || !active()) return;
+
+      const y = b.scrollTop || 0;
+      const dy = y - dernierBoxScroll;
+      dernierBoxScroll = y;
+
+      if (Math.abs(dy) > 0.25) {
+        floatCible = clamp(floatCible + dy * 0.035, -14, 14);
+        retourSouple();
+        lancer();
+      }
+    }
+
+    function lancer() {
+      if (!raf) raf = requestAnimationFrame(animer);
+    }
+
+    function animer() {
+      const b = box();
+      if (!mobile() || !b || !active() || topCible === null || hauteurCible === null) {
+        raf = null;
+        return;
+      }
+
+      const douceurPosition = 0.024;
+      const douceurFloat = 0.040;
+      const stop = 0.035;
+
+      const dt = topCible - topActuel;
+      const dh = hauteurCible - hauteurActuelle;
+      const df = floatCible - floatActuel;
+
+      topActuel = Math.abs(dt) < stop ? topCible : topActuel + dt * douceurPosition;
+      hauteurActuelle = Math.abs(dh) < stop ? hauteurCible : hauteurActuelle + dh * douceurPosition;
+      floatActuel = Math.abs(df) < stop ? floatCible : floatActuel + df * douceurFloat;
+
+      appliquer();
+
+      if (Math.abs(dt) > stop || Math.abs(dh) > stop || Math.abs(df) > stop) {
+        raf = requestAnimationFrame(animer);
+      } else {
+        raf = null;
+      }
+    }
+
+    function brancherScrollBox() {
+      const b = box();
+      if (!b || b.dataset.rulesHierOk) return;
+      b.dataset.rulesHierOk = "1";
+      b.addEventListener("scroll", impulsionBox, { passive: true });
+      b.addEventListener("touchmove", impulsionBox, { passive: true });
+      b.addEventListener("wheel", impulsionBox, { passive: true });
+    }
+
+    window.afficherSection = function(id) {
+      if (typeof oldAfficherSection === "function") oldAfficherSection(id);
+
+      if (id === "apropos") {
+        topActuel = null;
+        hauteurActuelle = null;
+        floatActuel = 0;
+        floatCible = 0;
+        dernierBoxScroll = 0;
+        window.scrollTo({ top: 0, left: 0, behavior: "auto" });
+        setTimeout(function() { calculer(true); brancherScrollBox(); }, 45);
+        setTimeout(function() { floatCible = 10; retourSouple(); lancer(); }, 100);
+        setTimeout(function() { calculer(false); }, 240);
+      } else {
+        setTimeout(function() { calculer(false); }, 60);
+      }
+    };
+
+    window.addEventListener("scroll", function() {
+      calculer(false);
+      impulsionPage();
+    }, { passive: true });
+
+    window.addEventListener("resize", function() {
+      calculer(false);
+    }, { passive: true });
+
+    window.addEventListener("orientationchange", function() {
+      setTimeout(function() { calculer(true); }, 120);
+      setTimeout(function() { calculer(true); }, 420);
+    }, { passive: true });
+
+    window.addEventListener("pageshow", function() {
+      setTimeout(function() { calculer(true); brancherScrollBox(); }, 120);
+    }, { passive: true });
+
+    document.addEventListener("click", function(event) {
+      const texte = event.target && event.target.textContent ? event.target.textContent.trim() : "";
+      if (texte === "RULES") {
+        setTimeout(function() { calculer(true); brancherScrollBox(); }, 45);
+        setTimeout(function() { floatCible = 10; retourSouple(); lancer(); }, 100);
+        setTimeout(function() { calculer(false); }, 240);
+      }
+    }, { passive: true });
+
+    brancherScrollBox();
+    setTimeout(function() { calculer(true); }, 500);
   })();
 </script>
 </body>
