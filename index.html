@@ -26,6 +26,86 @@
 <style id="gpc-fusee-ultra-speed-final">@media screen and (min-width:769px){.paris-timer{top:max(2px,calc(clamp(66px,11.4dvh,142px) - clamp(38px,4.25vw,70px) - 60px - 180px)) !important;font-size:clamp(46px,5.45vw,84px) !important;transform:translate3d(-50%,0,0) !important;will-change:auto !important}}@media screen and (min-width:1400px) and (min-height:820px){.paris-timer{top:max(2px,calc(clamp(76px,10.8dvh,154px) - clamp(40px,4vw,72px) - 60px - 180px)) !important;font-size:clamp(48px,5.1vw,86px) !important}}@media screen and (min-width:769px) and (max-width:1050px),screen and (min-width:769px) and (max-height:760px){.paris-timer{top:max(2px,calc(clamp(48px,10.8dvh,92px) - clamp(28px,3.25vw,46px) - 60px - 180px)) !important;font-size:clamp(36px,4.25vw,61px) !important}}.page-section:not(.active){display:none !important;content-visibility:hidden !important;pointer-events:none !important}#fondVideo,.video-bg{pointer-events:none !important;will-change:auto !important;contain:layout paint style !important}#apropos.gpc-starthere-mode h1{text-align:center !important;white-space:normal !important;word-break:normal !important;overflow-wrap:anywhere !important;font-size:var(--gpc-rules-font-size-lock,inherit) !important;line-height:var(--gpc-rules-line-height-lock,inherit) !important;letter-spacing:var(--gpc-rules-letter-spacing-lock,inherit) !important}@media screen and (max-width:768px){html,body{text-rendering:optimizeSpeed !important}#introVideo,#introGif,.intro-gif,.volume-white-glow-layer{display:none !important;opacity:0 !important;visibility:hidden !important;pointer-events:none !important}nav,.paris-timer,.audio-box,#apropos,#contact{backface-visibility:hidden !important;-webkit-backface-visibility:hidden !important}#volumeTextWhiteGlow,#volumeThumbWhiteGlow{display:none !important}}</style>
 <link rel="preload" href="./téma.mp4" as="video" type="video/mp4">
 <style id="gpc-video-mp4-antifreeze-final">#fondVideo.gpc-video-bg,#fondVideo.video-bg{position:fixed!important;left:0!important;top:0!important;width:100vw!important;height:100vh!important;min-width:100vw!important;min-height:100vh!important;max-width:none!important;max-height:none!important;object-fit:fill!important;object-position:center center!important;background:#ff00ff!important;z-index:0!important;pointer-events:none!important;user-select:none!important;-webkit-user-select:none!important;transform:translate3d(0,0,0)!important;backface-visibility:hidden!important;-webkit-backface-visibility:hidden!important;contain:paint!important;will-change:auto!important}html.gpc-site-ready #fondVideo.gpc-video-bg{display:block!important;visibility:visible!important;opacity:1!important}@supports (height:100dvh){#fondVideo.gpc-video-bg,#fondVideo.video-bg{height:100dvh!important;min-height:100dvh!important}}@supports (-webkit-touch-callout:none){#fondVideo.gpc-video-bg,#fondVideo.video-bg{height:var(--gpc-ih,100svh)!important;min-height:var(--gpc-ih,100svh)!important}}@media screen and (max-width:768px){#fondVideo.gpc-video-bg,#fondVideo.video-bg{width:100vw!important;height:var(--gpc-ih,100dvh)!important;min-height:var(--gpc-ih,100dvh)!important;object-fit:fill!important;object-position:center center!important;transform:translate3d(0,0,0)!important}}@media screen and (max-width:900px) and (max-height:500px) and (orientation:landscape){#fondVideo.gpc-video-bg,#fondVideo.video-bg{width:100vw!important;height:100vh!important;object-fit:fill!important;object-position:center center!important}}</style>
+<style id="gpc-box-scroll-antifreeze-final">
+  /*
+    BOX SCROLL ANTIFREEZE
+    La box garde sa position/taille, mais le scroll devient natif/stable :
+    plus de mouvement liquide pendant le scroll, plus de recalcul continu.
+  */
+  #apropos.active {
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+    -webkit-overflow-scrolling: touch !important;
+    overscroll-behavior: contain !important;
+    touch-action: pan-y pinch-zoom !important;
+    scroll-behavior: auto !important;
+    scrollbar-gutter: stable both-edges !important;
+    contain: layout paint style !important;
+    will-change: auto !important;
+  }
+
+  #apropos.active .card,
+  #apropos.active h1 {
+    transform: translateZ(0) !important;
+    backface-visibility: hidden !important;
+    -webkit-backface-visibility: hidden !important;
+    will-change: auto !important;
+  }
+
+  @media screen and (min-width: 769px) {
+    #apropos.active {
+      transform: translate3d(-50%, 0, 0) !important;
+      max-height: var(--gpc-box-desktop-height, var(--ordi-rules-fixed-height, clamp(78px, 13dvh, 132px))) !important;
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    html.gpc-box-static-scroll,
+    html.gpc-box-static-scroll body {
+      overscroll-behavior-y: auto !important;
+      -webkit-overflow-scrolling: touch !important;
+    }
+
+    html.gpc-box-static-scroll #apropos.active {
+      position: fixed !important;
+      left: 50% !important;
+      top: var(--rules-hier-top, 56vh) !important;
+      bottom: auto !important;
+      width: calc(100vw - 24px) !important;
+      max-width: calc(100vw - 24px) !important;
+      height: var(--rules-hier-height, calc(100dvh - 56vh - 190px)) !important;
+      min-height: 112px !important;
+      max-height: none !important;
+      margin: 0 !important;
+      padding: 22px 13px !important;
+      transform: translate3d(-50%, 0, 0) !important;
+      animation: none !important;
+      transition: none !important;
+      pointer-events: auto !important;
+      z-index: 16000 !important;
+      scroll-padding-top: clamp(28px, 8vw, 42px) !important;
+      scroll-padding-bottom: clamp(42px, 12vw, 68px) !important;
+    }
+  }
+
+  @media screen and (max-width: 430px) {
+    html.gpc-box-static-scroll #apropos.active {
+      width: calc(100vw - 22px) !important;
+      max-width: calc(100vw - 22px) !important;
+      padding: 21px 12px !important;
+    }
+  }
+
+  @media screen and (max-width: 900px) and (max-height: 500px) and (orientation: landscape) {
+    html.gpc-box-static-scroll #apropos.active {
+      width: min(92vw, 680px) !important;
+      max-width: min(92vw, 680px) !important;
+      min-height: 82px !important;
+      padding: 18px 10px !important;
+      height: var(--rules-hier-height, 34vh) !important;
+    }
+  }
+</style>
 </head><body>
 <video id="fondVideo" class="video-bg gpc-video-bg" autoplay muted loop playsinline webkit-playsinline preload="auto" disablepictureinpicture controlslist="nodownload noplaybackrate nofullscreen" aria-hidden="true">
   <source src="./téma.mp4" type="video/mp4">
@@ -1032,267 +1112,6 @@ PT: -pronto para uma grande competição?/<br></template>
     }
   })();
 </script>
-<script id="gpc-rules-hier-size-position-script-final">
-  (function() {
-    "use strict";
-
-    const root = document.documentElement;
-    const oldAfficherSection = window.afficherSection;
-
-    let largeurStable = 0;
-    let hauteurStable = 0;
-    let orientationStable = "";
-
-    let topActuel = null;
-    let topCible = null;
-    let hauteurActuelle = null;
-    let hauteurCible = null;
-
-    let floatActuel = 0;
-    let floatCible = 0;
-    let dernierScrollY = window.scrollY || 0;
-    let dernierBoxScroll = 0;
-    let raf = null;
-    let retourTimer = null;
-
-    function el(id) {
-      return document.getElementById(id);
-    }
-
-    function box() {
-      return el("apropos");
-    }
-
-    function mobile() {
-      return (window.innerWidth || document.documentElement.clientWidth || 390) <= 768;
-    }
-
-    function active() {
-      const b = box();
-      return !!(b && b.classList.contains("active"));
-    }
-
-    function clamp(v, min, max) {
-      return Math.max(min, Math.min(max, v));
-    }
-
-    function dimensions(force) {
-      const w = Math.round(window.innerWidth || document.documentElement.clientWidth || 390);
-      const h = Math.round(window.innerHeight || document.documentElement.clientHeight || screen.height || 760);
-      const orientation = w > h ? "landscape" : "portrait";
-      const largeurChange = Math.abs(w - largeurStable) > 24;
-      const orientationChange = orientation !== orientationStable;
-
-      if (force || !largeurStable || largeurChange || orientationChange) {
-        largeurStable = w;
-        hauteurStable = h;
-        orientationStable = orientation;
-      }
-
-      const ws = largeurStable || w;
-      const hs = hauteurStable || h;
-
-      return {
-        w: ws,
-        h: hs,
-        paysage: ws <= 900 && hs <= 500 && window.matchMedia("(orientation: landscape)").matches
-      };
-    }
-
-    function topLecteurMedia() {
-      const d = dimensions(false);
-      const lecteur = document.querySelector(".audio-box");
-
-      if (lecteur) {
-        const rect = lecteur.getBoundingClientRect();
-        if (rect && rect.top > 0 && rect.top < d.h) {
-          return rect.top;
-        }
-      }
-
-      return d.h - 170;
-    }
-
-    function appliquer() {
-      const b = box();
-      if (!b) return;
-      b.style.setProperty("--rules-hier-top", topActuel.toFixed(2) + "px");
-      b.style.setProperty("--rules-hier-height", hauteurActuelle.toFixed(2) + "px");
-      b.style.setProperty("--rules-hier-float", floatActuel.toFixed(2) + "px");
-    }
-
-    function calculer(force) {
-      const b = box();
-
-      if (!mobile() || !b || !active()) {
-        root.classList.remove("gpc-rules-hier-active");
-        root.classList.remove("rules-page-scroll-mode");
-        root.style.removeProperty("--rules-page-scroll-extra");
-        if (b) {
-          b.style.removeProperty("--rules-hier-top");
-          b.style.removeProperty("--rules-hier-height");
-          b.style.removeProperty("--rules-hier-float");
-        }
-        topActuel = null;
-        topCible = null;
-        hauteurActuelle = null;
-        hauteurCible = null;
-        floatActuel = 0;
-        floatCible = 0;
-        raf = null;
-        return;
-      }
-
-      const d = dimensions(!!force);
-      const extra = d.paysage ? 320 : 520;
-      root.style.setProperty("--rules-page-scroll-extra", extra + "px");
-      root.classList.add("gpc-rules-hier-active");
-      root.classList.add("rules-page-scroll-mode");
-
-      const descenteLegere = d.paysage ? 8 : clamp(Math.round(d.h * 0.018), 10, 18);
-      const topAncre = Math.round(d.h * (d.paysage ? 0.42 : 0.545) + descenteLegere);
-      const margeLecteur = d.paysage ? 5 : 6;
-      const basFinal = Math.round(topLecteurMedia() - margeLecteur);
-      const hauteurGrande = Math.max(d.paysage ? 82 : 112, basFinal - topAncre);
-
-      topCible = topAncre;
-      hauteurCible = hauteurGrande;
-
-      if (topActuel === null || force) {
-        topActuel = topCible;
-        hauteurActuelle = hauteurCible;
-      }
-
-      appliquer();
-      lancer();
-    }
-
-    function retourSouple() {
-      clearTimeout(retourTimer);
-      retourTimer = setTimeout(function() {
-        floatCible = 0;
-        lancer();
-      }, 140);
-    }
-
-    function impulsionPage() {
-      if (!mobile() || !active()) return;
-      const y = window.scrollY || document.documentElement.scrollTop || 0;
-      const dy = y - dernierScrollY;
-      dernierScrollY = y;
-
-      if (Math.abs(dy) > 0.2) {
-        floatCible = clamp(floatCible + dy * 0.065, -18, 18);
-        retourSouple();
-        lancer();
-      }
-    }
-
-    function impulsionBox() {
-      const b = box();
-      if (!b || !mobile() || !active()) return;
-
-      const y = b.scrollTop || 0;
-      const dy = y - dernierBoxScroll;
-      dernierBoxScroll = y;
-
-      if (Math.abs(dy) > 0.25) {
-        floatCible = clamp(floatCible + dy * 0.035, -14, 14);
-        retourSouple();
-        lancer();
-      }
-    }
-
-    function lancer() {
-      if (!raf) raf = requestAnimationFrame(animer);
-    }
-
-    function animer() {
-      const b = box();
-      if (!mobile() || !b || !active() || topCible === null || hauteurCible === null) {
-        raf = null;
-        return;
-      }
-
-      const douceurPosition = 0.024;
-      const douceurFloat = 0.040;
-      const stop = 0.035;
-
-      const dt = topCible - topActuel;
-      const dh = hauteurCible - hauteurActuelle;
-      const df = floatCible - floatActuel;
-
-      topActuel = Math.abs(dt) < stop ? topCible : topActuel + dt * douceurPosition;
-      hauteurActuelle = Math.abs(dh) < stop ? hauteurCible : hauteurActuelle + dh * douceurPosition;
-      floatActuel = Math.abs(df) < stop ? floatCible : floatActuel + df * douceurFloat;
-
-      appliquer();
-
-      if (Math.abs(dt) > stop || Math.abs(dh) > stop || Math.abs(df) > stop) {
-        raf = requestAnimationFrame(animer);
-      } else {
-        raf = null;
-      }
-    }
-
-    function brancherScrollBox() {
-      const b = box();
-      if (!b || b.dataset.rulesHierOk) return;
-      b.dataset.rulesHierOk = "1";
-      b.addEventListener("scroll", impulsionBox, { passive: true });
-      b.addEventListener("touchmove", impulsionBox, { passive: true });
-      b.addEventListener("wheel", impulsionBox, { passive: true });
-    }
-
-    window.afficherSection = function(id) {
-      if (typeof oldAfficherSection === "function") oldAfficherSection(id);
-
-      if (id === "apropos") {
-        topActuel = null;
-        hauteurActuelle = null;
-        floatActuel = 0;
-        floatCible = 0;
-        dernierBoxScroll = 0;
-        window.scrollTo({ top: 0, left: 0, behavior: "auto" });
-        setTimeout(function() { calculer(true); brancherScrollBox(); }, 45);
-        setTimeout(function() { floatCible = 10; retourSouple(); lancer(); }, 100);
-        setTimeout(function() { calculer(false); }, 240);
-      } else {
-        setTimeout(function() { calculer(false); }, 60);
-      }
-    };
-
-    window.addEventListener("scroll", function() {
-      calculer(false);
-      impulsionPage();
-    }, { passive: true });
-
-    window.addEventListener("resize", function() {
-      calculer(false);
-    }, { passive: true });
-
-    window.addEventListener("orientationchange", function() {
-      setTimeout(function() { calculer(true); }, 120);
-      setTimeout(function() { calculer(true); }, 420);
-    }, { passive: true });
-
-    window.addEventListener("pageshow", function() {
-      setTimeout(function() { calculer(true); brancherScrollBox(); }, 120);
-    }, { passive: true });
-
-    document.addEventListener("click", function(event) {
-      const texte = event.target && event.target.textContent ? event.target.textContent.trim() : "";
-      if (texte === "RULES") {
-        setTimeout(function() { calculer(true); brancherScrollBox(); }, 45);
-        setTimeout(function() { floatCible = 10; retourSouple(); lancer(); }, 100);
-        setTimeout(function() { calculer(false); }, 240);
-      }
-    }, { passive: true });
-
-    brancherScrollBox();
-    setTimeout(function() { calculer(true); }, 500);
-  })();
-</script>
 <script id="gpc-mobile-turbo-speed-script-final">
   (function() {
     "use strict";
@@ -1497,4 +1316,195 @@ PT: -pronto para uma grande competição?/<br></template>
 </script>
 <script id="gpc-code-text-registry-script-final">(function(){"use strict";const oldAfficherSection=window.afficherSection;function tpl(id){const t=document.getElementById(id);return t?t.innerHTML:"";}function box(){return document.getElementById("apropos");}function h1(){const b=box();return b?b.querySelector("h1"):null;}function setBoxText(mode){const b=box();const title=h1();if(!b||!title)return;if(mode==="start"){b.classList.add("gpc-starthere-mode");const v=tpl("gpcTextStartHere");if(v)title.innerHTML=v;}else{b.classList.remove("gpc-starthere-mode");const v=tpl("gpcTextRules");if(v)title.innerHTML=v;}b.scrollTop=0;requestAnimationFrame(function(){b.dispatchEvent(new Event("scroll"));});}function showBox(mode){setBoxText(mode);if(typeof oldAfficherSection==="function"){oldAfficherSection("apropos");}else{document.querySelectorAll(".page-section").forEach(function(s){s.classList.remove("active");});const b=box();if(b)b.classList.add("active");}setBoxText(mode);}window.afficherSection=function(id){if(id==="apropos"){showBox("rules");return;}if(typeof oldAfficherSection==="function")oldAfficherSection(id);if(id!=="apropos")setBoxText("rules");};window.lancerMusique=function(){showBox("start");};})();</script>
 <script id="gpc-video-mp4-antifreeze-script-final">(function(){"use strict";var v=null;var wakeTimer=null;function video(){if(!v)v=document.getElementById("fondVideo");return v;}function setup(){var x=video();if(!x)return;x.muted=true;x.loop=true;x.playsInline=true;x.setAttribute("muted","");x.setAttribute("playsinline","");x.setAttribute("webkit-playsinline","");x.preload="auto";x.playbackRate=1;try{x.disablePictureInPicture=true;}catch(e){}}function wake(){var x=video();if(!x)return;setup();if(x.paused||x.readyState<2){var p=x.play();if(p&&p.catch)p.catch(function(){});}}function softWake(){clearTimeout(wakeTimer);wakeTimer=setTimeout(wake,80);}setup();softWake();window.addEventListener("pageshow",softWake,{passive:true});window.addEventListener("focus",softWake,{passive:true});document.addEventListener("visibilitychange",function(){if(!document.hidden)softWake();},{passive:true});window.addEventListener("orientationchange",function(){setTimeout(softWake,180);},{passive:true});})();</script>
+<script id="gpc-box-scroll-antifreeze-script-final">
+  (function() {
+    "use strict";
+
+    const root = document.documentElement;
+    const oldAfficherSection = window.afficherSection;
+
+    let box = null;
+    let rafArrow = 0;
+    let resizeTimer = 0;
+    let lastW = 0;
+    let lastH = 0;
+
+    function el(id) {
+      return document.getElementById(id);
+    }
+
+    function getBox() {
+      if (!box) box = el("apropos");
+      return box;
+    }
+
+    function isMobile() {
+      return (window.innerWidth || document.documentElement.clientWidth || 390) <= 768;
+    }
+
+    function active() {
+      const b = getBox();
+      return !!(b && b.classList.contains("active"));
+    }
+
+    function clamp(v, min, max) {
+      return Math.max(min, Math.min(max, v));
+    }
+
+    function dimensions() {
+      const w = Math.round(window.innerWidth || document.documentElement.clientWidth || 390);
+      const h = Math.round(window.innerHeight || document.documentElement.clientHeight || screen.height || 760);
+      return {
+        w: w,
+        h: h,
+        paysage: w <= 900 && h <= 500 && window.matchMedia("(orientation: landscape)").matches
+      };
+    }
+
+    function audioTop(d) {
+      const audio = document.querySelector(".audio-box");
+      if (audio) {
+        const rect = audio.getBoundingClientRect();
+        if (rect && rect.top > 0 && rect.top < d.h) return rect.top;
+      }
+      return d.h - 170;
+    }
+
+    function normaliserFleches(b) {
+      if (!b) return;
+      b.querySelectorAll(".card .magicbox-arrow").forEach(function(node) {
+        if (node && node.parentNode) node.parentNode.removeChild(node);
+      });
+
+      function take(classe) {
+        const all = Array.from(b.querySelectorAll("." + classe));
+        const direct = all.find(function(node) { return node.parentNode === b; });
+        const first = direct || all[0] || document.createElement("span");
+        first.className = "magicbox-arrow " + classe;
+        first.setAttribute("aria-hidden", "true");
+        all.forEach(function(node) {
+          if (node !== first && node.parentNode) node.parentNode.removeChild(node);
+        });
+        return first;
+      }
+
+      const down = take("magicbox-arrow-down");
+      const up = take("magicbox-arrow-up");
+      if (down.parentNode !== b || b.firstElementChild !== down) b.insertBefore(down, b.firstChild);
+      if (up.parentNode !== b || b.lastElementChild !== up) b.appendChild(up);
+    }
+
+    function updateArrowsNow() {
+      rafArrow = 0;
+      const b = getBox();
+      if (!b) return;
+
+      normaliserFleches(b);
+
+      const visible = b.clientHeight || 0;
+      const total = b.scrollHeight || 0;
+      const maxScroll = Math.max(0, total - visible);
+      const marge = Math.max(4, Math.round(visible * 0.045));
+      const noScroll = maxScroll <= marge;
+      const atEnd = noScroll || (b.scrollTop || 0) >= maxScroll - marge;
+
+      b.classList.toggle("rules-no-scroll", noScroll);
+      b.classList.toggle("rules-at-end", atEnd);
+    }
+
+    function updateArrows() {
+      if (!rafArrow) rafArrow = requestAnimationFrame(updateArrowsNow);
+    }
+
+    function applyStaticSize(force) {
+      const b = getBox();
+      if (!b || !active()) {
+        root.classList.remove("gpc-box-static-scroll");
+        return;
+      }
+
+      updateArrows();
+
+      if (!isMobile()) {
+        root.classList.remove("gpc-box-static-scroll");
+        return;
+      }
+
+      const d = dimensions();
+      if (!force && Math.abs(d.w - lastW) < 18 && Math.abs(d.h - lastH) < 18) {
+        return;
+      }
+
+      lastW = d.w;
+      lastH = d.h;
+
+      const descente = d.paysage ? 8 : clamp(Math.round(d.h * 0.018), 10, 18);
+      const topAncre = Math.round(d.h * (d.paysage ? 0.42 : 0.545) + descente);
+      const margeLecteur = d.paysage ? 5 : 6;
+      const basFinal = Math.round(audioTop(d) - margeLecteur);
+      const hauteurGrande = Math.max(d.paysage ? 82 : 112, basFinal - topAncre);
+
+      root.classList.add("gpc-box-static-scroll");
+      b.style.setProperty("--rules-hier-top", topAncre + "px");
+      b.style.setProperty("--rules-hier-height", hauteurGrande + "px");
+      b.style.setProperty("--rules-hier-float", "0px");
+      updateArrows();
+    }
+
+    function scheduleSize(force) {
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(function() {
+        applyStaticSize(!!force);
+      }, force ? 30 : 120);
+    }
+
+    function hookBox() {
+      const b = getBox();
+      if (!b || b.dataset.gpcScrollAntifreezeOk) return;
+      b.dataset.gpcScrollAntifreezeOk = "1";
+      b.addEventListener("scroll", updateArrows, { passive: true });
+      b.addEventListener("wheel", updateArrows, { passive: true });
+      b.addEventListener("touchmove", updateArrows, { passive: true });
+    }
+
+    window.afficherSection = function(id) {
+      if (typeof oldAfficherSection === "function") oldAfficherSection(id);
+      hookBox();
+
+      if (id === "apropos") {
+        lastW = 0;
+        lastH = 0;
+        scheduleSize(true);
+        setTimeout(updateArrows, 180);
+      } else {
+        root.classList.remove("gpc-box-static-scroll");
+      }
+    };
+
+    hookBox();
+
+    window.addEventListener("resize", function() {
+      scheduleSize(false);
+    }, { passive: true });
+
+    window.addEventListener("orientationchange", function() {
+      lastW = 0;
+      lastH = 0;
+      setTimeout(function() { scheduleSize(true); }, 140);
+      setTimeout(function() { scheduleSize(true); }, 420);
+    }, { passive: true });
+
+    window.addEventListener("pageshow", function() {
+      hookBox();
+      lastW = 0;
+      lastH = 0;
+      setTimeout(function() { scheduleSize(true); }, 120);
+    }, { passive: true });
+
+    setTimeout(function() {
+      hookBox();
+      scheduleSize(true);
+    }, 300);
+  })();
+</script>
 </body></html>
