@@ -1,42 +1,63 @@
 <!--
 
 
-👶 PLAN TRÈS SIMPLE
+PLAN CHEF, SIMPLE MAIS MODIFIABLE
 
 
 1 · FOND
 
+    vidéo de fond du site
+
+
 2 · INTRO
+
+    écrans avant l'arrivée sur le site
+
 
 3 · BOUTONS
 
-4 · PAGE STARTHERE
+    menu du haut + timer ordinateur
+
+
+4 · PAGE
+
+    accueil starthere
+
 
 5 · BOX RULES
 
+    BOX RULES ORDINATEUR
+
+    BOX RULES TÉLÉPHONE
+
+
 6 · GMAIL
+
+    GMAIL ORDINATEUR
+
+    GMAIL TÉLÉPHONE
+
 
 7 · AUDIO
 
+    lecteur et contrôles
+
+
 8 · DESSINS
+
+    apparence, tailles, couleurs, positions
+
 
 9 · MOTEURS
 
-
-ORDINATEUR = desktop
-
-TÉLÉPHONE = smartphone
+    JavaScript, animations, scroll, timer
 
 
-Exemples :
+RÈGLE DE LECTURE
 
-BOX RULES ORDINATEUR
+    ORDINATEUR = desktop
 
-BOX RULES TÉLÉPHONE
-
-MENU DES BOUTONS
-
-GMAIL TÉLÉPHONE
+    TÉLÉPHONE = smartphone
 
 
 -->
@@ -49,9 +70,13 @@ GMAIL TÉLÉPHONE
 
 <!--
 
-👶 8 · DESSIN AUTRE
+╭────────────────────────────────────────────────────────────────────────────╮
 
-   bloc visuel
+│ 8 · DESSIN AUTRE
+
+╰────────────────────────────────────────────────────────────────────────────╯
+
+   - bloc visuel
 
 -->
 
@@ -89,6 +114,9 @@ body {
 
 }
 
+
+
+/* INTRO */
 
 .intro-page {
 
@@ -128,6 +156,9 @@ body {
 
 }
 
+
+
+/* INTRO */
 
 .intro-gif {
 
@@ -215,6 +246,9 @@ nav {
 }
 
 
+
+/* MENU BOUTONS */
+
 nav button {
 
   color:#ff4fd8;
@@ -278,6 +312,9 @@ nav button {
 }
 
 
+
+/* MENU BOUTONS */
+
 nav button:hover {
 
   color:#ff4fd8;
@@ -320,6 +357,9 @@ nav button:hover {
 
 }
 
+
+
+/* TIMER */
 
 .paris-timer {
 
@@ -520,6 +560,9 @@ p {
 }
 
 
+
+/* BOX RULES */
+
 .card {
 
   background:transparent;
@@ -555,6 +598,9 @@ p {
 
   }
 
+
+
+  /* MENU BOUTONS */
 
   nav button {
 
@@ -599,6 +645,9 @@ p {
   }
 
 
+
+  /* MENU BOUTONS */
+
   nav button:hover {
 
     text-shadow:
@@ -638,12 +687,18 @@ p {
   }
 
 
+
+  /* BOX RULES */
+
   #apropos {
 
     top:calc(54vh + 10px)
 
   }
 
+
+
+  /* BOX RULES */
 
   #apropos h1 {
 
@@ -688,12 +743,18 @@ p {
   }
 
 
+
+  /* BOX RULES */
+
   #apropos .card {
 
     margin-top:0
 
   }
 
+
+
+  /* BOX RULES */
 
   #contact .card {
 
@@ -704,6 +765,9 @@ p {
 
 }
 
+
+
+/* AUDIO */
 
 .audio-box {
 
@@ -831,11 +895,7 @@ audio {
 
   font-weight:bold;
 
-  text-shadow:
-
-    0 0 5px #00ff00,
-
-    0 0 12px #00ff00;
+  text-shadow:0 0 5px #00ff00,0 0 12px #00ff00;
 
   user-select:none;
 
@@ -874,23 +934,7 @@ audio {
 
   filter:blur(16px);
 
-  box-shadow:
-
-    0 0 22px 10px rgba(255,
-
-    255,
-
-    255,
-
-    0.72),
-
-    0 0 48px 22px rgba(255,
-
-    255,
-
-    255,
-
-    0.42);
+  box-shadow:0 0 22px 10px rgba(255,255,255,0.72),0 0 48px 22px rgba(255,255,255,0.42);
 
   pointer-events:none;
 
@@ -948,23 +992,7 @@ audio {
 
   filter:blur(12px);
 
-  box-shadow:
-
-    0 0 20px 10px rgba(255,
-
-    255,
-
-    255,
-
-    0.72),
-
-    0 0 44px 20px rgba(255,
-
-    255,
-
-    255,
-
-    0.42);
+  box-shadow:0 0 20px 10px rgba(255,255,255,0.72),0 0 44px 20px rgba(255,255,255,0.42);
 
   pointer-events:none;
 
@@ -1100,11 +1128,7 @@ audio {
 
   z-index:0;
 
-  box-shadow:
-
-    0 0 4px #ff0000,
-
-    0 0 8px #ff0000;
+  box-shadow:0 0 4px #ff0000,0 0 8px #ff0000
 
 }
 
@@ -1148,11 +1172,7 @@ audio {
 
   font-weight:bold;
 
-  text-shadow:
-
-    0 0 5px #00ff00,
-
-    0 0 12px #00ff00;
+  text-shadow:0 0 5px #00ff00,0 0 12px #00ff00;
 
   user-select:none;
 
@@ -1234,11 +1254,7 @@ audio {
 
   border:1px solid rgba(0,0,0,0.65);
 
-  box-shadow:
-
-    0 0 4px #00ff00,
-
-    0 0 8px #ff0000;
+  box-shadow:0 0 4px #00ff00,0 0 8px #ff0000
 
 }
 
@@ -1253,11 +1269,7 @@ audio {
 
   border:1px solid rgba(0,0,0,0.65);
 
-  box-shadow:
-
-    0 0 4px #00ff00,
-
-    0 0 8px #ff0000;
+  box-shadow:0 0 4px #00ff00,0 0 8px #ff0000
 
 }
 
@@ -1280,13 +1292,7 @@ audio {
 
   background:#ff0000;
 
-  box-shadow:
-
-    0 0 0 1px #000000,
-
-    0 0 7px #00ff00,
-
-    0 0 12px #ff0000;
+  box-shadow:0 0 0 1px #000000,0 0 7px #00ff00,0 0 12px #ff0000
 
 }
 
@@ -1303,13 +1309,7 @@ audio {
 
   background:#ff0000;
 
-  box-shadow:
-
-    0 0 0 1px #000000,
-
-    0 0 7px #00ff00,
-
-    0 0 12px #ff0000;
+  box-shadow:0 0 0 1px #000000,0 0 7px #00ff00,0 0 12px #ff0000
 
 }
 
@@ -1388,15 +1388,7 @@ audio {
 
   background:radial-gradient(circle,#2b2b2b 0%,#000000 70%,#000000 100%);
 
-  box-shadow:
-
-    0 0 0 1px #000000,
-
-    0 0 0 2px #ffffff,
-
-    0 0 7px #ffffff,
-
-    0 0 14px #000000;
+  box-shadow:0 0 0 1px #000000,0 0 0 2px #ffffff,0 0 7px #ffffff,0 0 14px #000000
 
 }
 
@@ -1409,15 +1401,7 @@ audio {
 
   background:radial-gradient(circle,#2b2b2b 0%,#000000 70%,#000000 100%);
 
-  box-shadow:
-
-    0 0 0 1px #000000,
-
-    0 0 0 2px #ffffff,
-
-    0 0 7px #ffffff,
-
-    0 0 14px #000000;
+  box-shadow:0 0 0 1px #000000,0 0 0 2px #ffffff,0 0 7px #ffffff,0 0 14px #000000
 
 }
 
@@ -1434,11 +1418,7 @@ audio {
 
   color:black;
 
-  text-shadow:
-
-    0 0 5px #ff0000,
-
-    0 0 10px #ff0000;
+  text-shadow:0 0 5px #ff0000,0 0 10px #ff0000
 
 }
 
@@ -1447,13 +1427,7 @@ audio {
 
   font-size:clamp(18px,1.45vw,25px);
 
-  text-shadow:
-
-    0 0 6px #ff0000,
-
-    0 0 14px #ff0000,
-
-    0 0 24px #ff0000;
+  text-shadow:0 0 6px #ff0000,0 0 14px #ff0000,0 0 24px #ff0000
 
 }
 
@@ -1491,11 +1465,7 @@ audio {
 
   color:black;
 
-  text-shadow:
-
-    0 0 4px #00ff00,
-
-    1px 1px 3px black;
+  text-shadow:0 0 4px #00ff00,1px 1px 3px black
 
 }
 
@@ -1517,6 +1487,9 @@ audio {
 
   }
 
+
+
+  /* TIMER */
 
   .paris-timer {
 
@@ -1552,12 +1525,18 @@ audio {
   }
 
 
+
+  /* GMAIL */
+
   #contact h1 {
 
     font-size:clamp(38px,5vw,50px)
 
   }
 
+
+
+  /* AUDIO */
 
   .audio-box {
 
@@ -1594,23 +1573,7 @@ audio {
 
     filter:blur(15px);
 
-    box-shadow:
-
-      0 0 20px 9px rgba(255,
-
-      255,
-
-      255,
-
-      0.72),
-
-      0 0 44px 20px rgba(255,
-
-      255,
-
-      255,
-
-      0.42);
+    box-shadow:0 0 20px 9px rgba(255,255,255,0.72),0 0 44px 20px rgba(255,255,255,0.42)
 
   }
 
@@ -1625,23 +1588,7 @@ audio {
 
     filter:blur(11px);
 
-    box-shadow:
-
-      0 0 18px 9px rgba(255,
-
-      255,
-
-      255,
-
-      0.72),
-
-      0 0 40px 18px rgba(255,
-
-      255,
-
-      255,
-
-      0.42);
+    box-shadow:0 0 18px 9px rgba(255,255,255,0.72),0 0 40px 18px rgba(255,255,255,0.42)
 
   }
 
@@ -1737,12 +1684,18 @@ audio {
 
 @media screen and (max-width:600px) {
 
+
+  /* INTRO */
+
   .intro-page {
 
     font-size:22px
 
   }
 
+
+
+  /* INTRO */
 
   .intro-gif {
 
@@ -1844,6 +1797,9 @@ audio {
   }
 
 
+
+  /* GMAIL */
+
   #contact {
 
     top:min(61vh,calc(100vh - 255px));
@@ -1896,6 +1852,9 @@ audio {
 
   }
 
+
+
+  /* BOX RULES */
 
   .card {
 
@@ -2005,23 +1964,7 @@ audio {
 
     filter:blur(12px);
 
-    box-shadow:
-
-      0 0 17px 8px rgba(255,
-
-      255,
-
-      255,
-
-      0.72),
-
-      0 0 34px 16px rgba(255,
-
-      255,
-
-      255,
-
-      0.40);
+    box-shadow:0 0 17px 8px rgba(255,255,255,0.72),0 0 34px 16px rgba(255,255,255,0.40)
 
   }
 
@@ -2036,23 +1979,7 @@ audio {
 
     filter:blur(9px);
 
-    box-shadow:
-
-      0 0 15px 7px rgba(255,
-
-      255,
-
-      255,
-
-      0.72),
-
-      0 0 30px 14px rgba(255,
-
-      255,
-
-      255,
-
-      0.40);
+    box-shadow:0 0 15px 7px rgba(255,255,255,0.72),0 0 30px 14px rgba(255,255,255,0.40)
 
   }
 
@@ -2497,23 +2424,7 @@ audio {
 
     filter:blur(10px);
 
-    box-shadow:
-
-      0 0 15px 7px rgba(255,
-
-      255,
-
-      255,
-
-      0.72),
-
-      0 0 30px 13px rgba(255,
-
-      255,
-
-      255,
-
-      0.38);
+    box-shadow:0 0 15px 7px rgba(255,255,255,0.72),0 0 30px 13px rgba(255,255,255,0.38)
 
   }
 
@@ -2528,23 +2439,7 @@ audio {
 
     filter:blur(8px);
 
-    box-shadow:
-
-      0 0 13px 6px rgba(255,
-
-      255,
-
-      255,
-
-      0.72),
-
-      0 0 26px 12px rgba(255,
-
-      255,
-
-      255,
-
-      0.38);
+    box-shadow:0 0 13px 6px rgba(255,255,255,0.72),0 0 26px 12px rgba(255,255,255,0.38)
 
   }
 
@@ -2766,23 +2661,7 @@ audio {
 
   filter:blur(12px);
 
-  box-shadow:
-
-    0 0 20px 10px rgba(255,
-
-    255,
-
-    255,
-
-    0.72),
-
-    0 0 44px 20px rgba(255,
-
-    255,
-
-    255,
-
-    0.42);
+  box-shadow:0 0 20px 10px rgba(255,255,255,0.72),0 0 44px 20px rgba(255,255,255,0.42)
 
 }
 
@@ -2795,23 +2674,7 @@ audio {
 
   filter:blur(16px);
 
-  box-shadow:
-
-    0 0 22px 10px rgba(255,
-
-    255,
-
-    255,
-
-    0.72),
-
-    0 0 48px 22px rgba(255,
-
-    255,
-
-    255,
-
-    0.42);
+  box-shadow:0 0 22px 10px rgba(255,255,255,0.72),0 0 48px 22px rgba(255,255,255,0.42)
 
 }
 
@@ -2826,23 +2689,7 @@ audio {
 
     filter:blur(11px);
 
-    box-shadow:
-
-      0 0 18px 9px rgba(255,
-
-      255,
-
-      255,
-
-      0.72),
-
-      0 0 40px 18px rgba(255,
-
-      255,
-
-      255,
-
-      0.42);
+    box-shadow:0 0 18px 9px rgba(255,255,255,0.72),0 0 40px 18px rgba(255,255,255,0.42)
 
   }
 
@@ -2855,23 +2702,7 @@ audio {
 
     filter:blur(15px);
 
-    box-shadow:
-
-      0 0 20px 9px rgba(255,
-
-      255,
-
-      255,
-
-      0.72),
-
-      0 0 44px 20px rgba(255,
-
-      255,
-
-      255,
-
-      0.42);
+    box-shadow:0 0 20px 9px rgba(255,255,255,0.72),0 0 44px 20px rgba(255,255,255,0.42)
 
   }
 
@@ -2889,23 +2720,7 @@ audio {
 
     filter:blur(9px);
 
-    box-shadow:
-
-      0 0 15px 7px rgba(255,
-
-      255,
-
-      255,
-
-      0.72),
-
-      0 0 30px 14px rgba(255,
-
-      255,
-
-      255,
-
-      0.40);
+    box-shadow:0 0 15px 7px rgba(255,255,255,0.72),0 0 30px 14px rgba(255,255,255,0.40)
 
   }
 
@@ -2918,23 +2733,7 @@ audio {
 
     filter:blur(12px);
 
-    box-shadow:
-
-      0 0 17px 8px rgba(255,
-
-      255,
-
-      255,
-
-      0.72),
-
-      0 0 34px 16px rgba(255,
-
-      255,
-
-      255,
-
-      0.40);
+    box-shadow:0 0 17px 8px rgba(255,255,255,0.72),0 0 34px 16px rgba(255,255,255,0.40)
 
   }
 
@@ -2952,23 +2751,7 @@ audio {
 
     filter:blur(8px);
 
-    box-shadow:
-
-      0 0 13px 6px rgba(255,
-
-      255,
-
-      255,
-
-      0.72),
-
-      0 0 26px 12px rgba(255,
-
-      255,
-
-      255,
-
-      0.38);
+    box-shadow:0 0 13px 6px rgba(255,255,255,0.72),0 0 26px 12px rgba(255,255,255,0.38)
 
   }
 
@@ -2981,23 +2764,7 @@ audio {
 
     filter:blur(10px);
 
-    box-shadow:
-
-      0 0 15px 7px rgba(255,
-
-      255,
-
-      255,
-
-      0.72),
-
-      0 0 30px 13px rgba(255,
-
-      255,
-
-      255,
-
-      0.38);
+    box-shadow:0 0 15px 7px rgba(255,255,255,0.72),0 0 30px 13px rgba(255,255,255,0.38)
 
   }
 
@@ -3224,23 +2991,7 @@ audio {
 
   filter:blur(12px);
 
-  box-shadow:
-
-    0 0 20px 10px rgba(255,
-
-    255,
-
-    255,
-
-    0.72),
-
-    0 0 44px 20px rgba(255,
-
-    255,
-
-    255,
-
-    0.42);
+  box-shadow:0 0 20px 10px rgba(255,255,255,0.72),0 0 44px 20px rgba(255,255,255,0.42);
 
   pointer-events:none;
 
@@ -3357,23 +3108,7 @@ audio {
 
     filter:blur(11px);
 
-    box-shadow:
-
-      0 0 18px 9px rgba(255,
-
-      255,
-
-      255,
-
-      0.72),
-
-      0 0 40px 18px rgba(255,
-
-      255,
-
-      255,
-
-      0.42);
+    box-shadow:0 0 18px 9px rgba(255,255,255,0.72),0 0 40px 18px rgba(255,255,255,0.42)
 
   }
 
@@ -3391,23 +3126,7 @@ audio {
 
     filter:blur(9px);
 
-    box-shadow:
-
-      0 0 15px 7px rgba(255,
-
-      255,
-
-      255,
-
-      0.72),
-
-      0 0 30px 14px rgba(255,
-
-      255,
-
-      255,
-
-      0.40);
+    box-shadow:0 0 15px 7px rgba(255,255,255,0.72),0 0 30px 14px rgba(255,255,255,0.40)
 
   }
 
@@ -3503,23 +3222,7 @@ audio {
 
     filter:blur(8px);
 
-    box-shadow:
-
-      0 0 13px 6px rgba(255,
-
-      255,
-
-      255,
-
-      0.72),
-
-      0 0 26px 12px rgba(255,
-
-      255,
-
-      255,
-
-      0.38);
+    box-shadow:0 0 13px 6px rgba(255,255,255,0.72),0 0 26px 12px rgba(255,255,255,0.38)
 
   }
 
@@ -3622,6 +3325,9 @@ audio {
 
   }
 
+
+
+  /* INTRO */
 
   .intro-gif,.gif-bg {
 
@@ -3752,6 +3458,9 @@ audio {
   }
 
 
+
+  /* PAGE STARTHERE */
+
   #accueil.page-section.active {
 
     min-height:55svh
@@ -3875,6 +3584,8 @@ audio {
 
   /* TÉLÉPHONE */
 
+  /* TÉLÉPHONE */
+
   html,body {
 
     width:100%;
@@ -3907,6 +3618,9 @@ audio {
   }
 
 
+
+  /* INTRO TÉLÉPHONE */
+
   .intro-page {
 
     position:fixed;
@@ -3925,6 +3639,9 @@ audio {
 
   }
 
+
+
+  /* INTRO TÉLÉPHONE */
 
   .intro-gif,.gif-bg {
 
@@ -3997,6 +3714,9 @@ audio {
   }
 
 
+
+  /* MENU BOUTONS TÉLÉPHONE */
+
   nav button {
 
     margin:0;
@@ -4013,6 +3733,9 @@ audio {
 
   }
 
+
+
+  /* TIMER TÉLÉPHONE */
 
   .paris-timer {
 
@@ -4073,12 +3796,18 @@ audio {
   }
 
 
+
+  /* PAGE STARTHERE TÉLÉPHONE */
+
   #accueil.page-section.active {
 
     min-height:55dvh
 
   }
 
+
+
+  /* BOX RULES TÉLÉPHONE */
 
   #apropos {
 
@@ -4088,6 +3817,9 @@ audio {
 
   }
 
+
+
+  /* GMAIL TÉLÉPHONE */
 
   #contact {
 
@@ -4104,6 +3836,9 @@ audio {
   }
 
 
+
+  /* BOX RULES TÉLÉPHONE */
+
   h1,#apropos h1 {
 
     font-size:clamp(16px,5vw,22px);
@@ -4115,6 +3850,9 @@ audio {
   }
 
 
+
+  /* GMAIL TÉLÉPHONE */
+
   #contact h1 {
 
     font-size:clamp(25px,9vw,38px);
@@ -4124,6 +3862,9 @@ audio {
   }
 
 
+
+  /* BOX RULES TÉLÉPHONE */
+
   .card {
 
     margin-top:0;
@@ -4132,6 +3873,9 @@ audio {
 
   }
 
+
+
+  /* AUDIO TÉLÉPHONE */
 
   .audio-box {
 
@@ -4223,6 +3967,8 @@ audio {
 
   /* TÉLÉPHONE */
 
+  /* TÉLÉPHONE */
+
   body {
 
     background:#ff00ff
@@ -4278,6 +4024,8 @@ audio {
 
   /* TÉLÉPHONE */
 
+  /* TÉLÉPHONE */
+
   .intro-gif,.gif-bg {
 
     width:100vw !important;
@@ -4312,6 +4060,11 @@ audio {
 
   /* TÉLÉPHONE */
 
+    /* TÉLÉPHONE */
+
+
+    /* INTRO TÉLÉPHONE */
+
     .intro-gif,.gif-bg {
 
       height:100dvh !important;
@@ -4332,6 +4085,8 @@ audio {
   @media screen and (max-width:768px) {
 
   /* TÉLÉPHONE */
+
+    /* TÉLÉPHONE */
 
     .intro-gif,.gif-bg {
 
@@ -4354,6 +4109,8 @@ audio {
 
   /* TÉLÉPHONE */
 
+  /* TÉLÉPHONE */
+
   html,body {
 
     min-height:100vh;
@@ -4368,6 +4125,9 @@ audio {
 
   }
 
+
+
+  /* INTRO TÉLÉPHONE */
 
   .gif-bg,.intro-gif {
 
@@ -4389,6 +4149,9 @@ audio {
 
 
   @supports (height:100dvh) {
+
+
+    /* INTRO TÉLÉPHONE */
 
     .gif-bg,.intro-gif {
 
@@ -4482,6 +4245,9 @@ audio {
 
   @supports (height:100dvh) {
 
+
+    /* PAGE STARTHERE TÉLÉPHONE */
+
     #accueil.page-section.active {
 
       min-height:68dvh !important
@@ -4516,12 +4282,18 @@ audio {
 
   @supports (height:100dvh) {
 
+
+    /* BOX RULES TÉLÉPHONE */
+
     #apropos {
 
       margin-top:58dvh !important
 
     }
 
+
+
+    /* GMAIL TÉLÉPHONE */
 
     #contact {
 
@@ -4532,6 +4304,9 @@ audio {
 
   }
 
+
+
+  /* BOX RULES TÉLÉPHONE */
 
   #apropos h1 {
 
@@ -4600,12 +4375,18 @@ audio {
 
   @supports (height:100dvh) {
 
+
+    /* BOX RULES */
+
     #apropos {
 
       margin-top:62dvh !important
 
     }
 
+
+
+    /* GMAIL */
 
     #contact {
 
@@ -4621,6 +4402,8 @@ audio {
 
 
 @media screen and (max-width:768px) {
+
+  /* TÉLÉPHONE */
 
   /* TÉLÉPHONE */
 
@@ -4691,6 +4474,9 @@ audio {
   }
 
 
+
+  /* BOX RULES TÉLÉPHONE */
+
   #apropos h1,#contact h1 {
 
     pointer-events:none !important
@@ -4743,6 +4529,8 @@ audio {
 
   /* TÉLÉPHONE */
 
+  /* TÉLÉPHONE */
+
   .page-section {
 
     position:fixed !important;
@@ -4768,6 +4556,9 @@ audio {
   }
 
 
+
+  /* BOX RULES TÉLÉPHONE */
+
   #apropos,#contact {
 
     top:clamp(54vh,59vh,calc(100vh - 275px)) !important;
@@ -4778,6 +4569,9 @@ audio {
 
 
   @supports (height:100dvh) {
+
+
+    /* BOX RULES TÉLÉPHONE */
 
     #apropos,#contact {
 
@@ -4811,6 +4605,9 @@ audio {
   }
 
 
+
+  /* BOX RULES TÉLÉPHONE */
+
   #apropos .card,#contact .card {
 
     margin:0 !important;
@@ -4839,6 +4636,9 @@ audio {
 
 @media screen and (max-width:430px) and (min-height:760px) {
 
+
+  /* BOX RULES */
+
   #apropos,#contact {
 
     top:clamp(55vh,60vh,calc(100vh - 285px)) !important
@@ -4847,6 +4647,9 @@ audio {
 
 
   @supports (height:100dvh) {
+
+
+    /* BOX RULES */
 
     #apropos,#contact {
 
@@ -4890,6 +4693,8 @@ audio {
 
 
 @media screen and (max-width:768px) {
+
+  /* TÉLÉPHONE */
 
   /* TÉLÉPHONE */
 
@@ -5152,6 +4957,8 @@ audio {
 
   /* TÉLÉPHONE */
 
+  /* TÉLÉPHONE */
+
   html,body {
 
     width:100%;
@@ -5239,6 +5046,9 @@ audio {
 
 
   @supports (height:100dvh) {
+
+
+    /* INTRO TÉLÉPHONE */
 
     .intro-page,.intro-gif,.gif-bg {
 
@@ -5346,6 +5156,9 @@ audio {
 
   @supports (height:100dvh) {
 
+
+    /* TIMER TÉLÉPHONE */
+
     .paris-timer {
 
       top:27dvh !important
@@ -5451,6 +5264,9 @@ audio {
   }
 
 
+
+  /* BOX RULES TÉLÉPHONE */
+
   .card,#apropos .card,#contact .card {
 
     margin:0 !important;
@@ -5524,23 +5340,7 @@ audio {
 
     filter:blur(7px) !important;
 
-    box-shadow:
-
-      0 0 10px 5px rgba(255,
-
-      255,
-
-      255,
-
-      0.58),
-
-      0 0 20px 10px rgba(255,
-
-      255,
-
-      255,
-
-      0.28) !important;
+    box-shadow:0 0 10px 5px rgba(255,255,255,0.58),0 0 20px 10px rgba(255,255,255,0.28) !important
 
   }
 
@@ -5632,6 +5432,8 @@ audio {
 
   /* TÉLÉPHONE */
 
+  /* TÉLÉPHONE */
+
   .overlay {
 
     min-height:130vh !important;
@@ -5709,6 +5511,9 @@ audio {
   }
 
 
+
+  /* BOX RULES TÉLÉPHONE */
+
   #apropos.active,#contact.active {
 
     display:flex !important;
@@ -5759,6 +5564,9 @@ audio {
   }
 
 
+
+  /* PAGE STARTHERE TÉLÉPHONE */
+
   #accueil.page-section {
 
     position:relative !important;
@@ -5777,6 +5585,9 @@ audio {
 
 
   @supports (height:100dvh) {
+
+
+    /* PAGE STARTHERE TÉLÉPHONE */
 
     #accueil.page-section {
 
@@ -5869,6 +5680,8 @@ audio {
 
   /* TÉLÉPHONE */
 
+  /* TÉLÉPHONE */
+
   #apropos {
 
     top:60vh !important
@@ -5887,6 +5700,9 @@ audio {
 
   }
 
+
+
+  /* BOX RULES TÉLÉPHONE */
 
   #apropos .card {
 
@@ -5929,6 +5745,9 @@ audio {
   }
 
 
+
+  /* BOX RULES TÉLÉPHONE */
+
   #apropos .card::before,#apropos .card::after {
 
     content:"";
@@ -5945,21 +5764,7 @@ audio {
 
     border-bottom:2px solid #000000;
 
-    filter:
-
-      drop-shadow(0 0 3px rgba(255,
-
-      255,
-
-      255,
-
-      0.95)) drop-shadow(0 0 7px rgba(255,
-
-      255,
-
-      255,
-
-      0.75));
+    filter:drop-shadow(0 0 3px rgba(255,255,255,0.95)) drop-shadow(0 0 7px rgba(255,255,255,0.75));
 
     pointer-events:none;
 
@@ -5967,6 +5772,9 @@ audio {
 
   }
 
+
+
+  /* BOX RULES TÉLÉPHONE */
 
   #apropos .card::before {
 
@@ -5976,6 +5784,9 @@ audio {
 
   }
 
+
+
+  /* BOX RULES TÉLÉPHONE */
 
   #apropos .card::after {
 
@@ -6017,12 +5828,18 @@ audio {
   }
 
 
+
+  /* BOX RULES */
+
   #apropos .card::before {
 
     top:-18px
 
   }
 
+
+
+  /* BOX RULES */
 
   #apropos .card::after {
 
@@ -6051,6 +5868,9 @@ audio {
 
   }
 
+
+
+  /* BOX RULES */
 
   #apropos .card::before,#apropos .card::after {
 
@@ -6083,6 +5903,8 @@ audio {
 
 
 @media screen and (max-width:768px) {
+
+  /* TÉLÉPHONE */
 
   /* TÉLÉPHONE */
 
@@ -6169,6 +5991,9 @@ audio {
   }
 
 
+
+  /* BOX RULES TÉLÉPHONE */
+
   #apropos::before,#apropos::after {
 
     content:"";
@@ -6187,21 +6012,7 @@ audio {
 
     border-bottom:2px solid #000000;
 
-    filter:
-
-      drop-shadow(0 0 3px rgba(255,
-
-      255,
-
-      255,
-
-      0.95)) drop-shadow(0 0 7px rgba(255,
-
-      255,
-
-      255,
-
-      0.72));
+    filter:drop-shadow(0 0 3px rgba(255,255,255,0.95)) drop-shadow(0 0 7px rgba(255,255,255,0.72));
 
     pointer-events:none;
 
@@ -6209,6 +6020,9 @@ audio {
 
   }
 
+
+
+  /* BOX RULES TÉLÉPHONE */
 
   #apropos::before {
 
@@ -6220,6 +6034,9 @@ audio {
 
   }
 
+
+
+  /* BOX RULES TÉLÉPHONE */
 
   #apropos::after {
 
@@ -6260,6 +6077,9 @@ audio {
   }
 
 
+
+  /* BOX RULES */
+
   #apropos::before,#apropos::after {
 
     width:9px;
@@ -6268,6 +6088,9 @@ audio {
 
   }
 
+
+
+  /* BOX RULES */
 
   #apropos::after {
 
@@ -6318,6 +6141,8 @@ audio {
 
 
 @media screen and (max-width:768px) {
+
+  /* TÉLÉPHONE */
 
   /* TÉLÉPHONE */
 
@@ -6384,6 +6209,9 @@ audio {
 
   @supports (height:100dvh) {
 
+
+    /* BOX RULES TÉLÉPHONE */
+
     #apropos::before {
 
       top:calc(60dvh + 6px) !important
@@ -6398,6 +6226,9 @@ audio {
 
 
 @media screen and (max-width:430px) and (min-height:760px) {
+
+
+  /* BOX RULES */
 
   #apropos::before {
 
@@ -6414,6 +6245,9 @@ audio {
 
 
   @supports (height:100dvh) {
+
+
+    /* BOX RULES */
 
     #apropos::before {
 
@@ -6461,6 +6295,8 @@ audio {
 
 
 @media screen and (max-width:768px) {
+
+  /* TÉLÉPHONE */
 
   /* TÉLÉPHONE */
 
@@ -6535,6 +6371,8 @@ audio {
 
 
 @media screen and (max-width:768px) {
+
+  /* TÉLÉPHONE */
 
   /* TÉLÉPHONE */
 
@@ -6701,6 +6539,9 @@ audio {
   }
 
 
+
+  /* GMAIL TÉLÉPHONE */
+
   #contact.active {
 
     display:flex !important;
@@ -6711,6 +6552,9 @@ audio {
 
   }
 
+
+
+  /* BOX RULES TÉLÉPHONE */
 
   #contact .card {
 
@@ -6833,6 +6677,8 @@ audio {
 
 
 @media screen and (max-width:768px) {
+
+  /* TÉLÉPHONE */
 
   /* TÉLÉPHONE */
 
@@ -6969,6 +6815,8 @@ audio {
 
   /* TÉLÉPHONE */
 
+  /* TÉLÉPHONE */
+
   #apropos {
 
     padding-top:30px !important;
@@ -7056,6 +6904,8 @@ audio {
 
 
 @media screen and (max-width:768px) {
+
+  /* TÉLÉPHONE */
 
   /* TÉLÉPHONE */
 
@@ -7179,6 +7029,8 @@ audio {
 
 
 @media screen and (max-width:768px) {
+
+  /* TÉLÉPHONE */
 
   /* TÉLÉPHONE */
 
@@ -7329,6 +7181,8 @@ audio {
 
   /* TÉLÉPHONE */
 
+  /* TÉLÉPHONE */
+
   #apropos {
 
     position:fixed !important;
@@ -7367,6 +7221,9 @@ audio {
 
   }
 
+
+
+  /* BOX RULES TÉLÉPHONE */
 
   #apropos.active {
 
@@ -7465,6 +7322,8 @@ audio {
 
 
 @media screen and (max-width:768px) {
+
+  /* TÉLÉPHONE */
 
   /* TÉLÉPHONE */
 
@@ -7678,6 +7537,8 @@ audio {
 
   /* TÉLÉPHONE */
 
+  /* TÉLÉPHONE */
+
   #apropos {
 
     top:var(--exemple-box-smooth-top,60dvh) !important;
@@ -7725,6 +7586,8 @@ audio {
 
 
 @media screen and (max-width:768px) {
+
+  /* TÉLÉPHONE */
 
   /* TÉLÉPHONE */
 
@@ -7803,6 +7666,8 @@ audio {
 
   /* TÉLÉPHONE */
 
+  /* TÉLÉPHONE */
+
   #apropos {
 
     top:var(--exemple-box-smooth-top,60dvh) !important;
@@ -7849,6 +7714,8 @@ audio {
 
 
 @media screen and (max-width:768px) {
+
+  /* TÉLÉPHONE */
 
   /* TÉLÉPHONE */
 
@@ -7986,6 +7853,8 @@ audio {
 
 
 @media screen and (max-width:768px) {
+
+  /* TÉLÉPHONE */
 
   /* TÉLÉPHONE */
 
@@ -8280,6 +8149,11 @@ audio {
 
   /* TÉLÉPHONE */
 
+  /* TÉLÉPHONE */
+
+
+  /* BOX RULES TÉLÉPHONE */
+
   #apropos::before,#apropos::after,#apropos .card::before,#apropos .card::after {
 
     content:none !important;
@@ -8288,6 +8162,9 @@ audio {
 
   }
 
+
+
+  /* BOX RULES TÉLÉPHONE */
 
   #apropos .magicbox-arrow {
 
@@ -8336,6 +8213,9 @@ audio {
   }
 
 
+
+  /* BOX RULES TÉLÉPHONE */
+
   #apropos .magicbox-arrow-down {
 
     margin:0 14px 13px auto !important;
@@ -8344,6 +8224,9 @@ audio {
 
   }
 
+
+
+  /* BOX RULES TÉLÉPHONE */
 
   #apropos .magicbox-arrow-up {
 
@@ -8359,6 +8242,9 @@ audio {
 
 @media screen and (max-width:430px) and (min-height:760px) {
 
+
+  /* BOX RULES */
+
   #apropos .magicbox-arrow {
 
     width:10px !important;
@@ -8368,6 +8254,9 @@ audio {
   }
 
 
+
+  /* BOX RULES */
+
   #apropos .magicbox-arrow-down {
 
     margin-right:12px !important;
@@ -8376,6 +8265,9 @@ audio {
 
   }
 
+
+
+  /* BOX RULES */
 
   #apropos .magicbox-arrow-up {
 
@@ -8422,6 +8314,8 @@ audio {
 
 
 @media screen and (max-width:768px) {
+
+  /* TÉLÉPHONE */
 
   /* TÉLÉPHONE */
 
@@ -8486,19 +8380,7 @@ audio {
 
       0.72)) !important;
 
-    text-shadow:
-
-      0 0 2px #ffffff,
-
-      0 0 6px #ffffff,
-
-      0 0 12px rgba(255,
-
-      255,
-
-      255,
-
-      0.85) !important;
+    text-shadow:0 0 2px #ffffff,0 0 6px #ffffff,0 0 12px rgba(255,255,255,0.85) !important;
 
     transform:translate3d(0,0,0) !important
 
@@ -8583,6 +8465,8 @@ audio {
 
 
 @media screen and (max-width:768px) {
+
+  /* TÉLÉPHONE */
 
   /* TÉLÉPHONE */
 
@@ -8708,6 +8592,8 @@ audio {
 
 
 @media screen and (max-width:768px) {
+
+  /* TÉLÉPHONE */
 
   /* TÉLÉPHONE */
 
@@ -8867,6 +8753,9 @@ audio {
 }
 
 
+
+/* INTRO */
+
 #introPage #introGif,.intro-page .intro-gif {
 
   display:none !important
@@ -8875,6 +8764,8 @@ audio {
 
 
 @media screen and (max-width:768px) {
+
+  /* TÉLÉPHONE */
 
   /* TÉLÉPHONE */
 
@@ -8983,6 +8874,8 @@ audio {
 
   /* TÉLÉPHONE */
 
+  /* TÉLÉPHONE */
+
   #contact {
 
     position:fixed !important;
@@ -9031,6 +8924,9 @@ audio {
   }
 
 
+
+  /* BOX RULES TÉLÉPHONE */
+
   #contact .card,#contact h1 {
 
     transform:none !important;
@@ -9056,6 +8952,9 @@ audio {
 
 }
 
+
+
+/* INTRO */
 
 .video-bg,.intro-video {
 
@@ -9087,6 +8986,9 @@ audio {
 }
 
 
+
+/* INTRO */
+
 .intro-video {
 
   display:none;
@@ -9095,6 +8997,9 @@ audio {
 
 }
 
+
+
+/* INTRO */
 
 .gif-bg,.intro-gif {
 
@@ -9106,6 +9011,11 @@ audio {
 @media screen and (max-width:768px) {
 
   /* TÉLÉPHONE */
+
+  /* TÉLÉPHONE */
+
+
+  /* INTRO TÉLÉPHONE */
 
   .video-bg,.intro-video {
 
@@ -9131,6 +9041,11 @@ audio {
 
   /* TÉLÉPHONE */
 
+    /* TÉLÉPHONE */
+
+
+    /* INTRO TÉLÉPHONE */
+
     .video-bg,.intro-video {
 
       height:100dvh;
@@ -9151,6 +9066,8 @@ audio {
   @media screen and (max-width:768px) {
 
   /* TÉLÉPHONE */
+
+    /* TÉLÉPHONE */
 
     .video-bg,.intro-video {
 
@@ -9252,6 +9169,8 @@ audio {
 
   /* TÉLÉPHONE */
 
+  /* TÉLÉPHONE */
+
   .video-bg,.intro-video {
 
     height:100vh !important;
@@ -9274,6 +9193,8 @@ audio {
 
   /* TÉLÉPHONE */
 
+    /* TÉLÉPHONE */
+
     .video-bg,.intro-video {
 
       height:100dvh !important;
@@ -9294,6 +9215,8 @@ audio {
   @media screen and (max-width:768px) {
 
   /* TÉLÉPHONE */
+
+    /* TÉLÉPHONE */
 
     .video-bg,.intro-video {
 
@@ -9338,6 +9261,9 @@ html,body {
 
 }
 
+
+
+/* FOND VIDÉO */
 
 #fondVideo.video-bg,#introVideo.intro-video {
 
@@ -9386,6 +9312,9 @@ html,body {
 }
 
 
+
+/* INTRO */
+
 #introVideo.intro-video {
 
   display:none !important;
@@ -9409,6 +9338,11 @@ html,body {
 @media screen and (max-width:768px) {
 
   /* TÉLÉPHONE */
+
+  /* TÉLÉPHONE */
+
+
+  /* FOND VIDÉO TÉLÉPHONE */
 
   #fondVideo.video-bg,#introVideo.intro-video {
 
@@ -9436,6 +9370,11 @@ html,body {
 
   /* TÉLÉPHONE */
 
+    /* TÉLÉPHONE */
+
+
+    /* FOND VIDÉO TÉLÉPHONE */
+
     #fondVideo.video-bg,#introVideo.intro-video {
 
       height:100svh !important;
@@ -9456,6 +9395,8 @@ html,body {
   @media screen and (max-width:768px) {
 
   /* TÉLÉPHONE */
+
+    /* TÉLÉPHONE */
 
     #fondVideo.video-bg,#introVideo.intro-video {
 
@@ -9478,6 +9419,8 @@ html,body {
 
   /* TÉLÉPHONE */
 
+    /* TÉLÉPHONE */
+
     #fondVideo.video-bg,#introVideo.intro-video {
 
       height:-webkit-fill-available !important;
@@ -9497,6 +9440,9 @@ html,body {
 
 @media screen and (max-width:900px) and (max-height:500px) and (orientation:landscape) {
 
+
+  /* FOND VIDÉO */
+
   #fondVideo.video-bg,#introVideo.intro-video {
 
     object-fit:fill !important
@@ -9506,6 +9452,9 @@ html,body {
 
 }
 
+
+
+/* INTRO */
 
 #introPage {
 
@@ -9610,6 +9559,8 @@ html,body {
 
   /* TÉLÉPHONE */
 
+  /* TÉLÉPHONE */
+
   #fondVideo.video-bg,#introVideo.intro-video {
 
     width:100vw !important;
@@ -9636,6 +9587,8 @@ html,body {
 
   /* TÉLÉPHONE */
 
+    /* TÉLÉPHONE */
+
     #fondVideo.video-bg,#introVideo.intro-video {
 
       height:100svh !important;
@@ -9657,6 +9610,8 @@ html,body {
 
   /* TÉLÉPHONE */
 
+    /* TÉLÉPHONE */
+
     #fondVideo.video-bg,#introVideo.intro-video {
 
       height:100dvh !important;
@@ -9677,6 +9632,8 @@ html,body {
   @media screen and (max-width:768px) {
 
   /* TÉLÉPHONE */
+
+    /* TÉLÉPHONE */
 
     #fondVideo.video-bg,#introVideo.intro-video {
 
@@ -9809,6 +9766,11 @@ html,body {
 
   /* ORDINATEUR */
 
+  /* ORDINATEUR */
+
+
+  /* BOX RULES ORDINATEUR */
+
   #apropos {
 
     position:fixed !important;
@@ -9832,6 +9794,9 @@ html,body {
   }
 
 
+
+  /* BOX RULES ORDINATEUR */
+
   #apropos.active {
 
     display:flex !important;
@@ -9842,6 +9807,9 @@ html,body {
 
   }
 
+
+
+  /* BOX RULES ORDINATEUR */
 
   #apropos .card {
 
@@ -9865,6 +9833,9 @@ html,body {
 
   }
 
+
+
+  /* BOX RULES ORDINATEUR */
 
   #apropos h1 {
 
@@ -9900,6 +9871,8 @@ html,body {
 
 @media screen and (min-width:769px) and (max-height:760px) {
 
+  /* ORDINATEUR */
+
   :root {
 
     --rules-desktop-font:clamp(14px,1.45vw,18px);
@@ -9922,6 +9895,8 @@ html,body {
 
 
 @media screen and (max-width:768px) {
+
+  /* TÉLÉPHONE */
 
   /* TÉLÉPHONE */
 
@@ -9976,6 +9951,9 @@ html,body {
 
   }
 
+
+
+  /* BOX RULES TÉLÉPHONE */
 
   #apropos::-webkit-scrollbar {
 
@@ -10049,6 +10027,8 @@ html,body {
 
   /* TÉLÉPHONE */
 
+    /* TÉLÉPHONE */
+
     .overlay {
 
       min-height:100dvh !important
@@ -10083,6 +10063,8 @@ html,body {
   @media screen and (max-width:768px) {
 
   /* TÉLÉPHONE */
+
+    /* TÉLÉPHONE */
 
     #fondVideo.video-bg,#introVideo.intro-video {
 
@@ -10228,6 +10210,8 @@ html,body {
 
   /* TÉLÉPHONE */
 
+  /* TÉLÉPHONE */
+
   #apropos {
 
     position:fixed !important;
@@ -10347,6 +10331,8 @@ html,body {
 
   /* TÉLÉPHONE */
 
+    /* TÉLÉPHONE */
+
     #apropos {
 
       height:var(--magicbox-height,calc(100dvh - 60dvh - 205px - env(safe-area-inset-bottom))) !important
@@ -10405,14 +10391,20 @@ html,body {
 
 <!--
 
-👶 8 · DESSIN AUTRE
+╭────────────────────────────────────────────────────────────────────────────╮
 
-   copyright-intro-footer-final
+│ 8 · DESSIN AUTRE
+
+╰────────────────────────────────────────────────────────────────────────────╯
+
+   - copyright-intro-footer-final
 
 -->
 
 
 <style id="copyright-intro-footer-final">
+
+/* INTRO */
 
 .copyright-intro-page {
 
@@ -10461,6 +10453,9 @@ html,body {
 }
 
 
+
+/* INTRO */
+
 .copyright-intro-page.hide {
 
   opacity:0 !important;
@@ -10471,6 +10466,9 @@ html,body {
 
 }
 
+
+
+/* INTRO */
 
 .copyright-intro-page p {
 
@@ -10543,6 +10541,9 @@ html,body {
 
 @media screen and (min-width:900px) {
 
+
+  /* INTRO */
+
   .copyright-intro-page p {
 
     font-size:clamp(20px,2.2vw,36px) !important
@@ -10554,6 +10555,9 @@ html,body {
 
 
 @media screen and (max-width:390px) {
+
+
+  /* INTRO */
 
   .copyright-intro-page {
 
@@ -10573,6 +10577,9 @@ html,body {
 
   @media screen and (max-width:900px) and (max-height:500px) and (orientation:landscape) {
 
+
+    /* INTRO */
+
     .copyright-intro-page p {
 
       font-size:clamp(12px,4.5vh,22px) !important
@@ -10589,9 +10596,13 @@ html,body {
 
 <!--
 
-👶 8 · DESSIN AUTRE
+╭────────────────────────────────────────────────────────────────────────────╮
 
-   gpc-mobile-ultra-smooth-final
+│ 8 · DESSIN AUTRE
+
+╰────────────────────────────────────────────────────────────────────────────╯
+
+   - gpc-mobile-ultra-smooth-final
 
 -->
 
@@ -10599,6 +10610,8 @@ html,body {
 <style id="gpc-mobile-ultra-smooth-final">
 
 @media screen and (max-width:768px) {
+
+  /* TÉLÉPHONE */
 
   /* TÉLÉPHONE */
 
@@ -10659,18 +10672,13 @@ html,body {
 
     border-radius:999px !important;
 
-    box-shadow:
-
-      0 0 7px rgba(255,
-
-      255,
-
-      255,
-
-      0.38) !important;
+    box-shadow:0 0 7px rgba(255,255,255,0.38) !important
 
   }
 
+
+
+  /* BOX RULES TÉLÉPHONE */
 
   #apropos {
 
@@ -10715,6 +10723,9 @@ html,body {
   }
 
 
+
+  /* BOX RULES TÉLÉPHONE */
+
   #apropos::-webkit-scrollbar {
 
     width:3px !important;
@@ -10724,6 +10735,9 @@ html,body {
   }
 
 
+
+  /* BOX RULES TÉLÉPHONE */
+
   #apropos::-webkit-scrollbar-track {
 
     background:transparent !important
@@ -10731,24 +10745,22 @@ html,body {
   }
 
 
+
+  /* BOX RULES TÉLÉPHONE */
+
   #apropos::-webkit-scrollbar-thumb {
 
     background:rgba(255,255,255,0.48) !important;
 
     border-radius:999px !important;
 
-    box-shadow:
-
-      0 0 6px rgba(255,
-
-      255,
-
-      255,
-
-      0.36) !important;
+    box-shadow:0 0 6px rgba(255,255,255,0.36) !important
 
   }
 
+
+
+  /* BOX RULES TÉLÉPHONE */
 
   #apropos .card,#apropos h1 {
 
@@ -10760,6 +10772,9 @@ html,body {
 
   }
 
+
+
+  /* GMAIL TÉLÉPHONE */
 
   #contact {
 
@@ -10802,6 +10817,9 @@ html,body {
   }
 
 
+
+  /* GMAIL TÉLÉPHONE */
+
   #contact.active {
 
     display:flex !important;
@@ -10812,6 +10830,9 @@ html,body {
 
   }
 
+
+
+  /* BOX RULES TÉLÉPHONE */
 
   #contact .card,#contact h1 {
 
@@ -10825,6 +10846,9 @@ html,body {
 
   }
 
+
+
+  /* FOND VIDÉO TÉLÉPHONE */
 
   #fondVideo.video-bg {
 
@@ -10850,6 +10874,9 @@ html,body {
 
 @media screen and (max-width:360px) {
 
+
+  /* BOX RULES */
+
   #apropos {
 
     width:calc(100vw - 18px) !important;
@@ -10863,6 +10890,8 @@ html,body {
 
 
 @media screen and (min-width:431px) and (max-width:768px) {
+
+  /* TÉLÉPHONE */
 
   #apropos {
 
@@ -10892,6 +10921,9 @@ html,body {
   }
 
 
+
+  /* GMAIL */
+
   #contact {
 
     transform:translate3d(-50%,calc(var(--gmail-liquid-y,var(--gmail-origin-y,66vh)) - 50%),0) !important
@@ -10908,9 +10940,13 @@ html,body {
 
 <!--
 
-👶 8 · DESSIN AUTRE
+╭────────────────────────────────────────────────────────────────────────────╮
 
-   gmail-magicbox-smooth-final
+│ 8 · DESSIN AUTRE
+
+╰────────────────────────────────────────────────────────────────────────────╯
+
+   - gmail-magicbox-smooth-final
 
 -->
 
@@ -10920,6 +10956,11 @@ html,body {
 @media screen and (max-width:768px) {
 
   /* TÉLÉPHONE */
+
+  /* TÉLÉPHONE */
+
+
+  /* GMAIL TÉLÉPHONE */
 
   #contact {
 
@@ -10962,6 +11003,9 @@ html,body {
   }
 
 
+
+  /* GMAIL TÉLÉPHONE */
+
   #contact.active {
 
     display:flex !important;
@@ -10972,6 +11016,9 @@ html,body {
 
   }
 
+
+
+  /* BOX RULES TÉLÉPHONE */
 
   #contact .card,#contact h1 {
 
@@ -10991,6 +11038,9 @@ html,body {
 
 @media screen and (max-width:900px) and (max-height:500px) and (orientation:landscape) {
 
+
+  /* GMAIL */
+
   #contact {
 
     transform:translate3d( -50%,calc(var(--gmail-base-y,var(--gmail-origin-y,66vh)) - 50% + var(--gmail-magicbox-float,0px)),0 ) !important
@@ -11007,9 +11057,13 @@ html,body {
 
 <!--
 
-👶 8 · DESSIN AUTRE
+╭────────────────────────────────────────────────────────────────────────────╮
 
-   website-ordi-mobile-clone-final
+│ 8 · DESSIN AUTRE
+
+╰────────────────────────────────────────────────────────────────────────────╯
+
+   - website-ordi-mobile-clone-final
 
 -->
 
@@ -11017,6 +11071,8 @@ html,body {
 <style id="website-ordi-mobile-clone-final">
 
 @media screen and (min-width:769px) {
+
+  /* ORDINATEUR */
 
   /* ORDINATEUR */
 
@@ -11060,6 +11116,9 @@ html,body {
   }
 
 
+
+  /* INTRO ORDINATEUR */
+
   .intro-page,.copyright-intro-page {
 
     position:fixed !important;
@@ -11083,12 +11142,18 @@ html,body {
   }
 
 
+
+  /* INTRO ORDINATEUR */
+
   .intro-page {
 
     font-size:clamp(24px,2.5vw,42px) !important
 
   }
 
+
+
+  /* FOND VIDÉO ORDINATEUR */
 
   .gif-bg,#fondVideo.video-bg,#introVideo.intro-video {
 
@@ -11193,6 +11258,9 @@ html,body {
   }
 
 
+
+  /* MENU BOUTONS ORDINATEUR */
+
   nav button {
 
     margin:0 !important;
@@ -11217,6 +11285,9 @@ html,body {
 
   }
 
+
+
+  /* TIMER ORDINATEUR */
 
   .paris-timer {
 
@@ -11287,12 +11358,18 @@ html,body {
   }
 
 
+
+  /* PAGE STARTHERE ORDINATEUR */
+
   #accueil.page-section.active {
 
     min-height:55dvh !important
 
   }
 
+
+
+  /* BOX RULES ORDINATEUR */
 
   #apropos {
 
@@ -11343,6 +11420,9 @@ html,body {
   }
 
 
+
+  /* BOX RULES ORDINATEUR */
+
   #apropos::-webkit-scrollbar {
 
     width:4px !important;
@@ -11352,6 +11432,9 @@ html,body {
   }
 
 
+
+  /* BOX RULES ORDINATEUR */
+
   #apropos::-webkit-scrollbar-track {
 
     background:transparent !important
@@ -11359,24 +11442,22 @@ html,body {
   }
 
 
+
+  /* BOX RULES ORDINATEUR */
+
   #apropos::-webkit-scrollbar-thumb {
 
     background:rgba(255,255,255,0.50) !important;
 
     border-radius:999px !important;
 
-    box-shadow:
-
-      0 0 7px rgba(255,
-
-      255,
-
-      255,
-
-      0.38) !important;
+    box-shadow:0 0 7px rgba(255,255,255,0.38) !important
 
   }
 
+
+
+  /* BOX RULES ORDINATEUR */
 
   #apropos .card {
 
@@ -11399,6 +11480,9 @@ html,body {
   }
 
 
+
+  /* BOX RULES ORDINATEUR */
+
   #apropos h1 {
 
     font-size:clamp(19px,2.05vw,31px) !important;
@@ -11417,6 +11501,9 @@ html,body {
 
   }
 
+
+
+  /* GMAIL ORDINATEUR */
 
   #contact {
 
@@ -11459,6 +11546,9 @@ html,body {
   }
 
 
+
+  /* GMAIL ORDINATEUR */
+
   #contact.active {
 
     display:flex !important;
@@ -11469,6 +11559,9 @@ html,body {
 
   }
 
+
+
+  /* BOX RULES ORDINATEUR */
 
   #contact .card {
 
@@ -11484,6 +11577,9 @@ html,body {
 
   }
 
+
+
+  /* GMAIL ORDINATEUR */
 
   #contact h1 {
 
@@ -11504,6 +11600,9 @@ html,body {
   }
 
 
+
+  /* BOX RULES ORDINATEUR */
+
   .card {
 
     margin-top:0 !important;
@@ -11512,6 +11611,9 @@ html,body {
 
   }
 
+
+
+  /* AUDIO ORDINATEUR */
 
   .audio-box {
 
@@ -11607,6 +11709,8 @@ html,body {
 
 @media screen and (min-width:769px) and (max-height:760px) {
 
+  /* ORDINATEUR */
+
   nav {
 
     flex-direction:row !important;
@@ -11661,6 +11765,9 @@ html,body {
 
 @media screen and (min-width:1200px) and (min-height:820px) {
 
+
+  /* BOX RULES */
+
   #apropos {
 
     width:min(76vw,780px) !important;
@@ -11669,6 +11776,9 @@ html,body {
 
   }
 
+
+
+  /* AUDIO */
 
   .audio-box {
 
@@ -11686,9 +11796,13 @@ html,body {
 
 <!--
 
-👶 8 · DESSIN AUTRE
+╭────────────────────────────────────────────────────────────────────────────╮
 
-   website-ordi-magicbox-copy-final
+│ 8 · DESSIN AUTRE
+
+╰────────────────────────────────────────────────────────────────────────────╯
+
+   - website-ordi-magicbox-copy-final
 
 -->
 
@@ -11698,6 +11812,11 @@ html,body {
 @media screen and (min-width:769px) {
 
   /* ORDINATEUR */
+
+  /* ORDINATEUR */
+
+
+  /* BOX RULES ORDINATEUR */
 
   #apropos {
 
@@ -11794,6 +11913,9 @@ html,body {
   }
 
 
+
+  /* BOX RULES ORDINATEUR */
+
   #apropos.active {
 
     display:block !important;
@@ -11802,6 +11924,9 @@ html,body {
 
   }
 
+
+
+  /* BOX RULES ORDINATEUR */
 
   #apropos::-webkit-scrollbar {
 
@@ -11812,6 +11937,9 @@ html,body {
   }
 
 
+
+  /* BOX RULES ORDINATEUR */
+
   #apropos::-webkit-scrollbar-track {
 
     background:transparent !important
@@ -11819,24 +11947,22 @@ html,body {
   }
 
 
+
+  /* BOX RULES ORDINATEUR */
+
   #apropos::-webkit-scrollbar-thumb {
 
     background:rgba(255,255,255,0.50) !important;
 
     border-radius:999px !important;
 
-    box-shadow:
-
-      0 0 7px rgba(255,
-
-      255,
-
-      255,
-
-      0.38) !important;
+    box-shadow:0 0 7px rgba(255,255,255,0.38) !important
 
   }
 
+
+
+  /* BOX RULES ORDINATEUR */
 
   #apropos .card {
 
@@ -11879,6 +12005,9 @@ html,body {
   }
 
 
+
+  /* BOX RULES ORDINATEUR */
+
   #apropos::before,#apropos::after,#apropos .card::before,#apropos .card::after {
 
     content:none !important;
@@ -11887,6 +12016,9 @@ html,body {
 
   }
 
+
+
+  /* BOX RULES ORDINATEUR */
 
   #apropos .magicbox-arrow {
 
@@ -11941,6 +12073,9 @@ html,body {
   }
 
 
+
+  /* BOX RULES ORDINATEUR */
+
   #apropos .magicbox-arrow-down {
 
     margin:0 clamp(10px,1.1vw,16px) clamp(10px,1vw,15px) auto !important;
@@ -11950,6 +12085,9 @@ html,body {
   }
 
 
+
+  /* BOX RULES ORDINATEUR */
+
   #apropos .magicbox-arrow-up {
 
     margin:clamp(10px,1vw,15px) auto 0 auto !important;
@@ -11958,6 +12096,9 @@ html,body {
 
   }
 
+
+
+  /* BOX RULES ORDINATEUR */
 
   #apropos h1 {
 
@@ -11996,6 +12137,8 @@ html,body {
 
 
 @media screen and (min-width:769px) and (max-height:760px) {
+
+  /* ORDINATEUR */
 
   #apropos {
 
@@ -12051,6 +12194,9 @@ html,body {
 
 @media screen and (min-width:1200px) and (min-height:820px) {
 
+
+  /* BOX RULES */
+
   #apropos {
 
     width:min(70vw,790px) !important;
@@ -12061,6 +12207,9 @@ html,body {
 
   }
 
+
+
+  /* BOX RULES */
 
   #apropos h1 {
 
@@ -12099,9 +12248,13 @@ html,body {
 
 <!--
 
-👶 8 · DESSIN AUTRE
+╭────────────────────────────────────────────────────────────────────────────╮
 
-   website-ordi-page-fixe-ajustements-final
+│ 8 · DESSIN AUTRE
+
+╰────────────────────────────────────────────────────────────────────────────╯
+
+   - website-ordi-page-fixe-ajustements-final
 
 -->
 
@@ -12109,6 +12262,8 @@ html,body {
 <style id="website-ordi-page-fixe-ajustements-final">
 
 @media screen and (min-width:769px) {
+
+  /* ORDINATEUR */
 
   /* ORDINATEUR */
 
@@ -12174,6 +12329,9 @@ html,body {
   }
 
 
+
+  /* MENU BOUTONS ORDINATEUR */
+
   nav button {
 
     font-size:clamp(14px,1.10vw,20px) !important;
@@ -12187,6 +12345,9 @@ html,body {
   }
 
 
+
+  /* TIMER ORDINATEUR */
+
   .paris-timer {
 
     top:clamp(112px,17.6dvh,218px) !important;
@@ -12198,6 +12359,9 @@ html,body {
   }
 
 
+
+  /* BOX RULES ORDINATEUR */
+
   #apropos {
 
     top:var(--ordi-rules-top,57dvh) !important;
@@ -12206,6 +12370,9 @@ html,body {
 
   }
 
+
+
+  /* GMAIL ORDINATEUR */
 
   #contact {
 
@@ -12218,6 +12385,8 @@ html,body {
 
 
 @media screen and (min-width:769px) and (max-height:760px) {
+
+  /* ORDINATEUR */
 
   .overlay {
 
@@ -12255,6 +12424,9 @@ html,body {
   }
 
 
+
+  /* BOX RULES ORDINATEUR */
+
   #apropos h1 {
 
     font-size:clamp(15px,1.48vw,23px) !important
@@ -12267,12 +12439,18 @@ html,body {
 
 @media screen and (min-width:1200px) and (min-height:820px) {
 
+
+  /* MENU BOUTONS */
+
   nav button {
 
     font-size:clamp(15px,1vw,22px) !important
 
   }
 
+
+
+  /* TIMER */
 
   .paris-timer {
 
@@ -12290,14 +12468,20 @@ html,body {
 
 <!--
 
-👶 8 · DESSIN AUTRE
+╭────────────────────────────────────────────────────────────────────────────╮
 
-   website-ordi-final-polish-fixed-box-final
+│ 8 · DESSIN AUTRE
+
+╰────────────────────────────────────────────────────────────────────────────╯
+
+   - website-ordi-final-polish-fixed-box-final
 
 -->
 
 
 <style id="website-ordi-final-polish-fixed-box-final">
+
+/* INTRO */
 
 html.gpc-intro-hold #introPage {
 
@@ -12314,12 +12498,18 @@ html.gpc-intro-hold #introPage {
 }
 
 
+
+/* MENU BOUTONS */
+
 html.gpc-intro-hold #menuPrincipal,html.gpc-intro-hold .audio-box {
 
   display:none !important
 
 }
 
+
+
+/* INTRO */
 
 html.gpc-intro-stage-text #introText {
 
@@ -12334,12 +12524,18 @@ html.gpc-intro-stage-text #introText {
 }
 
 
+
+/* INTRO */
+
 html.gpc-intro-stage-video #introText {
 
   display:none !important
 
 }
 
+
+
+/* INTRO */
 
 html.gpc-intro-stage-video #introGif {
 
@@ -12355,6 +12551,9 @@ html.gpc-intro-stage-video #introGif {
 
 }
 
+
+
+/* INTRO */
 
 html.gpc-intro-stage-video #introVideo.intro-video {
 
@@ -12380,6 +12579,11 @@ html.gpc-intro-stage-video #introVideo.intro-video {
 @media screen and (max-width:768px) {
 
   /* TÉLÉPHONE */
+
+  /* TÉLÉPHONE */
+
+
+  /* FOND VIDÉO TÉLÉPHONE */
 
   #fondVideo.video-bg {
 
@@ -12432,6 +12636,9 @@ html.gpc-intro-stage-video #introVideo.intro-video {
 
   @supports (height:100svh) {
 
+
+    /* FOND VIDÉO TÉLÉPHONE */
+
     #fondVideo.video-bg {
 
       height:100svh !important;
@@ -12448,6 +12655,8 @@ html.gpc-intro-stage-video #introVideo.intro-video {
 
 
 @media screen and (min-width:769px) {
+
+  /* ORDINATEUR */
 
   /* ORDINATEUR */
 
@@ -12513,6 +12722,9 @@ html.gpc-intro-stage-video #introVideo.intro-video {
   }
 
 
+
+  /* MENU BOUTONS ORDINATEUR */
+
   nav button {
 
     font-size:clamp(13px,1.03vw,19px) !important;
@@ -12526,6 +12738,9 @@ html.gpc-intro-stage-video #introVideo.intro-video {
   }
 
 
+
+  /* TIMER ORDINATEUR */
+
   .paris-timer {
 
     top:clamp(96px,15.6dvh,196px) !important;
@@ -12536,6 +12751,9 @@ html.gpc-intro-stage-video #introVideo.intro-video {
 
   }
 
+
+
+  /* BOX RULES ORDINATEUR */
 
   #apropos {
 
@@ -12559,11 +12777,9 @@ html.gpc-intro-stage-video #introVideo.intro-video {
 }
 
 
-@media screen and (min-width:769px) and (max-width:1050px),
+@media screen and (min-width:769px) and (max-width:1050px),screen and (min-width:769px) and (max-height:760px) {
 
-screen and (min-width:769px) and (max-height:760px)
-
-{
+  /* ORDINATEUR */
 
   #apropos {
 
@@ -12605,6 +12821,11 @@ screen and (min-width:769px) and (max-height:760px)
 
   /* GRAND ORDINATEUR */
 
+  /* GRAND ORDINATEUR */
+
+
+  /* BOX RULES GRAND ORDINATEUR */
+
   #apropos {
 
     width:var(--ordi-rules-fixed-width,780px) !important;
@@ -12619,6 +12840,9 @@ screen and (min-width:769px) and (max-height:760px)
 
   }
 
+
+
+  /* TIMER GRAND ORDINATEUR */
 
   .paris-timer {
 
@@ -12636,14 +12860,20 @@ screen and (min-width:769px) and (max-height:760px)
 
 <!--
 
-👶 8 · DESSIN AUTRE
+╭────────────────────────────────────────────────────────────────────────────╮
 
-   website-ordi-final-box-timer-intro-final
+│ 8 · DESSIN AUTRE
+
+╰────────────────────────────────────────────────────────────────────────────╯
+
+   - website-ordi-final-box-timer-intro-final
 
 -->
 
 
 <style id="website-ordi-final-box-timer-intro-final">
+
+/* INTRO */
 
 #copyrightIntroPage,.copyright-intro-page {
 
@@ -12653,6 +12883,9 @@ screen and (min-width:769px) and (max-height:760px)
 
 }
 
+
+
+/* INTRO */
 
 #copyrightIntroPage p,.copyright-intro-page p {
 
@@ -12681,6 +12914,9 @@ screen and (min-width:769px) and (max-height:760px)
 }
 
 
+
+/* INTRO */
+
 html.gpc-intro-hold.gpc-intro-stage-text #introPage,
 
 html.gpc-intro-stage-text #introPage,
@@ -12693,6 +12929,9 @@ html.gpc-intro-stage-text #introPage,
 
 }
 
+
+
+/* INTRO */
 
 html.gpc-intro-stage-text #introGif,
 
@@ -12710,6 +12949,9 @@ html.gpc-intro-stage-text #introVideo.intro-video
 
 }
 
+
+
+/* INTRO */
 
 html.gpc-intro-stage-text #introText {
 
@@ -12738,6 +12980,9 @@ html.gpc-intro-stage-text #introText {
 }
 
 
+
+/* INTRO */
+
 html.gpc-intro-stage-video #introPage {
 
   background:#ff00ff !important
@@ -12746,6 +12991,8 @@ html.gpc-intro-stage-video #introPage {
 
 
 @media screen and (min-width:769px) {
+
+  /* ORDINATEUR */
 
   /* ORDINATEUR */
 
@@ -12798,6 +13045,9 @@ html.gpc-intro-stage-video #introPage {
   }
 
 
+
+  /* MENU BOUTONS ORDINATEUR */
+
   nav button {
 
     font-size:clamp(13px,1.03vw,19px) !important;
@@ -12811,6 +13061,9 @@ html.gpc-intro-stage-video #introPage {
   }
 
 
+
+  /* TIMER ORDINATEUR */
+
   .paris-timer {
 
     top:clamp(84px,14.3dvh,178px) !important;
@@ -12821,6 +13074,9 @@ html.gpc-intro-stage-video #introPage {
 
   }
 
+
+
+  /* BOX RULES ORDINATEUR */
 
   #apropos {
 
@@ -12844,11 +13100,9 @@ html.gpc-intro-stage-video #introPage {
 }
 
 
-@media screen and (min-width:769px) and (max-width:1050px),
+@media screen and (min-width:769px) and (max-width:1050px),screen and (min-width:769px) and (max-height:760px) {
 
-screen and (min-width:769px) and (max-height:760px)
-
-{
+  /* ORDINATEUR */
 
   #apropos {
 
@@ -12890,6 +13144,11 @@ screen and (min-width:769px) and (max-height:760px)
 
   /* GRAND ORDINATEUR */
 
+  /* GRAND ORDINATEUR */
+
+
+  /* BOX RULES GRAND ORDINATEUR */
+
   #apropos {
 
     width:var(--ordi-rules-fixed-width,780px) !important;
@@ -12904,6 +13163,9 @@ screen and (min-width:769px) and (max-height:760px)
 
   }
 
+
+
+  /* TIMER GRAND ORDINATEUR */
 
   .paris-timer {
 
@@ -12921,12 +13183,20 @@ screen and (min-width:769px) and (max-height:760px)
 
   /* TÉLÉPHONE */
 
+  /* TÉLÉPHONE */
+
+
+  /* INTRO TÉLÉPHONE */
+
   html.gpc-intro-hold.gpc-intro-stage-text #introPage,html.gpc-intro-stage-text #introPage {
 
     background:#000000 !important
 
   }
 
+
+
+  /* INTRO TÉLÉPHONE */
 
   #copyrightIntroPage,.copyright-intro-page {
 
@@ -12944,9 +13214,13 @@ screen and (min-width:769px) and (max-height:760px)
 
 <!--
 
-👶 8 · DESSIN AUTRE
+╭────────────────────────────────────────────────────────────────────────────╮
 
-   website-ordi-stable-half-box-final
+│ 8 · DESSIN AUTRE
+
+╰────────────────────────────────────────────────────────────────────────────╯
+
+   - website-ordi-stable-half-box-final
 
 -->
 
@@ -12954,6 +13228,8 @@ screen and (min-width:769px) and (max-height:760px)
 <style id="website-ordi-stable-half-box-final">
 
 @media screen and (min-width:769px) {
+
+  /* ORDINATEUR */
 
   /* ORDINATEUR */
 
@@ -13006,6 +13282,9 @@ screen and (min-width:769px) and (max-height:760px)
   }
 
 
+
+  /* TIMER ORDINATEUR */
+
   .paris-timer {
 
     top:clamp(66px,11.4dvh,142px) !important;
@@ -13016,6 +13295,9 @@ screen and (min-width:769px) and (max-height:760px)
 
   }
 
+
+
+  /* BOX RULES ORDINATEUR */
 
   #apropos {
 
@@ -13046,6 +13328,9 @@ screen and (min-width:769px) and (max-height:760px)
   }
 
 
+
+  /* BOX RULES ORDINATEUR */
+
   #apropos .card {
 
     min-height:auto !important;
@@ -13054,6 +13339,9 @@ screen and (min-width:769px) and (max-height:760px)
 
   }
 
+
+
+  /* BOX RULES ORDINATEUR */
 
   #apropos h1 {
 
@@ -13064,6 +13352,9 @@ screen and (min-width:769px) and (max-height:760px)
   }
 
 
+
+  /* BOX RULES ORDINATEUR */
+
   #apropos .magicbox-arrow-down {
 
     margin-bottom:clamp(7px,0.8vw,11px) !important
@@ -13071,12 +13362,18 @@ screen and (min-width:769px) and (max-height:760px)
   }
 
 
+
+  /* BOX RULES ORDINATEUR */
+
   #apropos .magicbox-arrow-up {
 
     margin-top:clamp(7px,0.8vw,11px) !important
 
   }
 
+
+
+  /* GMAIL ORDINATEUR */
 
   #contact {
 
@@ -13091,6 +13388,11 @@ screen and (min-width:769px) and (max-height:760px)
 @media screen and (min-width:1400px) and (min-height:820px) {
 
   /* GRAND ORDINATEUR */
+
+  /* GRAND ORDINATEUR */
+
+
+  /* BOX RULES GRAND ORDINATEUR */
 
   #apropos {
 
@@ -13107,6 +13409,9 @@ screen and (min-width:769px) and (max-height:760px)
   }
 
 
+
+  /* TIMER GRAND ORDINATEUR */
+
   .paris-timer {
 
     top:clamp(76px,10.8dvh,154px) !important;
@@ -13119,11 +13424,9 @@ screen and (min-width:769px) and (max-height:760px)
 }
 
 
-@media screen and (min-width:769px) and (max-width:1050px),
+@media screen and (min-width:769px) and (max-width:1050px),screen and (min-width:769px) and (max-height:760px) {
 
-screen and (min-width:769px) and (max-height:760px)
-
-{
+  /* ORDINATEUR */
 
   .paris-timer {
 
@@ -13167,14 +13470,20 @@ screen and (min-width:769px) and (max-height:760px)
 
 <!--
 
-👶 8 · DESSIN AUTRE
+╭────────────────────────────────────────────────────────────────────────────╮
 
-   rules-scroll-text-adaptive-final
+│ 8 · DESSIN AUTRE
+
+╰────────────────────────────────────────────────────────────────────────────╯
+
+   - rules-scroll-text-adaptive-final
 
 -->
 
 
 <style id="rules-scroll-text-adaptive-final">
+
+/* BOX RULES */
 
 #apropos {
 
@@ -13196,6 +13505,9 @@ screen and (min-width:769px) and (max-height:760px)
 
 }
 
+
+
+/* BOX RULES */
 
 #apropos .card {
 
@@ -13224,6 +13536,9 @@ screen and (min-width:769px) and (max-height:760px)
 }
 
 
+
+/* BOX RULES */
+
 #apropos h1 {
 
   display:block !important;
@@ -13250,6 +13565,9 @@ screen and (min-width:769px) and (max-height:760px)
 
 }
 
+
+
+/* BOX RULES */
 
 #apropos > .magicbox-arrow {
 
@@ -13300,6 +13618,9 @@ screen and (min-width:769px) and (max-height:760px)
 }
 
 
+
+/* BOX RULES */
+
 #apropos > .magicbox-arrow-down {
 
   top:clamp(10px,1.1vw,16px) !important;
@@ -13315,6 +13636,9 @@ screen and (min-width:769px) and (max-height:760px)
 }
 
 
+
+/* BOX RULES */
+
 #apropos > .magicbox-arrow-up {
 
   bottom:clamp(10px,1.1vw,16px) !important;
@@ -13329,6 +13653,9 @@ screen and (min-width:769px) and (max-height:760px)
 
 }
 
+
+
+/* BOX RULES */
 
 #apropos .card > .magicbox-arrow,
 
@@ -13353,6 +13680,11 @@ screen and (min-width:769px) and (max-height:760px)
 
   /* ORDINATEUR */
 
+  /* ORDINATEUR */
+
+
+  /* BOX RULES ORDINATEUR */
+
   #apropos {
 
     scroll-padding-top:clamp(30px,3vw,44px) !important;
@@ -13362,12 +13694,18 @@ screen and (min-width:769px) and (max-height:760px)
   }
 
 
+
+  /* BOX RULES ORDINATEUR */
+
   #apropos .card {
 
     padding:clamp(24px,2.2vw,34px) 0 clamp(34px,3.1vw,48px) 0 !important
 
   }
 
+
+
+  /* BOX RULES ORDINATEUR */
 
   #apropos h1 {
 
@@ -13396,6 +13734,9 @@ screen and (min-width:769px) and (max-height:760px)
   }
 
 
+
+  /* TIMER ORDINATEUR */
+
   .paris-timer,#contact,.audio-box {
 
     max-width:100vw !important;
@@ -13405,6 +13746,9 @@ screen and (min-width:769px) and (max-height:760px)
   }
 
 
+
+  /* GMAIL ORDINATEUR */
+
   #contact h1 {
 
     max-width:96vw !important;
@@ -13413,6 +13757,9 @@ screen and (min-width:769px) and (max-height:760px)
 
   }
 
+
+
+  /* AUDIO ORDINATEUR */
 
   .audio-box {
 
@@ -13431,11 +13778,9 @@ screen and (min-width:769px) and (max-height:760px)
 }
 
 
-@media screen and (min-width:769px) and (max-width:1050px),
+@media screen and (min-width:769px) and (max-width:1050px),screen and (min-width:769px) and (max-height:760px) {
 
-screen and (min-width:769px) and (max-height:760px)
-
-{
+  /* ORDINATEUR */
 
   #apropos {
 
@@ -13457,6 +13802,9 @@ screen and (min-width:769px) and (max-height:760px)
   }
 
 
+
+  /* BOX RULES ORDINATEUR */
+
   #apropos > .magicbox-arrow-down {
 
     top:clamp(7px,1.1vh,12px) !important;
@@ -13465,6 +13813,9 @@ screen and (min-width:769px) and (max-height:760px)
 
   }
 
+
+
+  /* BOX RULES ORDINATEUR */
 
   #apropos > .magicbox-arrow-up {
 
@@ -13494,6 +13845,11 @@ screen and (min-width:769px) and (max-height:760px)
 
   /* TÉLÉPHONE */
 
+  /* TÉLÉPHONE */
+
+
+  /* BOX RULES TÉLÉPHONE */
+
   #apropos {
 
     scroll-padding-top:clamp(28px,8vw,42px) !important;
@@ -13503,12 +13859,18 @@ screen and (min-width:769px) and (max-height:760px)
   }
 
 
+
+  /* BOX RULES TÉLÉPHONE */
+
   #apropos .card {
 
     padding:clamp(26px,7vw,38px) 0 clamp(44px,12vw,70px) 0 !important
 
   }
 
+
+
+  /* BOX RULES TÉLÉPHONE */
 
   #apropos h1 {
 
@@ -13518,6 +13880,9 @@ screen and (min-width:769px) and (max-height:760px)
 
   }
 
+
+
+  /* BOX RULES TÉLÉPHONE */
 
   #apropos > .magicbox-arrow {
 
@@ -13532,6 +13897,9 @@ screen and (min-width:769px) and (max-height:760px)
   }
 
 
+
+  /* BOX RULES TÉLÉPHONE */
+
   #apropos > .magicbox-arrow-down {
 
     top:clamp(9px,3vw,14px) !important;
@@ -13541,12 +13909,18 @@ screen and (min-width:769px) and (max-height:760px)
   }
 
 
+
+  /* BOX RULES TÉLÉPHONE */
+
   #apropos > .magicbox-arrow-up {
 
     bottom:clamp(9px,3vw,15px) !important
 
   }
 
+
+
+  /* TIMER TÉLÉPHONE */
 
   nav,.paris-timer,#contact,.audio-box {
 
@@ -13556,6 +13930,9 @@ screen and (min-width:769px) and (max-height:760px)
 
   }
 
+
+
+  /* GMAIL TÉLÉPHONE */
 
   #contact h1 {
 
@@ -13571,6 +13948,9 @@ screen and (min-width:769px) and (max-height:760px)
 
 @media screen and (max-width:900px) and (max-height:500px) and (orientation:landscape) {
 
+
+  /* BOX RULES */
+
   #apropos .card {
 
     padding-top:clamp(20px,6vh,28px) !important;
@@ -13579,6 +13959,9 @@ screen and (min-width:769px) and (max-height:760px)
 
   }
 
+
+
+  /* BOX RULES */
 
   #apropos > .magicbox-arrow {
 
@@ -13593,6 +13976,9 @@ screen and (min-width:769px) and (max-height:760px)
   }
 
 
+
+  /* BOX RULES */
+
   #apropos > .magicbox-arrow-down {
 
     top:8px !important;
@@ -13601,6 +13987,9 @@ screen and (min-width:769px) and (max-height:760px)
 
   }
 
+
+
+  /* BOX RULES */
 
   #apropos > .magicbox-arrow-up {
 
@@ -13618,14 +14007,20 @@ screen and (min-width:769px) and (max-height:760px)
 
 <!--
 
-👶 8 · DESSIN AUTRE
+╭────────────────────────────────────────────────────────────────────────────╮
 
-   gpc-intro-no-video-final
+│ 8 · DESSIN AUTRE
+
+╰────────────────────────────────────────────────────────────────────────────╯
+
+   - gpc-intro-no-video-final
 
 -->
 
 
 <style id="gpc-intro-no-video-final">
+
+/* INTRO */
 
 #copyrightIntroPage,.copyright-intro-page {
 
@@ -13635,6 +14030,9 @@ screen and (min-width:769px) and (max-height:760px)
 
 }
 
+
+
+/* INTRO */
 
 #copyrightIntroPage p,.copyright-intro-page p {
 
@@ -13663,6 +14061,9 @@ screen and (min-width:769px) and (max-height:760px)
 }
 
 
+
+/* INTRO */
+
 #introPage,
 
 #introPage.intro-page,
@@ -13677,6 +14078,9 @@ html.gpc-intro-stage-text #introPage
 
 }
 
+
+
+/* INTRO */
 
 #introText {
 
@@ -13705,6 +14109,9 @@ html.gpc-intro-stage-text #introPage
 }
 
 
+
+/* INTRO */
+
 #introPage #introVideo,#introVideo.intro-video,#introPage #introGif,.intro-page .intro-gif {
 
   display:none !important;
@@ -13718,12 +14125,18 @@ html.gpc-intro-stage-text #introPage
 }
 
 
+
+/* INTRO */
+
 html.gpc-intro-stage-video #introPage {
 
   background:#000000 !important
 
 }
 
+
+
+/* INTRO */
 
 html.gpc-intro-stage-video #introVideo,html.gpc-intro-stage-video #introGif {
 
@@ -13742,9 +14155,13 @@ html.gpc-intro-stage-video #introVideo,html.gpc-intro-stage-video #introGif {
 
 <!--
 
-👶 8 · DESSIN AUTRE
+╭────────────────────────────────────────────────────────────────────────────╮
 
-   gpc-static-responsive-layout-final
+│ 8 · DESSIN AUTRE
+
+╰────────────────────────────────────────────────────────────────────────────╯
+
+   - gpc-static-responsive-layout-final
 
 -->
 
@@ -13752,6 +14169,8 @@ html.gpc-intro-stage-video #introVideo,html.gpc-intro-stage-video #introGif {
 <style id="gpc-static-responsive-layout-final">
 
 @media screen and (min-width:769px) {
+
+  /* ORDINATEUR */
 
   /* ORDINATEUR */
 
@@ -13784,6 +14203,9 @@ html.gpc-intro-stage-video #introVideo,html.gpc-intro-stage-video #introGif {
 
   }
 
+
+
+  /* FOND VIDÉO ORDINATEUR */
 
   #fondVideo.video-bg,.gif-bg {
 
@@ -13835,6 +14257,9 @@ html.gpc-intro-stage-video #introVideo,html.gpc-intro-stage-video #introGif {
   }
 
 
+
+  /* TIMER ORDINATEUR */
+
   nav,
 
   .paris-timer,
@@ -13860,12 +14285,18 @@ html.gpc-intro-stage-video #introVideo,html.gpc-intro-stage-video #introGif {
   }
 
 
+
+  /* BOX RULES ORDINATEUR */
+
   nav,#apropos,#contact,.audio-box {
 
     pointer-events:auto !important
 
   }
 
+
+
+  /* PAGE STARTHERE ORDINATEUR */
 
   #accueil {
 
@@ -13889,6 +14320,9 @@ html.gpc-intro-stage-video #introVideo,html.gpc-intro-stage-video #introGif {
   }
 
 
+
+  /* BOX RULES ORDINATEUR */
+
   #apropos {
 
     width:var(--ordi-rules-fixed-width,min(760px,calc(100vw - 42px))) !important;
@@ -13906,6 +14340,9 @@ html.gpc-intro-stage-video #introVideo,html.gpc-intro-stage-video #introGif {
   }
 
 
+
+  /* BOX RULES ORDINATEUR */
+
   #contact h1,#apropos h1 {
 
     max-width:100% !important;
@@ -13914,6 +14351,9 @@ html.gpc-intro-stage-video #introVideo,html.gpc-intro-stage-video #introGif {
 
   }
 
+
+
+  /* AUDIO ORDINATEUR */
 
   .audio-box {
 
@@ -13938,11 +14378,12 @@ html.gpc-intro-stage-video #introVideo,html.gpc-intro-stage-video #introGif {
 }
 
 
-@media screen and (min-width:769px) and (max-width:1050px),
+@media screen and (min-width:769px) and (max-width:1050px),screen and (min-width:769px) and (max-height:760px) {
 
-screen and (min-width:769px) and (max-height:760px)
+  /* ORDINATEUR */
 
-{
+
+  /* MENU BOUTONS ORDINATEUR */
 
   nav button {
 
@@ -13961,6 +14402,9 @@ screen and (min-width:769px) and (max-height:760px)
 
   }
 
+
+
+  /* GMAIL ORDINATEUR */
 
   #contact h1 {
 
@@ -13992,9 +14436,17 @@ screen and (min-width:769px) and (max-height:760px)
 
 <!--
 
-👶 8 · DESSIN GLOBAL
+╭────────────────────────────────────────────────────────────────────────────╮
 
-   couleurs, tailles, placements de base
+│ 8 · DESSINS GÉNÉRAUX
+
+╰────────────────────────────────────────────────────────────────────────────╯
+
+   - couleurs
+
+   - tailles de base
+
+   - positions principales
 
 -->
 
@@ -14053,6 +14505,9 @@ button,audio,input,input[type="range"],label,[onclick] {
 }
 
 
+
+/* INTRO */
+
 #copyrightIntroPage,.copyright-intro-page,#introPage,#introPage.intro-page {
 
   position:fixed !important;
@@ -14082,6 +14537,9 @@ button,audio,input,input[type="range"],label,[onclick] {
 }
 
 
+
+/* INTRO */
+
 #copyrightIntroPage,.copyright-intro-page {
 
   z-index:100000 !important;
@@ -14099,12 +14557,18 @@ button,audio,input,input[type="range"],label,[onclick] {
 }
 
 
+
+/* INTRO */
+
 #introPage,#introPage.intro-page {
 
   z-index:99999 !important
 
 }
 
+
+
+/* INTRO */
 
 #copyrightIntroPage p,.copyright-intro-page p,#introText {
 
@@ -14137,6 +14601,9 @@ button,audio,input,input[type="range"],label,[onclick] {
 }
 
 
+
+/* INTRO */
+
 #introText {
 
   white-space:pre-line !important;
@@ -14147,6 +14614,9 @@ button,audio,input,input[type="range"],label,[onclick] {
 
 }
 
+
+
+/* INTRO */
 
 html.gpc-site-ready #copyrightIntroPage,
 
@@ -14162,6 +14632,9 @@ html.gpc-site-ready #introPage
 
 }
 
+
+
+/* INTRO */
 
 #introVideo,#introPage #introVideo,#introPage #introGif {
 
@@ -14179,6 +14652,11 @@ html.gpc-site-ready #introPage
 @media screen and (min-width:769px) {
 
   /* ORDINATEUR */
+
+  /* ORDINATEUR */
+
+
+  /* TIMER ORDINATEUR */
 
   .paris-timer {
 
@@ -14198,6 +14676,11 @@ html.gpc-site-ready #introPage
 
   /* GRAND ORDINATEUR */
 
+  /* GRAND ORDINATEUR */
+
+
+  /* TIMER GRAND ORDINATEUR */
+
   .paris-timer {
 
     top:max(6px,calc(clamp(76px,10.8dvh,154px) - clamp(40px,4vw,72px) - 60px)) !important;
@@ -14210,11 +14693,9 @@ html.gpc-site-ready #introPage
 }
 
 
-@media screen and (min-width:769px) and (max-width:1050px),
+@media screen and (min-width:769px) and (max-width:1050px),screen and (min-width:769px) and (max-height:760px) {
 
-screen and (min-width:769px) and (max-height:760px)
-
-{
+  /* ORDINATEUR */
 
   .paris-timer {
 
@@ -14228,12 +14709,18 @@ screen and (min-width:769px) and (max-height:760px)
 }
 
 
+
+/* BOX RULES */
+
 #apropos {
 
   position:fixed !important
 
 }
 
+
+
+/* BOX RULES */
 
 #apropos > .magicbox-arrow {
 
@@ -14286,6 +14773,9 @@ screen and (min-width:769px) and (max-height:760px)
 }
 
 
+
+/* BOX RULES */
+
 #apropos > .magicbox-arrow-down {
 
   top:var(--rules-arrow-gap,clamp(10px,1.1vw,16px)) !important;
@@ -14304,6 +14794,9 @@ screen and (min-width:769px) and (max-height:760px)
 
 }
 
+
+
+/* BOX RULES */
 
 #apropos > .magicbox-arrow-up {
 
@@ -14324,6 +14817,9 @@ screen and (min-width:769px) and (max-height:760px)
 }
 
 
+
+/* BOX RULES */
+
 #apropos.rules-at-end > .magicbox-arrow-up,#apropos.rules-no-scroll > .magicbox-arrow-up {
 
   opacity:1 !important;
@@ -14332,6 +14828,9 @@ screen and (min-width:769px) and (max-height:760px)
 
 }
 
+
+
+/* BOX RULES */
 
 #apropos .card > .magicbox-arrow,
 
@@ -14356,6 +14855,11 @@ screen and (min-width:769px) and (max-height:760px)
 
   /* TÉLÉPHONE */
 
+  /* TÉLÉPHONE */
+
+
+  /* BOX RULES TÉLÉPHONE */
+
   #apropos {
 
     --rules-arrow-size:clamp(8px,2.6vw,11px);
@@ -14369,6 +14873,9 @@ screen and (min-width:769px) and (max-height:760px)
   }
 
 
+
+  /* BOX RULES TÉLÉPHONE */
+
   #apropos > .magicbox-arrow {
 
     transition:opacity 500ms cubic-bezier(0.16,1,0.3,1),transform 640ms cubic-bezier(0.16,1,0.3,1),filter 640ms cubic-bezier(0.16,1,0.3,1) !important
@@ -14380,6 +14887,9 @@ screen and (min-width:769px) and (max-height:760px)
 
 
 @media screen and (max-width:900px) and (max-height:500px) and (orientation:landscape) {
+
+
+  /* BOX RULES */
 
   #apropos {
 
@@ -14403,9 +14913,13 @@ screen and (min-width:769px) and (max-height:760px)
 
 <!--
 
-👶 8 · IPHONE
+╭────────────────────────────────────────────────────────────────────────────╮
 
-   aide iOS
+│ 8 · IPHONE
+
+╰────────────────────────────────────────────────────────────────────────────╯
+
+   - sécurité iOS
 
 -->
 
@@ -14415,6 +14929,11 @@ screen and (min-width:769px) and (max-height:760px)
 @media screen and (min-width:769px) {
 
   /* ORDINATEUR */
+
+  /* ORDINATEUR */
+
+
+  /* TIMER ORDINATEUR */
 
   .paris-timer {
 
@@ -14436,6 +14955,11 @@ screen and (min-width:769px) and (max-height:760px)
 
   /* GRAND ORDINATEUR */
 
+  /* GRAND ORDINATEUR */
+
+
+  /* TIMER GRAND ORDINATEUR */
+
   .paris-timer {
 
     top:max(6px,calc(clamp(76px,10.8dvh,154px) - clamp(40px,4vw,72px) - 60px)) !important;
@@ -14448,11 +14972,9 @@ screen and (min-width:769px) and (max-height:760px)
 }
 
 
-@media screen and (min-width:769px) and (max-width:1050px),
+@media screen and (min-width:769px) and (max-width:1050px),screen and (min-width:769px) and (max-height:760px) {
 
-screen and (min-width:769px) and (max-height:760px)
-
-{
+  /* ORDINATEUR */
 
   .paris-timer {
 
@@ -14470,6 +14992,11 @@ screen and (min-width:769px) and (max-height:760px)
 
   /* TÉLÉPHONE */
 
+  /* TÉLÉPHONE */
+
+
+  /* GMAIL TÉLÉPHONE */
+
   #contact h1 {
 
     transform:translate3d(0,var(--gmail-smooth-float,0px),0) !important;
@@ -14485,23 +15012,12 @@ screen and (min-width:769px) and (max-height:760px)
   }
 
 
+
+  /* GMAIL TÉLÉPHONE */
+
   #contact.active h1 {
 
-    filter:
-
-      drop-shadow(0 0 2px rgba(255,
-
-      255,
-
-      255,
-
-      .55)) drop-shadow(0 0 8px rgba(255,
-
-      255,
-
-      255,
-
-      .28));
+    filter:drop-shadow(0 0 2px rgba(255,255,255,.55)) drop-shadow(0 0 8px rgba(255,255,255,.28))
 
   }
 
@@ -14514,6 +15030,8 @@ screen and (min-width:769px) and (max-height:760px)
   @media screen and (max-width:768px) {
 
   /* TÉLÉPHONE */
+
+    /* TÉLÉPHONE */
 
     html,body {
 
@@ -14532,6 +15050,9 @@ screen and (min-width:769px) and (max-height:760px)
     }
 
 
+
+    /* INTRO TÉLÉPHONE */
+
     #copyrightIntroPage,.copyright-intro-page,#introPage,#introPage.intro-page {
 
       width:100vw !important;
@@ -14546,6 +15067,9 @@ screen and (min-width:769px) and (max-height:760px)
 
     }
 
+
+
+    /* FOND VIDÉO TÉLÉPHONE */
 
     #fondVideo.video-bg,.video-bg {
 
@@ -14602,6 +15126,9 @@ screen and (min-width:769px) and (max-height:760px)
     }
 
 
+
+    /* AUDIO TÉLÉPHONE */
+
     .audio-box {
 
       bottom:calc(38px + env(safe-area-inset-bottom)) !important;
@@ -14611,12 +15138,18 @@ screen and (min-width:769px) and (max-height:760px)
     }
 
 
+
+    /* TIMER TÉLÉPHONE */
+
     .paris-timer {
 
       transform:translate3d(-50%,0,0) !important
 
     }
 
+
+
+    /* TIMER TÉLÉPHONE */
 
     #apropos,#contact,.audio-box,nav,.paris-timer {
 
@@ -14633,6 +15166,11 @@ screen and (min-width:769px) and (max-height:760px)
 
 
   @media screen and (max-width:430px) {
+
+    /* TÉLÉPHONE */
+
+
+    /* GMAIL TÉLÉPHONE */
 
     #contact h1 {
 
@@ -14662,9 +15200,15 @@ screen and (min-width:769px) and (max-height:760px)
 
 <!--
 
-👶 8 · FLÈCHES BOX RULES
+╭────────────────────────────────────────────────────────────────────────────╮
 
-   flèches haut et bas
+│ 8 · FLÈCHES BOX RULES
+
+╰────────────────────────────────────────────────────────────────────────────╯
+
+   - flèche haut
+
+   - flèche bas
 
 -->
 
@@ -14680,6 +15224,9 @@ html,body {
 }
 
 
+
+/* FOND VIDÉO */
+
 #fondVideo.video-bg,.video-bg {
 
   max-width:100vw !important;
@@ -14690,6 +15237,9 @@ html,body {
 
 }
 
+
+
+/* BOX RULES */
 
 #apropos {
 
@@ -14712,6 +15262,9 @@ html,body {
 }
 
 
+
+/* BOX RULES */
+
 #apropos .card {
 
   overflow:visible !important;
@@ -14725,6 +15278,9 @@ html,body {
 }
 
 
+
+/* BOX RULES */
+
 #apropos h1 {
 
   overflow:visible !important;
@@ -14737,6 +15293,9 @@ html,body {
 
 }
 
+
+
+/* BOX RULES */
 
 #apropos::before,
 
@@ -14786,6 +15345,9 @@ html,body {
 
 }
 
+
+
+/* BOX RULES */
 
 #apropos > .magicbox-arrow {
 
@@ -14872,6 +15434,9 @@ html,body {
 }
 
 
+
+/* BOX RULES */
+
 #apropos > .magicbox-arrow-down {
 
   top:var(--rules-arrow-gap,clamp(10px,1.1vw,16px)) !important;
@@ -14889,6 +15454,9 @@ html,body {
 }
 
 
+
+/* BOX RULES */
+
 #apropos > .magicbox-arrow-up {
 
   top:auto !important;
@@ -14905,6 +15473,9 @@ html,body {
 
 }
 
+
+
+/* BOX RULES */
 
 #apropos.rules-at-end > .magicbox-arrow-up,#apropos.rules-no-scroll > .magicbox-arrow-up {
 
@@ -14941,6 +15512,8 @@ html,body {
 
   /* ORDINATEUR */
 
+  /* ORDINATEUR */
+
   html,body {
 
     height:100dvh !important;
@@ -14965,6 +15538,9 @@ html,body {
   }
 
 
+
+  /* BOX RULES ORDINATEUR */
+
   #apropos {
 
     max-width:calc(100vw - 34px) !important;
@@ -14986,6 +15562,9 @@ html,body {
   }
 
 
+
+  /* TIMER ORDINATEUR */
+
   .paris-timer,nav,#contact,.audio-box {
 
     max-width:100vw !important;
@@ -14994,6 +15573,9 @@ html,body {
 
   }
 
+
+
+  /* BOX RULES ORDINATEUR */
 
   #contact h1,#apropos h1 {
 
@@ -15005,11 +15587,9 @@ html,body {
 }
 
 
-@media screen and (min-width:769px) and (max-width:1050px),
+@media screen and (min-width:769px) and (max-width:1050px),screen and (min-width:769px) and (max-height:760px) {
 
-screen and (min-width:769px) and (max-height:760px)
-
-{
+  /* ORDINATEUR */
 
   #apropos {
 
@@ -15019,6 +15599,9 @@ screen and (min-width:769px) and (max-height:760px)
 
   }
 
+
+
+  /* AUDIO ORDINATEUR */
 
   .audio-box {
 
@@ -15041,6 +15624,8 @@ screen and (min-width:769px) and (max-height:760px)
 
   /* TÉLÉPHONE */
 
+  /* TÉLÉPHONE */
+
   html,body {
 
     width:100vw !important;
@@ -15052,6 +15637,9 @@ screen and (min-width:769px) and (max-height:760px)
   }
 
 
+
+  /* INTRO TÉLÉPHONE */
+
   #copyrightIntroPage,.copyright-intro-page,#introPage,#introPage.intro-page {
 
     height:var(--gpc-ih,100dvh) !important;
@@ -15062,6 +15650,9 @@ screen and (min-width:769px) and (max-height:760px)
 
   }
 
+
+
+  /* FOND VIDÉO TÉLÉPHONE */
 
   #fondVideo.video-bg,.video-bg {
 
@@ -15106,6 +15697,9 @@ screen and (min-width:769px) and (max-height:760px)
   }
 
 
+
+  /* AUDIO TÉLÉPHONE */
+
   .audio-box {
 
     bottom:calc(38px + env(safe-area-inset-bottom)) !important;
@@ -15114,6 +15708,9 @@ screen and (min-width:769px) and (max-height:760px)
 
   }
 
+
+
+  /* BOX RULES TÉLÉPHONE */
 
   #apropos {
 
@@ -15132,12 +15729,18 @@ screen and (min-width:769px) and (max-height:760px)
   }
 
 
+
+  /* BOX RULES TÉLÉPHONE */
+
   #apropos > .magicbox-arrow {
 
     transition:opacity 520ms cubic-bezier(.16,1,.3,1),transform 660ms cubic-bezier(.16,1,.3,1),filter 660ms cubic-bezier(.16,1,.3,1) !important
 
   }
 
+
+
+  /* GMAIL TÉLÉPHONE */
 
   #contact h1 {
 
@@ -15157,12 +15760,17 @@ screen and (min-width:769px) and (max-height:760px)
 
   /* TÉLÉPHONE */
 
+    /* TÉLÉPHONE */
+
     html,body {
 
       min-height:var(--gpc-ih,100svh) !important
 
     }
 
+
+
+    /* FOND VIDÉO TÉLÉPHONE */
 
     #copyrightIntroPage,
 
@@ -15193,6 +15801,9 @@ screen and (min-width:769px) and (max-height:760px)
 
 @media screen and (max-width:900px) and (max-height:500px) and (orientation:landscape) {
 
+
+  /* BOX RULES */
+
   #apropos {
 
     --rules-arrow-size:8px;
@@ -15205,6 +15816,9 @@ screen and (min-width:769px) and (max-height:760px)
 
   }
 
+
+
+  /* AUDIO */
 
   .audio-box {
 
@@ -15222,9 +15836,13 @@ screen and (min-width:769px) and (max-height:760px)
 
 <!--
 
-👶 8 · GMAIL TÉLÉPHONE
+╭────────────────────────────────────────────────────────────────────────────╮
 
-   place du mail sur smartphone
+│ 8 · GMAIL TÉLÉPHONE
+
+╰────────────────────────────────────────────────────────────────────────────╯
+
+   - placement du mail sur smartphone
 
 -->
 
@@ -15234,6 +15852,11 @@ screen and (min-width:769px) and (max-height:760px)
 @media screen and (max-width:768px) {
 
   /* TÉLÉPHONE */
+
+  /* TÉLÉPHONE */
+
+
+  /* GMAIL TÉLÉPHONE */
 
   #contact {
 
@@ -15274,6 +15897,9 @@ screen and (min-width:769px) and (max-height:760px)
   }
 
 
+
+  /* GMAIL TÉLÉPHONE */
+
   #contact.active {
 
     display:flex !important;
@@ -15284,6 +15910,9 @@ screen and (min-width:769px) and (max-height:760px)
 
   }
 
+
+
+  /* BOX RULES TÉLÉPHONE */
 
   #contact .card {
 
@@ -15307,6 +15936,9 @@ screen and (min-width:769px) and (max-height:760px)
 
   }
 
+
+
+  /* GMAIL TÉLÉPHONE */
 
   #contact h1 {
 
@@ -15338,6 +15970,9 @@ screen and (min-width:769px) and (max-height:760px)
 
 @media screen and (max-width:430px) and (min-height:760px) {
 
+
+  /* GMAIL */
+
   #contact {
 
     transform:translate3d( -50%,calc(var(--gmail-chef-anchor-y,var(--gmail-origin-y,56vh)) - 50%),0 ) !important
@@ -15366,14 +16001,20 @@ screen and (min-width:769px) and (max-height:760px)
 
 <!--
 
-👶 8 · INTRO NOIRE
+╭────────────────────────────────────────────────────────────────────────────╮
 
-   dessin de l'intro
+│ 8 · INTRO NOIRE
+
+╰────────────────────────────────────────────────────────────────────────────╯
+
+   - dessin intro
 
 -->
 
 
 <style id="gpc-intro-black-sequence-restored-final">
+
+/* INTRO */
 
 #gpcIntroSequenceFinal {
 
@@ -15412,12 +16053,18 @@ screen and (min-width:769px) and (max-height:760px)
 }
 
 
+
+/* INTRO */
+
 #gpcIntroSequenceFinal.gpc-intro-visible {
 
   display:flex !important
 
 }
 
+
+
+/* INTRO */
 
 #gpcIntroSequenceFinal.gpc-intro-hidden {
 
@@ -15427,6 +16074,9 @@ screen and (min-width:769px) and (max-height:760px)
 
 }
 
+
+
+/* INTRO */
 
 #gpcIntroSequenceFinalText {
 
@@ -15481,6 +16131,11 @@ screen and (min-width:769px) and (max-height:760px)
 
   /* TÉLÉPHONE */
 
+  /* TÉLÉPHONE */
+
+
+  /* INTRO TÉLÉPHONE */
+
   #gpcIntroSequenceFinal {
 
     height:var(--gpc-ih,100dvh) !important;
@@ -15491,6 +16146,9 @@ screen and (min-width:769px) and (max-height:760px)
 
   }
 
+
+
+  /* INTRO TÉLÉPHONE */
 
   #gpcIntroSequenceFinalText {
 
@@ -15509,6 +16167,11 @@ screen and (min-width:769px) and (max-height:760px)
   @media screen and (max-width:768px) {
 
   /* TÉLÉPHONE */
+
+    /* TÉLÉPHONE */
+
+
+    /* INTRO TÉLÉPHONE */
 
     #gpcIntroSequenceFinal {
 
@@ -15531,9 +16194,17 @@ screen and (min-width:769px) and (max-height:760px)
 
 <!--
 
-👶 8 · BOX RULES TÉLÉPHONE
+╭────────────────────────────────────────────────────────────────────────────╮
 
-   place de la box sur smartphone
+│ 8 · BOX RULES TÉLÉPHONE
+
+╰────────────────────────────────────────────────────────────────────────────╯
+
+   - position téléphone
+
+   - hauteur téléphone
+
+   - scroll téléphone
 
 -->
 
@@ -15541,6 +16212,8 @@ screen and (min-width:769px) and (max-height:760px)
 <style id="gpc-rules-hier-size-position-final">
 
 @media screen and (max-width:768px) {
+
+  /* TÉLÉPHONE */
 
   /* TÉLÉPHONE */
 
@@ -15554,6 +16227,9 @@ screen and (min-width:769px) and (max-height:760px)
 
   }
 
+
+
+  /* BOX RULES TÉLÉPHONE */
 
   html.gpc-rules-hier-active #apropos.active {
 
@@ -15612,6 +16288,9 @@ screen and (min-width:769px) and (max-height:760px)
   }
 
 
+
+  /* BOX RULES TÉLÉPHONE */
+
   html.gpc-rules-hier-active #apropos.active .card {
 
     width:100% !important;
@@ -15630,6 +16309,9 @@ screen and (min-width:769px) and (max-height:760px)
 
   }
 
+
+
+  /* BOX RULES TÉLÉPHONE */
 
   html.gpc-rules-hier-active #apropos.active h1 {
 
@@ -15654,6 +16336,9 @@ screen and (min-width:769px) and (max-height:760px)
 
 
 @media screen and (max-width:430px) {
+
+
+  /* BOX RULES */
 
   html.gpc-rules-hier-active #apropos.active {
 
@@ -15684,6 +16369,9 @@ screen and (min-width:769px) and (max-height:760px)
   }
 
 
+
+  /* BOX RULES */
+
   html.gpc-rules-hier-active #apropos.active h1 {
 
     font-size:clamp(10px,3.35vw,13px) !important;
@@ -15702,9 +16390,13 @@ screen and (min-width:769px) and (max-height:760px)
 
 <!--
 
-👶 8 · TÉLÉPHONE RAPIDE
+╭────────────────────────────────────────────────────────────────────────────╮
 
-   aide vitesse mobile
+│ 8 · TÉLÉPHONE RAPIDE
+
+╰────────────────────────────────────────────────────────────────────────────╯
+
+   - optimisation smartphone
 
 -->
 
@@ -15714,6 +16406,11 @@ screen and (min-width:769px) and (max-height:760px)
 @media screen and (max-width:768px) {
 
   /* TÉLÉPHONE */
+
+  /* TÉLÉPHONE */
+
+
+  /* INTRO TÉLÉPHONE */
 
   #introVideo,#introGif,.intro-gif {
 
@@ -15727,6 +16424,9 @@ screen and (min-width:769px) and (max-height:760px)
 
   }
 
+
+
+  /* FOND VIDÉO TÉLÉPHONE */
 
   #fondVideo.video-bg,.video-bg {
 
@@ -15755,9 +16455,13 @@ screen and (min-width:769px) and (max-height:760px)
 
 <!--
 
-👶 8 · SITE RAPIDE
+╭────────────────────────────────────────────────────────────────────────────╮
 
-   aide vitesse
+│ 8 · SITE RAPIDE
+
+╰────────────────────────────────────────────────────────────────────────────╯
+
+   - optimisation vitesse
 
 -->
 
@@ -15767,6 +16471,11 @@ screen and (min-width:769px) and (max-height:760px)
 @media screen and (min-width:769px) {
 
   /* ORDINATEUR */
+
+  /* ORDINATEUR */
+
+
+  /* TIMER ORDINATEUR */
 
   .paris-timer {
 
@@ -15788,6 +16497,11 @@ screen and (min-width:769px) and (max-height:760px)
 
   /* GRAND ORDINATEUR */
 
+  /* GRAND ORDINATEUR */
+
+
+  /* TIMER GRAND ORDINATEUR */
+
   .paris-timer {
 
     top:max(2px,calc(clamp(76px,10.8dvh,154px) - clamp(40px,4vw,72px) - 60px - 180px)) !important;
@@ -15800,11 +16514,9 @@ screen and (min-width:769px) and (max-height:760px)
 }
 
 
-@media screen and (min-width:769px) and (max-width:1050px),
+@media screen and (min-width:769px) and (max-width:1050px),screen and (min-width:769px) and (max-height:760px) {
 
-screen and (min-width:769px) and (max-height:760px)
-
-{
+  /* ORDINATEUR */
 
   .paris-timer {
 
@@ -15829,6 +16541,9 @@ screen and (min-width:769px) and (max-height:760px)
 }
 
 
+
+/* FOND VIDÉO */
+
 #fondVideo,.video-bg {
 
   pointer-events:none !important;
@@ -15839,6 +16554,9 @@ screen and (min-width:769px) and (max-height:760px)
 
 }
 
+
+
+/* BOX RULES */
 
 #apropos.gpc-starthere-mode h1 {
 
@@ -15863,12 +16581,17 @@ screen and (min-width:769px) and (max-height:760px)
 
   /* TÉLÉPHONE */
 
+  /* TÉLÉPHONE */
+
   html,body {
 
     text-rendering:optimizeSpeed !important
 
   }
 
+
+
+  /* INTRO TÉLÉPHONE */
 
   #introVideo,#introGif,.intro-gif,.volume-white-glow-layer {
 
@@ -15882,6 +16605,9 @@ screen and (min-width:769px) and (max-height:760px)
 
   }
 
+
+
+  /* TIMER TÉLÉPHONE */
 
   nav,.paris-timer,.audio-box,#apropos,#contact {
 
@@ -15910,14 +16636,22 @@ screen and (min-width:769px) and (max-height:760px)
 
 <!--
 
-👶 8 · FOND VIDÉO
+╭────────────────────────────────────────────────────────────────────────────╮
 
-   dessin de la vidéo plein écran
+│ 8 · FOND VIDÉO
+
+╰────────────────────────────────────────────────────────────────────────────╯
+
+   - vidéo plein écran
+
+   - ne pas cropper
 
 -->
 
 
 <style id="gpc-video-mp4-antifreeze-final">
+
+/* FOND VIDÉO */
 
 #fondVideo.gpc-video-bg,#fondVideo.video-bg {
 
@@ -15966,6 +16700,9 @@ screen and (min-width:769px) and (max-height:760px)
 }
 
 
+
+/* FOND VIDÉO */
+
 html.gpc-site-ready #fondVideo.gpc-video-bg {
 
   display:block!important;
@@ -15978,6 +16715,9 @@ html.gpc-site-ready #fondVideo.gpc-video-bg {
 
 
 @supports (height:100dvh) {
+
+
+  /* FOND VIDÉO */
 
   #fondVideo.gpc-video-bg,#fondVideo.video-bg {
 
@@ -16008,6 +16748,11 @@ html.gpc-site-ready #fondVideo.gpc-video-bg {
 @media screen and (max-width:768px) {
 
   /* TÉLÉPHONE */
+
+  /* TÉLÉPHONE */
+
+
+  /* FOND VIDÉO TÉLÉPHONE */
 
   #fondVideo.gpc-video-bg,#fondVideo.video-bg {
 
@@ -16053,9 +16798,13 @@ html.gpc-site-ready #fondVideo.gpc-video-bg {
 
 <!--
 
-👶 8 · DESSIN AUTRE
+╭────────────────────────────────────────────────────────────────────────────╮
 
-   gpc-mobile-stable-before-starthere-box-final
+│ 8 · DESSIN AUTRE
+
+╰────────────────────────────────────────────────────────────────────────────╯
+
+   - gpc-mobile-stable-before-starthere-box-final
 
 -->
 
@@ -16065,6 +16814,11 @@ html.gpc-site-ready #fondVideo.gpc-video-bg {
 @media screen and (min-width: 769px) {
 
   /* ORDINATEUR */
+
+  /* ORDINATEUR */
+
+
+  /* TIMER ORDINATEUR */
 
   .paris-timer {
 
@@ -16084,7 +16838,12 @@ html.gpc-site-ready #fondVideo.gpc-video-bg {
 
   /* TÉLÉPHONE */
 
+  /* TÉLÉPHONE */
+
   #contact.active h1,
+
+
+  /* GMAIL TÉLÉPHONE */
 
   #contact h1 {
 
@@ -16112,9 +16871,15 @@ html.gpc-site-ready #fondVideo.gpc-video-bg {
 
 <!--
 
-👶 1 · FOND
+╭────────────────────────────────────────────────────────────────────────────╮
 
-   vidéo derrière tout le site
+│ 1 · FOND
+
+╰────────────────────────────────────────────────────────────────────────────╯
+
+   - FOND VIDÉO
+
+   - à modifier si tu changes la vidéo
 
 -->
 
@@ -16143,7 +16908,7 @@ html.gpc-site-ready #fondVideo.gpc-video-bg {
 
   aria-hidden="true">
 
-  <source src="./tema_regardable_site_960p.mp4" type="video/mp4">
+<source src="./tema_regardable_site_960p.mp4" type="video/mp4">
 
 </video>
 
@@ -16152,29 +16917,51 @@ html.gpc-site-ready #fondVideo.gpc-video-bg {
 
 <!--
 
-👶 2 · INTRO
+╭────────────────────────────────────────────────────────────────────────────╮
 
-   écran du début
+│ 2 · INTRO
+
+╰────────────────────────────────────────────────────────────────────────────╯
+
+   - INTRO COPYRIGHT
+
+   - premier écran
 
 -->
 
 
-<div id="copyrightIntroPage" class="copyright-intro-page" aria-label="© 2026 catdezoo&lt;3. all rights reserved."><p>© 2026 catdezoo&lt;3. all rights reserved.</p></div>
+<div id="copyrightIntroPage" class="copyright-intro-page" aria-label="© 2026 catdezoo&lt;3. all rights reserved.">
+
+<p>© 2026 catdezoo&lt;3. all rights reserved.</p>
+
+</div>
 
 
 
 <!--
 
-👶 2 · INTRO MESSAGE
+╭────────────────────────────────────────────────────────────────────────────╮
 
-   warning puis coeur
+│ 2 · INTRO
+
+╰────────────────────────────────────────────────────────────────────────────╯
+
+   - INTRO MESSAGE
+
+   - warning puis coeur
 
 -->
 
 
-<div id="introPage" class="intro-page"><span id="introText">⚠. -no epilepsy please, <br>
+<div id="introPage" class="intro-page">
 
-      and headphones please/</span><div id="introGif" class="intro-gif"></div>
+<span id="introText">⚠. -no epilepsy please, <br>
+
+      and headphones please/</span>
+
+<div id="introGif" class="intro-gif">
+
+</div>
 
 </div><div class="gif-bg"></div>
 
@@ -16183,53 +16970,103 @@ html.gpc-site-ready #fondVideo.gpc-video-bg {
 
 <!--
 
-👶 3 · BOUTONS
+╭────────────────────────────────────────────────────────────────────────────╮
 
-   menu du haut
+│ 3 · BOUTONS
+
+╰────────────────────────────────────────────────────────────────────────────╯
+
+   - MENU DES BOUTONS
+
+   - starthere / RULES / SEND A WAV MP3
 
 -->
 
 
-<nav id="menuPrincipal" style="display: none;"><button onclick="lancerMusique()">starthere</button><button onclick="afficherSection('apropos')">RULES</button><button onclick="afficherSection('contact')">SEND A WAV / MP3</button></nav>
+<nav id="menuPrincipal" style="display: none;">
+
+<button onclick="lancerMusique()">starthere</button>
+
+<button onclick="afficherSection('apropos')">RULES</button>
+
+<button onclick="afficherSection('contact')">SEND A WAV / MP3</button>
+
+</nav>
 
 
 
 <!--
 
-👶 3 · TIMER ORDINATEUR
+╭────────────────────────────────────────────────────────────────────────────╮
 
-   heure sous les boutons sur desktop
+│ 3 · TIMER
+
+╰────────────────────────────────────────────────────────────────────────────╯
+
+   - TIMER ORDINATEUR
+
+   - sous le menu sur desktop
 
 -->
 
 
-<div id="parisTimer" class="paris-timer"><span id="timerTime">00:00:01</span><span id="timerPeriod" class="timer-period">AM</span></div>
+<div id="parisTimer" class="paris-timer">
+
+<span id="timerTime">00:00:01</span>
+
+<span id="timerPeriod" class="timer-period">AM</span>
+
+</div>
 
 
 
 <!--
 
-👶 4 · PAGE STARTHERE
+╭────────────────────────────────────────────────────────────────────────────╮
 
-   accueil simple
+│ 4 · PAGE
+
+╰────────────────────────────────────────────────────────────────────────────╯
+
+   - PAGE STARTHERE
+
+   - accueil simple
 
 -->
 
 
-<section id="accueil" class="page-section active"></section>
+<section id="accueil" class="page-section active">
+
+</section>
 
 
 
 <!--
 
-👶 5 · BOX RULES ORDINATEUR + TÉLÉPHONE
+╭────────────────────────────────────────────────────────────────────────────╮
 
-   la boîte des règles
+│ 5 · BOX RULES
+
+╰────────────────────────────────────────────────────────────────────────────╯
+
+   - BOX RULES ORDINATEUR
+
+   - BOX RULES TÉLÉPHONE
+
+   - même contenu, placement différent selon écran
 
 -->
 
 
-<section id="apropos" class="page-section"><div class="card"><span class="magicbox-arrow magicbox-arrow-down" aria-hidden="true"></span><h1>
+<section id="apropos" class="page-section">
+
+<div class="card">
+
+<span class="magicbox-arrow magicbox-arrow-down" aria-hidden="true">
+
+</span>
+
+<h1>
 
       -RULES/<br>
 
@@ -16243,7 +17080,15 @@ html.gpc-site-ready #fondVideo.gpc-video-bg {
 
       N5-ELECTRONIC ART ONLY/
 
-    </h1><span class="magicbox-arrow magicbox-arrow-up" aria-hidden="true"></span></div></section>
+    </h1>
+
+<span class="magicbox-arrow magicbox-arrow-up" aria-hidden="true">
+
+</span>
+
+</div>
+
+</section>
 
 
 <!-- =========================================================
@@ -16262,37 +17107,40 @@ html.gpc-site-ready #fondVideo.gpc-video-bg {
 
 <!--
 
-👶 5 · TEXTES
+╭────────────────────────────────────────────────────────────────────────────╮
 
-   phrases utilisées par le site
+│ 5 · TEXTES
+
+╰────────────────────────────────────────────────────────────────────────────╯
+
+   - phrases du site
+
+   - facile à modifier ici
 
 -->
 
 
 <div id="gpcTextRegistry" hidden aria-hidden="true">
 
+<!-- 01 / INTRO -->
 
-  <!-- 01 / INTRO -->
+<template id="gpcTextIntroCopyright">© 2026 catdezoo&lt;3. all rights reserved.</template>
 
-  <template id="gpcTextIntroCopyright">© 2026 catdezoo&lt;3. all rights reserved.</template>
+<template id="gpcTextIntroWarning">WARNING THIS WEBSITE MAY CONTAIN FLASHING IMAGES</template>
 
-  <template id="gpcTextIntroWarning">WARNING THIS WEBSITE MAY CONTAIN FLASHING IMAGES</template>
+<template id="gpcTextIntroHeart">&lt;3</template>
 
-  <template id="gpcTextIntroHeart">&lt;3</template>
+<!-- 02 / MENU -->
 
+<template id="gpcTextNavStart">starthere</template>
 
-  <!-- 02 / MENU -->
+<template id="gpcTextNavRules">RULES</template>
 
-  <template id="gpcTextNavStart">starthere</template>
+<template id="gpcTextNavContact">SEND A WAV / MP3</template>
 
-  <template id="gpcTextNavRules">RULES</template>
+<!-- 03 / RULES - TEXTE PRINCIPAL DE REFERENCE -->
 
-  <template id="gpcTextNavContact">SEND A WAV / MP3</template>
-
-
-  <!-- 03 / RULES - TEXTE PRINCIPAL DE REFERENCE -->
-
-  <template id="gpcTextRules">-RULES/<br>
+<template id="gpcTextRules">-RULES/<br>
 
 N1-USE A 1992/2012 MUSIC/<br>
 
@@ -16304,10 +17152,9 @@ N4-NO ai AT ALL/<br>
 
 N5-ELECTRONIC ART ONLY/</template>
 
+<!-- 04 / STARTHERE - MEME BOX QUE RULES, AUTRE TEXTE -->
 
-  <!-- 04 / STARTHERE - MEME BOX QUE RULES, AUTRE TEXTE -->
-
-  <template id="gpcTextStartHere">US: -ready for a big competition?/<br>
+<template id="gpcTextStartHere">US: -ready for a big competition?/<br>
 
 CN: -准备好参加大型比赛了吗?/<br>
 
@@ -16349,52 +17196,49 @@ TH: -พร้อมสำหรับการแข่งขันใหญ่
 
 SE: -redo för en stor tävling?/<br>
 
-PT: -pronto para uma grande competição?/<br></template>
+PT: -pronto para uma grande competição?/<br>
 
+</template>
 
-  <!-- 05 / CONTACT -->
+<!-- 05 / CONTACT -->
 
-  <template id="gpcTextContact">@gmail.com</template>
+<template id="gpcTextContact">@gmail.com</template>
 
+<!-- 06 / AUDIO - SOUS-TITRES -->
 
-  <!-- 06 / AUDIO - SOUS-TITRES -->
+<template id="gpcTextAudioSubtitle12">imabarbiegirlnabarbiewxrld</template>
 
-  <template id="gpcTextAudioSubtitle12">imabarbiegirlnabarbiewxrld</template>
+<template id="gpcTextAudioSubtitle15">lifeinplastixitsfantastix</template>
 
-  <template id="gpcTextAudioSubtitle15">lifeinplastixitsfantastix</template>
+<template id="gpcTextAudioSubtitle17">?</template>
 
-  <template id="gpcTextAudioSubtitle17">?</template>
+<template id="gpcTextAudioSubtitle21">??</template>
 
-  <template id="gpcTextAudioSubtitle21">??</template>
+<template id="gpcTextAudioSubtitle24">imabarbiegirlnabarbiewxrld</template>
 
-  <template id="gpcTextAudioSubtitle24">imabarbiegirlnabarbiewxrld</template>
+<template id="gpcTextAudioSubtitle27">lifeinplastixitsfantastix</template>
 
-  <template id="gpcTextAudioSubtitle27">lifeinplastixitsfantastix</template>
+<template id="gpcTextAudioSubtitle29">?</template>
 
-  <template id="gpcTextAudioSubtitle29">?</template>
+<template id="gpcTextAudioSubtitle31">?</template>
 
-  <template id="gpcTextAudioSubtitle31">?</template>
+<template id="gpcTextAudioSubtitle33">???</template>
 
-  <template id="gpcTextAudioSubtitle33">???</template>
+<template id="gpcTextAudioSubtitle36">imabarbiegirlnabarbiewxrld</template>
 
-  <template id="gpcTextAudioSubtitle36">imabarbiegirlnabarbiewxrld</template>
+<template id="gpcTextAudioSubtitle39">lifeinplastixitsfantastix</template>
 
-  <template id="gpcTextAudioSubtitle39">lifeinplastixitsfantastix</template>
+<template id="gpcTextAudioSubtitle46">?!?!?!?!?!?!?!?&gt;&lt;</template>
 
-  <template id="gpcTextAudioSubtitle46">?!?!?!?!?!?!?!?&gt;&lt;</template>
+<!-- 07 / VOLUME / CONTROLES -->
 
+<template id="gpcTextVolumeLabel">VOLUME 100%</template>
 
-  <!-- 07 / VOLUME / CONTROLES -->
+<template id="gpcTextVolumeWarning">WARNING</template>
 
-  <template id="gpcTextVolumeLabel">VOLUME 100%</template>
+<!-- 08 / FOOTER -->
 
-  <template id="gpcTextVolumeWarning">WARNING</template>
-
-
-  <!-- 08 / FOOTER -->
-
-  <template id="gpcTextFooter">© 2026 catdezoo&lt;3. all rights reserved.</template>
-
+<template id="gpcTextFooter">© 2026 catdezoo&lt;3. all rights reserved.</template>
 
 </div>
 
@@ -16403,28 +17247,52 @@ PT: -pronto para uma grande competição?/<br></template>
 
 <!--
 
-👶 6 · GMAIL
+╭────────────────────────────────────────────────────────────────────────────╮
 
-   page contact
+│ 6 · GMAIL
+
+╰────────────────────────────────────────────────────────────────────────────╯
+
+   - GMAIL ORDINATEUR
+
+   - GMAIL TÉLÉPHONE
 
 -->
 
 
-<section id="contact" class="page-section"><div class="card"><h1>@gmail.com</h1></div></section>
+<section id="contact" class="page-section">
+
+<div class="card">
+
+<h1>@gmail.com</h1>
+
+</div>
+
+</section>
 
 </div>
 
 
 <!--
 
-👶 7 · AUDIO
+╭────────────────────────────────────────────────────────────────────────────╮
 
-   musique et boutons audio
+│ 7 · AUDIO
+
+╰────────────────────────────────────────────────────────────────────────────╯
+
+   - LECTEUR AUDIO
+
+   - musique, volume, barre
 
 -->
 
 
-<div class="audio-box"><div id="audioWordDisplay" class="audio-word-display"></div>
+<div class="audio-box">
+
+<div id="audioWordDisplay" class="audio-word-display">
+
+</div>
 
 <audio id="lecteurAudio" controls preload="metadata"><source src="./musique432.mp3?v=50" type="audio/mpeg"><source src="./musique432.wav?v=50" type="audio/wav"></audio><div class="volume-boost-box"><label for="volumeBoost"><span class="volume-word">volume</span><span id="volumeValue">100%</span></label><div class="volume-slider-wrap"><input id="volumeBoost" type="range" min="0" max="200" value="100" step="1"></div><div class="audio-progress-box"><div class="audio-time-row"><span id="audioCurrentTime">0:00</span><span id="audioDuration">0:00</span></div><div class="audio-progress-wrap"><input id="audioProgress" type="range" min="0" max="1000" value="0" step="1"></div></div><div id="volumeWarning" class="volume-warning">⚠. 100% is the good way.</div></div><div class="audio-footer"><p>© 2026 catdezoo&lt;3. all rights reserved.</p></div></div>
 
@@ -16439,9 +17307,13 @@ PT: -pronto para uma grande competição?/<br></template>
 
 <!--
 
-👶 8 · DESSIN AUTRE
+╭────────────────────────────────────────────────────────────────────────────╮
 
-   rules-scroll-restore-final
+│ 8 · DESSIN AUTRE
+
+╰────────────────────────────────────────────────────────────────────────────╯
+
+   - rules-scroll-restore-final
 
 -->
 
@@ -16449,6 +17321,8 @@ PT: -pronto para uma grande competição?/<br></template>
 <style id="rules-scroll-restore-final">
 
 @media screen and (max-width:768px) {
+
+  /* TÉLÉPHONE */
 
   /* TÉLÉPHONE */
 
@@ -16485,6 +17359,9 @@ PT: -pronto para uma grande competição?/<br></template>
   }
 
 
+
+  /* FOND VIDÉO TÉLÉPHONE */
+
   #fondVideo.video-bg,#introVideo.intro-video {
 
     pointer-events:none !important;
@@ -16502,6 +17379,9 @@ PT: -pronto para uma grande competição?/<br></template>
 
   }
 
+
+
+  /* BOX RULES TÉLÉPHONE */
 
   #apropos {
 
@@ -16554,12 +17434,18 @@ PT: -pronto para uma grande competição?/<br></template>
   }
 
 
+
+  /* BOX RULES TÉLÉPHONE */
+
   #apropos::-webkit-scrollbar {
 
     display:none !important
 
   }
 
+
+
+  /* BOX RULES TÉLÉPHONE */
 
   #apropos.active {
 
@@ -16569,6 +17455,9 @@ PT: -pronto para uma grande competição?/<br></template>
 
   }
 
+
+
+  /* BOX RULES TÉLÉPHONE */
 
   #apropos .card {
 
@@ -16588,6 +17477,9 @@ PT: -pronto para uma grande competição?/<br></template>
 
   }
 
+
+
+  /* BOX RULES TÉLÉPHONE */
 
   #apropos h1 {
 
@@ -16616,9 +17508,13 @@ PT: -pronto para uma grande competição?/<br></template>
 
 <!--
 
-👶 8 · TOUS LES ÉCRANS
+╭────────────────────────────────────────────────────────────────────────────╮
 
-   sécurité responsive
+│ 8 · TOUS LES ÉCRANS
+
+╰────────────────────────────────────────────────────────────────────────────╯
+
+   - sécurité responsive
 
 -->
 
@@ -16634,6 +17530,9 @@ html,body {
 }
 
 
+
+/* FOND VIDÉO */
+
 #fondVideo.video-bg {
 
   object-fit:fill !important;
@@ -16648,6 +17547,11 @@ html,body {
 @media screen and (max-width:768px) {
 
   /* TÉLÉPHONE */
+
+  /* TÉLÉPHONE */
+
+
+  /* BOX RULES TÉLÉPHONE */
 
   #apropos {
 
@@ -16666,6 +17570,9 @@ html,body {
 
 
 @media screen and (max-width:320px) {
+
+
+  /* BOX RULES */
 
   #apropos h1 {
 
@@ -16697,9 +17604,13 @@ html,body {
 
 <!--
 
-👶 8 · TIMER + RULES
+╭────────────────────────────────────────────────────────────────────────────╮
 
-   effets visuels
+│ 8 · TIMER + RULES
+
+╰────────────────────────────────────────────────────────────────────────────╯
+
+   - effets visuels
 
 -->
 
@@ -16726,6 +17637,9 @@ html,body {
 
 }
 
+
+
+/* TIMER */
 
 .paris-timer,#timerTime {
 
@@ -16815,6 +17729,9 @@ html,body {
 
 }
 
+
+
+/* TIMER */
 
 .paris-timer {
 
@@ -16953,6 +17870,11 @@ html,body {
 
   /* TÉLÉPHONE */
 
+  /* TÉLÉPHONE */
+
+
+  /* TIMER TÉLÉPHONE */
+
   .paris-timer {
 
     font-size:clamp(37px,12vw,58px) !important;
@@ -16963,6 +17885,9 @@ html,body {
 
   }
 
+
+
+  /* TIMER TÉLÉPHONE */
 
   .paris-timer,#timerTime,#timerPeriod,.timer-period {
 
@@ -17018,24 +17943,13 @@ html,body {
 
       0.16) !important;
 
-    filter:
-
-      drop-shadow(0 0 9px rgba(255,
-
-      0,
-
-      0,
-
-      0.66)) drop-shadow(0 0 25px rgba(255,
-
-      0,
-
-      0,
-
-      0.30)) !important;
+    filter:drop-shadow(0 0 9px rgba(255,0,0,0.66)) drop-shadow(0 0 25px rgba(255,0,0,0.30)) !important
 
   }
 
+
+
+  /* TIMER TÉLÉPHONE */
 
   .paris-timer,#timerTime {
 
@@ -17057,6 +17971,9 @@ html,body {
 
 
 @media screen and (max-width:390px) {
+
+
+  /* TIMER */
 
   .paris-timer {
 
@@ -17095,6 +18012,9 @@ html,body {
 
   }
 
+
+
+  /* TIMER */
 
   .paris-timer,#timerTime,#timerPeriod,.timer-period {
 
@@ -17150,21 +18070,7 @@ html,body {
 
       0.14) !important;
 
-    filter:
-
-      drop-shadow(0 0 7px rgba(255,
-
-      0,
-
-      0,
-
-      0.62)) drop-shadow(0 0 21px rgba(255,
-
-      0,
-
-      0,
-
-      0.28)) !important;
+    filter:drop-shadow(0 0 7px rgba(255,0,0,0.62)) drop-shadow(0 0 21px rgba(255,0,0,0.28)) !important
 
   }
 
@@ -17206,9 +18112,13 @@ html,body {
 
 <!--
 
-👶 8 · VIDÉO + GMAIL
+╭────────────────────────────────────────────────────────────────────────────╮
 
-   scroll et contact
+│ 8 · VIDÉO + GMAIL
+
+╰────────────────────────────────────────────────────────────────────────────╯
+
+   - aide scroll
 
 -->
 
@@ -17233,12 +18143,18 @@ html,body {
 }
 
 
+
+/* INTRO */
+
 .gif-bg,.intro-gif {
 
   background-color:#000000 !important
 
 }
 
+
+
+/* FOND VIDÉO */
 
 #fondVideo.video-bg {
 
@@ -17273,6 +18189,9 @@ html,body {
 }
 
 
+
+/* TIMER */
+
 .paris-timer {
 
   position:fixed !important;
@@ -17302,6 +18221,8 @@ html,body {
 
   /* TÉLÉPHONE */
 
+  /* TÉLÉPHONE */
+
   html,body {
 
     background:#000000 !important;
@@ -17315,6 +18236,9 @@ html,body {
   }
 
 
+
+  /* FOND VIDÉO TÉLÉPHONE */
+
   #fondVideo.video-bg {
 
     height:max(var(--gpc-fixed-h,100vh),100vh,100dvh) !important;
@@ -17323,6 +18247,9 @@ html,body {
 
   }
 
+
+
+  /* TIMER TÉLÉPHONE */
 
   .paris-timer {
 
@@ -17338,6 +18265,9 @@ html,body {
 
   }
 
+
+
+  /* GMAIL TÉLÉPHONE */
 
   #contact {
 
@@ -17378,6 +18308,9 @@ html,body {
   }
 
 
+
+  /* GMAIL TÉLÉPHONE */
+
   #contact.active {
 
     display:flex !important;
@@ -17388,6 +18321,9 @@ html,body {
 
   }
 
+
+
+  /* BOX RULES TÉLÉPHONE */
 
   #contact .card,#contact h1 {
 
@@ -17407,12 +18343,18 @@ html,body {
 
 @media screen and (max-width:900px) and (max-height:500px) and (orientation:landscape) {
 
+
+  /* TIMER */
+
   .paris-timer {
 
     top:14svh !important
 
   }
 
+
+
+  /* GMAIL */
 
   #contact {
 
@@ -17430,9 +18372,13 @@ html,body {
 
 <!--
 
-👶 8 · TÉLÉPHONE FLUIDE
+╭────────────────────────────────────────────────────────────────────────────╮
 
-   compatibilité mobile
+│ 8 · TÉLÉPHONE FLUIDE
+
+╰────────────────────────────────────────────────────────────────────────────╯
+
+   - compatibilité mobile
 
 -->
 
@@ -17442,6 +18388,11 @@ html,body {
 @media screen and (max-width:768px) {
 
   /* TÉLÉPHONE */
+
+  /* TÉLÉPHONE */
+
+
+  /* BOX RULES TÉLÉPHONE */
 
   #apropos {
 
@@ -17460,6 +18411,9 @@ html,body {
   }
 
 
+
+  /* BOX RULES TÉLÉPHONE */
+
   #apropos .card,#apropos h1,#contact,#contact .card,#contact h1 {
 
     backface-visibility:hidden !important;
@@ -17476,6 +18430,9 @@ html,body {
 
 @media screen and (max-width:360px) {
 
+
+  /* BOX RULES */
+
   #apropos {
 
     width:calc(100vw - 18px) !important;
@@ -17489,6 +18446,8 @@ html,body {
 
 
 @media screen and (min-width:431px) and (max-width:768px) {
+
+  /* TÉLÉPHONE */
 
   #apropos {
 
@@ -17520,9 +18479,19 @@ html,body {
 
 <!--
 
-👶 9 · MOTEUR PRINCIPAL
+╭────────────────────────────────────────────────────────────────────────────╮
 
-   fait tourner le site
+│ 9 · MOTEUR · GLOBAL
+
+╰────────────────────────────────────────────────────────────────────────────╯
+
+   - intro
+
+   - onglets
+
+   - audio
+
+   - fonctions de base
 
 -->
 
@@ -18617,9 +19586,13 @@ html,body {
 
 <!--
 
-👶 9 · MOTEUR IPHONE
+╭────────────────────────────────────────────────────────────────────────────╮
 
-   aide iOS
+│ 9 · MOTEUR · IPHONE
+
+╰────────────────────────────────────────────────────────────────────────────╯
+
+   - compatibilité vidéo et écran iOS
 
 -->
 
@@ -18972,9 +19945,13 @@ html,body {
 
 <!--
 
-👶 9 · MOTEUR FLÈCHES
+╭────────────────────────────────────────────────────────────────────────────╮
 
-   flèches de la box
+│ 9 · MOTEUR · FLÈCHES BOX RULES
+
+╰────────────────────────────────────────────────────────────────────────────╯
+
+   - flèches haut/bas de la box
 
 -->
 
@@ -19309,9 +20286,13 @@ html,body {
 
 <!--
 
-👶 9 · MOTEUR GMAIL TÉLÉPHONE
+╭────────────────────────────────────────────────────────────────────────────╮
 
-   bouge le Gmail
+│ 9 · MOTEUR · GMAIL TÉLÉPHONE
+
+╰────────────────────────────────────────────────────────────────────────────╯
+
+   - aide au placement du mail sur mobile
 
 -->
 
@@ -19422,9 +20403,13 @@ html,body {
 
 <!--
 
-👶 9 · MOTEUR VIDÉO TÉLÉPHONE
+╭────────────────────────────────────────────────────────────────────────────╮
 
-   aide vidéo mobile
+│ 9 · MOTEUR · VIDÉO TÉLÉPHONE
+
+╰────────────────────────────────────────────────────────────────────────────╯
+
+   - aide vidéo sur smartphone
 
 -->
 
@@ -19521,9 +20506,15 @@ html,body {
 
 <!--
 
-👶 9 · MOTEUR BOX RULES TÉLÉPHONE
+╭────────────────────────────────────────────────────────────────────────────╮
 
-   effet fluide au scroll
+│ 9 · MOTEUR · BOX RULES TÉLÉPHONE
+
+╰────────────────────────────────────────────────────────────────────────────╯
+
+   - effet fluide au scroll
+
+   - ne pas changer les constantes sans réfléchir
 
 -->
 
@@ -19664,6 +20655,9 @@ html,body {
 
   }
 
+
+
+  /* MOTEUR TIMER ORDINATEUR */
 
   function updateDesktopTimer() {
 
@@ -19843,6 +20837,9 @@ html,body {
   }
 
 
+
+  /* MOTEUR VIDÉO */
+
   function playVideo() {
 
     refs();
@@ -19874,6 +20871,9 @@ html,body {
 
   }
 
+
+
+  /* MOTEUR INTRO */
 
   function startIntro() {
 
@@ -20046,6 +21046,9 @@ html,body {
   }
 
 
+
+  /* MOTEUR POSITION BOX RULES TÉLÉPHONE */
+
   function calculer(force) {
 
     const b = box();
@@ -20117,6 +21120,9 @@ html,body {
   }
 
 
+
+  /* MOTEUR EFFET SCROLL BOX RULES */
+
   function impulsionPage() {
 
     if (!mobile() || !active()) return;
@@ -20140,6 +21146,9 @@ html,body {
 
   }
 
+
+
+  /* MOTEUR EFFET SCROLL BOX RULES */
 
   function impulsionBox() {
 
@@ -20316,6 +21325,9 @@ html,body {
 
   }
 
+
+
+  /* MOTEUR CHANGEMENT DE PAGE */
 
   function showSection(id) {
 
